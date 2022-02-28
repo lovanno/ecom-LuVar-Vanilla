@@ -1,0 +1,3956 @@
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      overflow-x: hidden;
+    }
+
+
+
+    /*                  Grid Layout               */
+    .grid.layout {
+      /*background-color: palevioletred;*/
+      position: relative;
+      display: grid;
+      text-align: center;
+
+
+      grid-template-rows: 1.8fr 1.7fr 3.6fr 1.7fr 3.6fr 1.7fr 3.2fr 3.5fr;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4.0rem;
+
+      grid-template-areas:
+        "landing landing landing landing"
+
+        "parlance parlance parlance parlance"
+        "sunSec1 sunSec1 sunSec1 sunSec1"
+
+        "lacuna lacuna lacuna lacuna"
+        "sunSec2 sunSec2 sunSec2 sunSec2"
+
+        "alure alure alure alure"
+        "sunSec3 sunSec3 sunSec3 sunSec3"
+
+        "location location location location"
+    }
+
+
+
+
+    /*                Grid Areas              */
+
+    .landingPage {
+      /*  Section2   */
+      /*background-color: #D291BC;*/
+      grid-area: landing;
+      position: relative;
+    }
+
+
+    /*    Section3, Section5, Section7    */
+    .parlance {
+      grid-area: parlance;
+      position: relative;
+      margin-top: 1.0rem;
+
+    }
+
+    .lacuna {
+      grid-area: lacuna;
+      position: relative;
+
+    }
+
+    .alure {
+      grid-area: alure;
+      position: relative;
+
+    }
+
+
+    /*    Section4, Section6, Section8    */
+    .sunglassSec.\31 {
+      grid-area: sunSec1;
+    }
+
+    .sunglassSec.\32 {
+      grid-area: sunSec2;
+    }
+
+    .sunglassSec.\33 {
+      grid-area: sunSec3;
+    }
+
+
+    .locationBox {
+      /*    Section9    */
+      margin-top: 4.0rem;
+      grid-area: location;
+    }
+
+    .locateColmGrid {
+      /*    Section10    */
+      /*background-color: cadetblue;*/
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      position: relative;
+      left: 12%;
+      max-width: 75rem;
+      /*1200px*/
+    }
+
+
+    /*!                  Modal Class                      !*/
+    .modal {
+      position: fixed;
+      display: none;
+      overflow: auto;
+      overflow-x: hidden;
+
+      padding-top: 3.625rem;
+      height: 100%;
+      width: 100%;
+      z-index: 2000;
+
+      background-color: rgb(0, 0, 0);
+      /* background shadow */
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-header {
+      background-color: black;
+      color: white;
+      padding: 0.125rem 1rem;
+      /*2px 16px*/
+      height: 2.5rem;
+      /*40px*/
+    }
+
+    .popupHeader {
+      position: relative;
+      top: 20%;
+      left: 14%;
+
+      font-size: 1.125rem;
+      /*18px*/
+      letter-spacing: 0.3rem;
+    }
+
+
+    .modal-content {
+      position: relative;
+      float: right;
+      margin: auto;
+
+      background-color: #fefefe;
+      padding: 0rem;
+      width: 40%;
+
+
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+
+
+    /* The Close Button */
+    .close {
+      float: right;
+      font-weight: bold;
+      color: white;
+      font-size: 1.75rem;
+      /*28px*/
+
+    }
+
+    .close:hover,
+    .close:focus {
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+
+    }
+
+
+
+    /* Animations */
+    @-webkit-keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+
+
+    /*                    Cart Section   - separate Modules (Modal 1)                          */
+
+    /*  Cart Boxes within Modal 1 */
+    .cartCount {
+      position: fixed;
+      text-align: center;
+
+      top: 2.5%;
+      left: 94.5%;
+
+      height: 1.563rem;
+      /*25px*/
+      width: 1.563rem;
+      border-radius: 50%;
+
+
+
+      font-size: 0.7rem;
+      line-height: 1.563rem;
+      z-index: 1001;
+
+
+      font-weight: bold;
+      color: #fff;
+      background: black;
+    }
+
+
+    .scrolling-active .cartCount {
+      color: black;
+      background: white;
+      z-index: 1001;
+    }
+
+
+    /*        Product Boxes        */
+    .cartContainer {
+      position: relative;
+      display: grid;
+      justify-content: center;
+      justify-content: space-evenly;
+
+      top: 10%;
+    }
+
+    .cartBox {
+      /*background-color: red;*/
+      position: relative;
+      display: flex;
+      text-align: center;
+
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      left: -6%;
+
+      min-height: 10rem;
+      min-width: 28rem;
+      /*250px*/
+      padding: 1.25rem;
+      /*20px*/
+    }
+
+
+    .cartBox:after {
+      /*Creates pseudo line underneath Product Boxes */
+      position: absolute;
+      content: "";
+      border-bottom: 2px solid black;
+
+      left: -11.8%;
+      min-height: 20%;
+      width: 300%;
+      margin-bottom: -2.5rem;
+      /*40px*/
+
+      opacity: 25%;
+    }
+
+
+    /*  Product Boxes  -  Images   */
+    .cartProd-image {
+      position: relative;
+      background: url("../../watchDes/watchPage/R1/lava.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      height: 10vh;
+      width: 30%;
+      left: -8%;
+      top: -7%;
+    }
+
+
+
+    /*         Text         */
+    .textBox {
+      position: relative;
+      top: -14%;
+      left: 1%;
+
+      font-size: 0.75rem;
+      /*12px*/
+      letter-spacing: 0.094rem;
+      /*1.5px*/
+      font-family: century;
+      text-align: left;
+    }
+
+    .prodHeader {
+      font-size: 1.063rem;
+      /*17px*/
+      letter-spacing: 0.25rem;
+      /*4px*/
+      font-weight: 400;
+
+      color: black;
+      font-family: garamond;
+      font-weight: bold;
+    }
+
+
+
+    /*  Product Box - Buttons   */
+
+    .deleteTest {
+      /*Subtract 1 Item Button*/
+      cursor: pointer;
+      position: absolute;
+      top: 37%;
+      left: 85%;
+
+      font-size: 1.3rem;
+      line-height: 0.6rem;
+      width: 1.313rem;
+      /*21px*/
+      height: 1.125rem;
+      /*18px*/
+
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+
+    .addTest {
+      /*Add 1 Item Button*/
+      cursor: pointer;
+      position: absolute;
+      top: 37%;
+      left: 93%;
+
+      line-height: 1.0rem;
+      font-size: 1.0rem;
+      width: 1.313rem;
+      /*21px*/
+      height: 1.125rem;
+      /*18px*/
+
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
+
+
+    .deleteProd {
+      /*Delete Entire Product Button*/
+      cursor: pointer;
+      display: flex;
+      position: absolute;
+
+      top: 18%;
+      left: 111%;
+
+      font-size: 1.063rem;
+      /*17px*/
+      width: 1.875rem;
+      /*30px*/
+      height: 1.563rem;
+      /*25px*/
+
+      border: transparent;
+      background-color: white;
+      align-items: center;
+      justify-content: center;
+
+      opacity: 35%;
+      transition: 1.3s;
+    }
+
+
+    .deleteProd:hover {
+      border: 2px solid black;
+      opacity: 100%;
+      transition: 0.4s;
+    }
+
+
+
+    /*    Cart Total Box (1st/Top Box)      */
+    .cartProd-image.\-1 {
+      background: url("../../material/checkout4.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      top: -8%;
+      left: -10%;
+      height: 13vh;
+      width: 35%;
+    }
+
+
+    /*  Cart Box (top) - Text   */
+    .textBox.\-1 {
+      font-size: 0.75rem;
+      /*12px*/
+      top: -15%;
+      left: -4.5%;
+      letter-spacing: 0.2rem;
+    }
+
+
+    p.prodHeader.-\31 {
+      font-size: 1.0rem;
+      /*16px*/
+      letter-spacing: 0.4rem;
+    }
+
+
+
+    /*  Cart Box (top) - Buttons   */
+    .deleteTest.\-1 {
+      position: absolute;
+      top: 75.5%;
+      left: 32%;
+
+      height: 1.875rem;
+      /*30px*/
+      width: 7.5rem;
+      /*120px*/
+
+
+      font-size: 0.8rem;
+      line-height: 0rem;
+      letter-spacing: 0.05rem;
+
+      font-family: century;
+      text-align: center;
+
+      color: black;
+      border-radius: 0.5px solid black;
+      background-color: transparent;
+
+
+      opacity: 60%;
+    }
+
+    .deleteTest.\-1:hover {
+      opacity: 100%;
+      transition: 0.5s;
+
+    }
+
+    .addTest.\-1 {
+      position: static;
+      visibility: hidden;
+    }
+
+
+    /*                    Product Desc Section   - separate Module (Modal 2)                          */
+
+    .modal.\32 {
+      display: none;
+      position: fixed;
+      overflow: auto;
+      overflow-x: hidden;
+
+      width: 100%;
+      height: 100%;
+      padding-top: 5.313;
+      /*85px*/
+
+      z-index: 1;
+    }
+
+
+    .modal-header.\32 {
+      background-color: black;
+      color: white;
+      padding: 0.125rem 1rem;
+      /*2px 16px*/
+      height: 2.5rem;
+      /*40px*/
+
+    }
+
+    .popupHeader.\32 {
+      position: relative;
+
+      left: 19%;
+      top: 20%;
+      font-size: 1.125rem;
+      /*18px*/
+    }
+
+
+    .modal-content.\32 {
+      position: relative;
+      margin: auto;
+
+      background-color: #fefefe;
+      border: 1px solid #888;
+
+      top: 2%;
+      height: 100%;
+      width: 100%;
+      padding: 0rem;
+
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+
+
+    /* The Close Button */
+    .close.\32 {
+      float: right;
+      font-weight: bold;
+      color: white;
+      font-size: 1.75rem;
+      /*28px*/
+    }
+
+    .close.\32:hover,
+    .close.\32:focus {
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+    }
+
+
+
+    /*!     Product Decription Module       !*/
+
+    .productBoxView {
+      /*Grid Area for Product Desc - Separate Grid (unique)*/
+      /*background-color: pink;*/
+
+      position: absolute;
+      width: 80%;
+      left: 10%;
+
+      display: grid;
+      justify-content: space-evenly;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 4.375rem repeat(2, 12.5rem) 9.375rem;
+      /*70px repeat(2, 200px) 150px*/
+
+      grid-template-areas:
+        "header header header header"
+        "focusProd focusProd smBox smBox"
+        "focusProd focusProd smBox smBox"
+        "btn btn btn btn";
+    }
+
+    /*  productDesc element setup */
+
+    .headerBox {
+      /*background-color: lavender;*/
+      grid-area: header;
+    }
+
+    .largeProdBox {
+      /*background-color: chocolate;*/
+      grid-area: focusProd;
+    }
+
+    .smallProdBox.Frame {
+      /*background-color: plum;*/
+      grid-area: smBox;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+
+    }
+
+    .btnAreaBox {
+      /*background-color: salmon;*/
+      grid-area: btn;
+    }
+
+
+    /*              leftBox                 */
+    .focusProd-Image {
+      position: relative;
+      top: 14%;
+
+      background: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      height: 37vh;
+      width: 57%;
+      left: 30%;
+    }
+
+
+    /*productBox Header */
+    .headerTextWrap {
+      position: relative;
+      display: flex;
+      float: right;
+
+      top: 35%;
+      right: 16.85%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h3.headerProdBox {
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+
+      font-size: 2.188rem;
+      /*35px*/
+      letter-spacing: 0.75rem;
+      /*12px*/
+      font-weight: 100;
+    }
+
+
+
+    /*dot buttons - changes productSect*/
+    .dot {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      background-color: #bbb;
+
+      height: 0.688rem;
+      /*11px*/
+      width: 0.688rem;
+
+      margin: 0.313rem;
+      /*5px*/
+      margin-top: 0.75rem;
+      /*12px*/
+      border-radius: 20%;
+
+      transition: 600ms;
+    }
+
+
+
+    /*        rightBox - product choices         */
+
+    .smallBox {
+      /*background-color: palegoldenrod;*/
+
+      position: relative;
+      display: flex;
+
+      top: 5%;
+      width: 22%;
+      height: 43%;
+
+
+      flex-wrap: wrap;
+      align-items: flex-end;
+      text-align: center;
+      justify-content: center;
+    }
+
+
+
+    /*productBox Hidden Btn's*/
+    .smBtn {
+      cursor: pointer;
+      position: relative;
+
+      font-family: garamond;
+      text-transform: uppercase;
+      color: transparent;
+      background-color: transparent;
+
+      top: -94%;
+      height: 100%;
+      width: 100%;
+
+      font-size: 0.75rem;
+      /*12px;*/
+      letter-spacing: 0.625rem;
+      /*10px;*/
+      padding: 2.7rem;
+      /*43.2px*/
+    }
+
+
+    .prodDescName {
+      position: relative;
+      top: -45%;
+      left: -20.25%;
+      line-height: 2.0rem;
+
+      text-align: center;
+    }
+
+    /*        productImage Boxes      */
+    .smallBox-image {
+      position: relative;
+      top: 10%;
+      background: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      height: 16vh;
+      width: 85%;
+    }
+
+    .smallBox-image.\32 {
+      background-image: url("../../watchDes/watchPage/R1/mblWhite.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .smallBox-image.\33 {
+      background-image: url("../../watchDes/watchPage/R1/mblGoldBlk.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .smallBox-image.\34 {
+      background-image: url("../../watchDes/watchPage/R1/lava.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .smallBox-image.\35 {
+      background: url("../../watchDes/watchPage/R1/sand.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .smallBox-image.\36 {
+      position: relative;
+      background: url("../../watchDes/watchPage/R1/ocean.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+
+    .smallBox-image.\37 {
+      background-image: url("../../watchDes/watchPage/R1/whiteBlue.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .smallBox-image.\38 {
+      background-image: url("../../watchDes/watchPage/R1/mblAqua.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    /*             bottomBox - productInfo                */
+    p.subHeaderView {
+      position: relative;
+      top: 5%;
+
+      font-size: 1.3rem;
+      letter-spacing: 0.438rem;
+      /*7px*/
+      font-weight: 100;
+
+
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+
+      opacity: 0.8;
+    }
+
+
+    p.priceProdView {
+      position: relative;
+      top: 23%;
+
+      color: black;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      font-family: 'Times New Roman', Times, serif;
+
+      font-size: 1.0rem;
+      /*16px;*/
+      letter-spacing: 0.2rem;
+      /*0.2px;*/
+      font-weight: 100;
+
+      opacity: 0.8;
+    }
+
+
+    .productViewBtn {
+      cursor: pointer;
+      position: relative;
+      float: right;
+
+      top: -5%;
+      right: 18%;
+      width: 20%;
+
+      font-size: 0.75rem;
+      /*12px*/
+      letter-spacing: 0.25rem;
+      /*4px*/
+      padding: 1.0rem;
+      /*16px*/
+
+      text-transform: uppercase;
+      font-family: garamond;
+      background-color: black;
+      color: white;
+
+      z-index: 1001;
+    }
+
+
+    /*            productDesc Info (bottom sect)          */
+
+    .productDescView {
+      /*background-color: tomato;*/
+      position: absolute;
+      top: 99%;
+      width: 100%;
+    }
+
+
+    /*       background     -   image        */
+    .descViewBG-image {
+      background: url("../../material/prodDesc.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      position: relative;
+      height: 113vh;
+      width: 100%;
+    }
+
+
+    /*         productDesc -   Text         */
+
+    .descTextWrap {
+      /*background-color: pink;*/
+      position: absolute;
+      top: 13%;
+      left: 28%;
+
+      text-align: center;
+      align-items: center;
+    }
+
+
+    h3.headerProdBox.\31 {
+      font-size: 2.5rem;
+      /*40px*/
+      line-height: 4.375rem;
+      /*70px*/
+
+    }
+
+    p.subHeaderView.\32 {
+      font-size: 1.0rem;
+      /*16px*/
+      line-height: 2.5rem;
+      /*40px*/
+      left: 0%;
+
+    }
+
+
+    p.paragraphDesc {
+      position: relative;
+      top: 20%;
+
+      margin-top: 2.5rem;
+      /*40px*/
+      font-size: 1.0rem;
+      /*16px*/
+
+      letter-spacing: 0.313rem;
+      /*5px*/
+      line-height: 4.375rem;
+      /*70px*/
+      text-transform: uppercase;
+    }
+
+    /*      product image     */
+    .focusProd-Image.\32 {
+      background: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      height: 40vh;
+      width: 50%;
+
+      left: 24.25%;
+      margin-top: 4.375rem;
+      /*70px*/
+    }
+
+
+    /***                       navBar - section1                              ***/
+
+    p.logo {
+      display: block;
+
+      position: fixed;
+      cursor: pointer;
+
+      height: 5%;
+      top: -1.25%;
+      left: 44%;
+
+
+      font-family: 'Times New Roman', Times, serif;
+      color: white;
+      /*slighly lighter to blend with Li's */
+
+      font-size: 1.5rem;
+      letter-spacing: 0.438rem;
+      font-weight: 600;
+
+      margin: 1.563rem;
+      padding: 0.625rem 1.0rem;
+
+
+      transition: 400ms;
+    }
+
+    .nav-items {
+      /*  Text  */
+      background: transparent;
+      position: fixed;
+
+      overflow: hidden;
+      list-style-type: none;
+
+      width: 100%;
+      z-index: 500;
+
+      transition: 400ms;
+    }
+
+    .nav-item.sec1 {
+      position: relative;
+      float: left;
+
+      left: 3%;
+    }
+
+    .nav-item.sec2 {
+      position: relative;
+      float: right;
+
+      right: 3%;
+    }
+
+    .nav-link {
+      display: block;
+      cursor: pointer;
+
+      font-size: 1.0rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+
+      margin: 1.563rem;
+      padding: 0.625rem 1.0rem;
+      letter-spacing: 0.156rem;
+
+
+      transition: 400ms;
+    }
+
+
+    /* Text Highlight */
+    .nav-link:hover:not(.active) {
+      /* Hover of Li Nav Bar*/
+      color: #c2592f;
+      text-decoration: none;
+      transition: 400ms;
+
+    }
+
+
+    /*!                 Scroll Effects                  !*/
+
+    .scrolling-active {
+      /*Background*/
+      background: black;
+      box-shadow: 0 3px 1rem rgba(0, 0, 0, .1);
+      z-index: 1002;
+
+      transition: 800ms;
+    }
+
+
+    /* Text */
+    .scrolling-active .nav-link {
+      color: white;
+      z-index: 1001;
+
+    }
+
+    .scrolling-active p.logo {
+      color: white;
+
+    }
+
+    .scrolling-active .nav-link:hover {
+      color: #878686;
+      z-index: 1001;
+      transition: 600ms;
+
+    }
+
+
+
+    /***                       landingPage - section2                              ***/
+    #sunLanding-Image {
+      background: url("../../secondary/sunglassFar.jpg");
+      background-size: cover;
+      background-position: center;
+
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      -o-object-fit: cover;
+    }
+
+
+
+    /*  Text  */
+    #landHeader {
+      position: absolute;
+      top: 46%;
+      left: 29%;
+
+      font-size: 4.0rem;
+      letter-spacing: 0.2rem;
+      font-weight: 100;
+
+      font-family: garamond;
+      color: white;
+      text-transform: uppercase;
+
+    }
+
+
+    #landDesc {
+      position: absolute;
+      top: 57%;
+      left: 38.75%;
+
+      font-size: 1.35rem;
+      letter-spacing: 0.2rem;
+      font-weight: 100;
+
+      color: #FDFEFF;
+      text-transform: uppercase;
+      font-family: Alegreya SC;
+
+      opacity: 0.9;
+      line-height: 3.4rem;
+
+    }
+
+
+
+    a.landingBtn {
+      position: absolute;
+      top: 80.5%;
+      left: 45%;
+
+      font-size: 0.9rem;
+      letter-spacing: 0.3rem;
+      font-weight: 100;
+
+      color: white;
+      font-family: Alegreya SC;
+
+      background-color: black;
+      text-transform: uppercase;
+      text-align: center;
+      width: 17%;
+
+
+      text-decoration: none;
+      padding: 1.0rem;
+
+    }
+
+
+
+
+
+    /***                    Parlance Photo (Club Master)    -  Section3               ***/
+
+    /*Sun Photo Classes for 3 Sections*/
+
+    .introSunBG-Image {
+      position: relative;
+      transform: scale(0.85);
+
+      height: 100%;
+      width: 100%;
+    }
+
+    .sunpromoWrap {
+      position: absolute;
+
+      letter-spacing: 0.2rem;
+      line-height: 2.4rem;
+
+      color: black;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .sunPhotoHeader {
+      font-size: 1.9rem;
+      letter-spacing: 0.6rem;
+      font-weight: 100;
+
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .sunPhotoDesc {
+      font-size: 0.85rem;
+      font-weight: 100;
+
+      font-family: garamond;
+
+      opacity: 0.8;
+    }
+
+    .sunPhotoPrice {
+      font-size: 1.3rem;
+      line-height: 6.0rem;
+
+      font-family: Alegreya SC;
+      font-weight: bold;
+
+      opacity: 0.8;
+    }
+
+    a.sunPhotoBtn {
+      position: absolute;
+
+      font-size: 1.0rem;
+      letter-spacing: 0.3rem;
+      font-weight: 100;
+
+      background-color: white;
+      color: black;
+      text-transform: uppercase;
+      font-family: Alegreya SC;
+
+
+      border: 1px solid black;
+      text-decoration: none;
+      width: 102%;
+      padding: 0.4rem;
+    }
+
+
+    .introSunBG-Image.\31 {
+      /*Photo 1 Edits */
+      background: url("../../secondary/sunCine.jpg");
+      background-size: cover;
+      background-position: center;
+      width: 97%;
+
+      left: 4%;
+    }
+
+    .sunpromoWrap.\31 {
+      /*  Text  */
+      top: 49%;
+      left: 68%;
+    }
+
+    a.sunPhotoBtn.\31 {
+      top: 102%;
+      left: -1%;
+    }
+
+
+    /***                       Parlance Products (Colm)        -  Section4                       ***/
+
+    .sunColumn {
+      /*creates columns for sunglasses*/
+
+      /*background-color: pink;*/
+      display: grid;
+      justify-content: center;
+      position: relative;
+      left: 0%;
+
+      grid-template-columns: repeat(auto-fit, 25rem);
+      grid-column-gap: 2rem;
+      grid-row-gap: 7rem;
+      /*90px*/
+    }
+
+
+    .container {
+      /*background: red;*/
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+
+    }
+
+
+    /*    Parlance Promo Photo   */
+
+    /*  Header  */
+    h5.sunBanner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+
+      left: 11%;
+      width: 80%;
+
+      font-size: 1.3rem;
+      /*20.8px*/
+      color: black;
+      font-weight: normal;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+
+      border-bottom: 2px black solid;
+      margin-bottom: 2.5rem;
+
+      line-height: 4.3rem;
+      letter-spacing: 0.5rem;
+    }
+
+
+    h5.sunBanner.\31 {
+      margin-top: 5.0rem;
+      /*80px*/
+
+    }
+
+
+    /*          Text for Product Boxes        */
+    .text {
+      position: relative;
+      top: -10%;
+      left: -2.85%;
+
+      text-align: center;
+      line-height: 1.2;
+    }
+
+
+    .title {
+      font-size: 0.688rem;
+      /*11px*/
+      font-weight: bolder;
+      letter-spacing: 0.1rem;
+    }
+
+    .color {
+      font-size: 1.75rem;
+      /*28px*/
+      letter-spacing: 0.3rem;
+
+      font-family: century;
+      text-transform: capitalize;
+      font-weight: 100;
+
+    }
+
+    .price {
+      font-family: 'Times New Roman', Times, serif;
+
+      font-size: 1.063rem;
+      /*17px*/
+      line-height: 4.5rem;
+      /*72px*/
+      letter-spacing: 0.25rem;
+      /*4px*/
+      font-weight: 100;
+    }
+
+
+
+
+    /*        Product Boxes        */
+    .product-image {
+      position: relative;
+      left: 8.15%;
+
+      height: 25vh;
+      width: 78%;
+
+    }
+
+
+    button.add {
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      top: -3%;
+      left: -1.75%;
+
+      font-size: 0.6875rem;
+      width: 50%;
+      letter-spacing: 0.3rem;
+      line-height: 0.375rem;
+
+      color: white;
+      background-color: black;
+      padding: 1rem;
+
+    }
+
+    button.descViewBtn {
+      background-color: transparent;
+      text-transform: uppercase;
+      font-family: Alegreya SC;
+      cursor: pointer;
+
+      border: 2px solid transparent;
+      text-decoration: none;
+
+      width: 100%;
+      height: 80%;
+
+    }
+
+
+    /*    -      Product Images -     (Parlance)     -    */
+    .product-image.sec1.\31 {
+      background: url("../../secondary/sunglasses/sunR1/silver.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec1.\32 {
+      background: url("../../secondary/sunglasses/sunR1/orange\ tint.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec1.\33 {
+      background: url("../../secondary/sunglasses/sunR1/gold.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec1.\34 {
+      background: url("../../secondary/sunglasses/sunR1/rose\ gold.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+
+    .product-image.sec1.\35 {
+      background: url("../../secondary/sunglasses/sunR1/lava.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec1.\36 {
+      background: url("../../secondary/sunglasses/sunR1/marble\ blue.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec1.\37 {
+      background: url("../../secondary/sunglasses/sunR1/marble\ black.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec1.\38 {
+      background: url("../../secondary/sunglasses/sunR1/emerald.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+
+    /***                     Lacuna Photo (Round)    -  section5                ***/
+
+    /*Header*/
+    h5.sunBanner.\32 {
+      margin-top: 7.0rem;
+      /*16px*/
+
+    }
+
+
+    /*Image*/
+    .introSunBG-Image.\32 {
+      background: url("../../secondary/sunCine2.jpg");
+      background-size: cover;
+      background-position: center;
+
+      height: 110%;
+      width: 95%;
+      left: 4%;
+    }
+
+
+
+
+    /*  Text  */
+    .sunpromoWrap.\32 {
+      top: 55%;
+      left: 68.25%;
+    }
+
+
+    a.sunPhotoBtn.\32 {
+      top: 102%;
+      left: -1%;
+    }
+
+
+
+
+
+
+    /***                    Lacuna Products (Colm)    -  section6               ***/
+
+    /* -       Product Images - Section2 (Lacuna)       - */
+    .product-image.sec2 {
+      left: 7.75%;
+    }
+
+    .text.\32 {
+      top: -12%;
+      left: -3.2%;
+    }
+
+    button.add.\32 {
+      top: -6%;
+      left: -3%;
+    }
+
+
+
+    /*    -      Product Images -     (Lacuna)     -    */
+    .product-image.sec2.\31 {
+      background: url("../../secondary/sunglasses/sunR2/sky\ blue.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec2.\32 {
+      background: url("../../secondary/sunglasses/sunR2/rose\ gold.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec2.\33 {
+      background: url("../../secondary/sunglasses/sunR2/gold.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec2.\34 {
+      background: url("../../secondary/sunglasses/sunR2/red.jpg");
+
+      background-repeat: no-repeat;
+
+      background-size: cover;
+      background-position: center;
+
+    }
+
+
+    .product-image.sec2.\35 {
+      background: url("../../secondary/sunglasses/sunR2/sky\ gray.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec2.\36 {
+      background: url("../../secondary/sunglasses/sunR2/dark\ blue.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec2.\37 {
+      background: url("../../secondary/sunglasses/sunR2/yellow\ tint.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec2.\38 {
+      background: url("../../secondary/sunglasses/sunR2/orange\ tint.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    /***                    Alure Photo (Round)    -    section7              ***/
+
+    /*Header*/
+    h5.sunBanner.\33 {
+      margin-top: 7.0rem;
+      /*16px*/
+
+    }
+
+    .introSunBG-Image.\33 {
+      background: url("../../secondary/sunCine3.jpg");
+      background-size: cover;
+      background-position: center;
+      /*transform: scale(0.80);*/
+
+      height: 110%;
+      width: 93%;
+      left: 4%;
+    }
+
+
+
+
+    /*  Text  */
+    .sunpromoWrap.\33 {
+      top: 57.5%;
+      left: 23.5%;
+    }
+
+
+    a.sunPhotoBtn.\33 {
+      top: 104%;
+      left: -2%;
+    }
+
+
+
+    /***                    Alure Products (Colm)    -    section8               ***/
+
+    /*  Product Box Adjustments */
+    .sunColumn.\33 {
+      grid-row-gap: 5.5rem;
+    }
+
+    /*  Box Images */
+    .product-image.sec3 {
+      left: 8.25%;
+
+    }
+
+
+    .text.\33 {
+      top: -22%;
+      left: -3.25%
+    }
+
+    .price.\33 {
+      line-height: 3.7rem;
+    }
+
+
+    button.add.\33 {
+      top: -14%;
+      left: -2.5%;
+    }
+
+
+
+
+
+    /* -            Product Images - Sec3 (Alure)           - */
+    .product-image.sec3.\31 {
+      background: url("../../secondary/sunglasses/sunR3/black\ tint.jpg");
+
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec3.\32 {
+      background: url("../../secondary/sunglasses/sunR3/dark\ gold.jpg");
+
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec3.\33 {
+      background: url("../../secondary/sunglasses/sunR3/dark\ rose.jpg");
+
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec3.\34 {
+      background: url("../../secondary/sunglasses/sunR3/blue\ tint.jpg");
+
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec3.\35 {
+      background: url("../../secondary/sunglasses/sunR3/rose\ black.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec3.\36 {
+      background: url("../../secondary/sunglasses/sunR3/rose\ tint.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+    .product-image.sec3.\37 {
+      background: url("../../secondary/sunglasses/sunR3/gold.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .product-image.sec3.\38 {
+      background: url("../../secondary/sunglasses/sunR3/olive\ tint.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+
+
+
+
+    /***                        Locations    -     section9                           ***/
+
+
+    /*              "Lu Var" Header for Sec                  */
+    .titleSec {
+      position: relative;
+      left: 0.45%;
+
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2.4rem;
+      font-weight: 100;
+      letter-spacing: 0.5rem;
+
+      color: black;
+      text-transform: uppercase;
+      text-align: center;
+
+      margin-top: 6.0rem;
+      margin-bottom: 1.7rem;
+    }
+
+
+
+    /*                 Columns                  */
+    .locateColmGrid>* {
+      flex: 1 1 33%;
+      min-width: 40ch;
+    }
+
+
+    .colm {
+      /*background-color: turquoise;*/
+      cursor: pointer;
+      min-height: 28.125rem;
+      /*450px */
+      min-width: 17.5rem;
+      /*250px*/
+
+      border-bottom: 220px solid #FEFEFE;
+      outline: 3px solid #DCDCDC;
+    }
+
+
+    .colm:hover {
+      transform: scale(0.85);
+      transition: 600ms;
+
+    }
+
+
+
+    /*      Column Location Photos  */
+    .colm.\31 {
+      position: relative;
+      background-position-y: 40%;
+
+      background: url("../../material/building1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+
+
+    .colm.\32 {
+      position: relative;
+      background-position-y: 85%;
+
+      background: url("../../material/building2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+
+
+    .colm.\33 {
+      position: relative;
+      background-position-y: 10%;
+
+      background: url("../../material/building3.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+
+    /*                 href Link Buttons                  */
+    a.escape {
+      position: relative;
+      display: block;
+      top: -30%;
+      width: 100%;
+      height: 180%;
+      background-color: transparent;
+
+    }
+
+
+    /*                 Text                  */
+    .location {
+      position: relative;
+      top: 106%;
+
+      font-family: garamond;
+      font-size: 1.6rem;
+      letter-spacing: 0.2rem;
+      font-weight: normal;
+
+
+      color: black;
+      text-transform: uppercase;
+      text-align: center;
+
+      align-items: center;
+    }
+
+
+
+    .address {
+      position: relative;
+      top: 121%;
+
+      color: black;
+      font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
+
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15rem;
+      line-height: 1.8rem;
+
+      text-transform: uppercase;
+      text-align: center;
+      align-items: center;
+    }
+
+
+
+
+    /*    Button  Sec   */
+    .findLocat {
+      position: relative;
+      left: 2%;
+
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.6rem;
+      font-weight: 100;
+
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+
+      color: #535353;
+      text-align: center;
+      margin-top: 4.0rem;
+    }
+
+
+    a.locateBtn {
+      position: absolute;
+
+      top: 92.25%;
+      left: 43.5%;
+
+
+      font-family: garamond;
+      font-size: 1.3rem;
+      letter-spacing: 0.2rem;
+      font-weight: 100;
+
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      align-items: center;
+
+
+      color: white;
+      background-color: orange;
+
+      border: 1.5px solid black;
+      border-radius: 2.0rem;
+      font-weight: 100;
+
+
+      padding: 0.9rem 1.6rem;
+      width: 17%;
+    }
+
+
+
+    /***                        Footer - section7                              ***/
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+
+    footer {
+      position: absolute;
+      bottom: 0%;
+
+      width: 100%;
+      line-height: 5.5;
+
+      background-color: black;
+      color: #bbb;
+    }
+
+
+    /*  Text  */
+    footer a {
+      font-family: garamond;
+      font-size: 0.9rem;
+      /*16px*/
+      letter-spacing: 0.1rem;
+      /*1.6px*/
+
+      text-decoration: none;
+      color: #eee;
+      text-transform: capitalize;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    .ftrHeadings {
+      font-family: Alegreya SC;
+      text-transform: uppercase;
+      color: #fff;
+
+      font-size: 1.0rem;
+      padding-bottom: 0.625rem;
+      letter-spacing: 0.3rem;
+    }
+
+
+    .container {
+      flex: 1;
+    }
+
+    section.ftrMain {
+      font-weight: 100;
+      text-align: left;
+    }
+
+
+    /* Footer Rows */
+    .ftrMain {
+      padding: 1.25rem 1.875rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+    /* Footer legal */
+    .ftrLegal {
+      background-color: #141414;
+      padding: 0.938rem 1.875rem;
+      line-height: 0.4rem;
+    }
+
+
+    .ftrLegalText {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+
+    .ftrLegalText li {
+      position: relative;
+      white-space: nowrap;
+      margin: 0.013rem 0.625rem;
+      left: 75%;
+    }
+
+
+    /*Text*/
+    li.endName, li.endCopyright, p.ft-Desc {
+      font-family: Alegreya SC;
+
+      font-size: 0.8rem;
+      text-transform: uppercase;
+
+      letter-spacing: 0.2rem;
+      font-weight: 100;
+      text-align: left;
+    }
+
+
+    /*  Text Positions  */
+    li.endName {
+      margin: 1rem;
+      left: 7%;
+    }
+
+
+    li.endCopyright {
+      margin: 1rem;
+      left: -7%;
+    }
+
+    p.ft-Desc {
+      position: relative;
+      top: -12%;
+
+    }
+
+
+    /*  Space between bottom Text */
+    .ftrLegalText li:nth-last-child(2) {
+      flex: 1;
+    }
+
+
+
+
+    .ftrMainItem {
+      padding: 1.25rem;
+      min-width: 12.5rem;
+    }
+
+    /*  Enter Email Section   */
+    form {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+
+      top: -2%;
+    }
+
+    input[type="email"] {
+      font-family: Alegreya SC;
+      letter-spacing: 0.1rem;
+
+      border: 0;
+      padding: 0.625rem;
+      margin-top: 0.031rem;
+    }
+
+    input[type="submit"] {
+      cursor: pointer;
+      font-family: century;
+
+      background-color: #333333;
+      color: white;
+
+      border: 0;
+      padding: 0.625rem 0.938rem;
+      margin-top: 0.031rem;
+      letter-spacing: 0.05rem;
+    }
+
+
+
+
+
+
+    @media only screen and (min-width: 29.813rem
+
+      /* 477px */
+    ) {
+      .ftrMain {
+        justify-content: space-evenly;
+      }
+
+    }
+
+    @media only screen and (min-width: 77.5rem
+
+      /* 1240px */
+    ) {
+      .ftrMain {
+        justify-content: space-evenly;
+      }
+    }
+
+
+
+
+
+
+
+
+    /*****                                              Media Queries                                               *****/
+
+    @media (max-width: 1250px) {
+
+      /*                  Grid Layout               */
+      .grid.layout {
+        /*background-color: palevioletred;*/
+        grid-template-rows: 1.9fr 1.45fr 3.2fr 1.4fr 3.0fr 1.6fr 2.7fr 3.6fr;
+      }
+
+
+      .locateColmGrid {
+        /*    Section10    */
+        /*background-color: cadetblue;*/
+        left: 10%;
+        width: 80%;
+      }
+
+
+
+      .modal-content {
+        top: -1%;
+        width: 60%;
+      }
+
+
+      /*  Cart Boxes within Modal 1 */
+      .cartBox:after {
+        left: -7.2vw;
+        width: 320vw;
+      }
+
+      .cartProd-image {
+        height: 15vh;
+        width: 16.5vw;
+        top: 2vh;
+        left: -1vw;
+      }
+
+
+      .textBox {
+        left: 3%;
+        font-size: 0.9rem;
+        margin-left: 1.8vw;
+        /*Prevents image and textbox from squishing*/
+      }
+
+      .prodHeader {
+        font-size: 1.2rem;
+      }
+
+
+
+      .deleteTest {
+        /*  Product Box - Buttons   */
+        top: 35%;
+        left: 35vw;
+
+        font-size: 1.4rem;
+        width: 1.5rem;
+        height: 1.28rem;
+      }
+
+      .addTest {
+        top: 35%;
+        left: 39vw;
+
+        font-size: 1.15rem;
+        width: 1.5rem;
+        height: 1.28rem;
+      }
+
+      .deleteProd {
+        left: 47vw;
+      }
+
+
+
+      /*  Cart Box (top) - Text   */
+      .cartProd-image.\-1 {
+        left: 0vw;
+        height: 16vh;
+        width: 16.5vw;
+      }
+
+      .textBox.\-1 {
+        left: 3vw;
+        font-size: 0.95rem;
+
+        margin-left: 0vw;
+      }
+
+      p.prodHeader.-\31 {
+        font-size: 1.2rem;
+        letter-spacing: 0.5rem;
+      }
+
+      .deleteTest.\-1 {
+        top: 78.5%;
+        left: 21vw;
+      }
+
+
+
+
+      /*!                 productDesc   -    Modal2           !*/
+
+      .modal-header.\32 {
+        /*altered to make design look thinner*/
+        background-color: transparent;
+      }
+
+      .close.\32 {
+        cursor: pointer;
+        color: black;
+        font-size: 2.0rem;
+        margin-top: 1.3rem;
+      }
+
+      .close.\32:hover,
+      .close.\32:focus {
+        color: white;
+        background-color: black
+      }
+
+
+      /*!     Product Decription Module       !*/
+
+      .productBoxView {
+        /*background-color: pink;*/
+        left: 0%;
+        width: 99%;
+        grid-template-columns: 0.5fr repeat(3, 1fr);
+      }
+
+      .smallProdBox.Frame {
+        /* background-color: plum; */
+        justify-content: space-around;
+      }
+
+
+
+      /*      leftBox          */
+      .focusProd-Image {
+        top: 11vh;
+        left: 5.5vw;
+        height: 35vh;
+        width: 32vw;
+      }
+
+      .headerTextWrap {
+        top: 32%;
+        right: 18.5vw;
+      }
+
+      h3.headerProdBox {
+        font-size: 3.3vw;
+      }
+
+      .prodDescName {
+        top: -49%;
+        left: -27.5%;
+      }
+
+
+      /*        productImage Boxes      */
+      .smallBox-image {
+        top: 0%;
+        height: 19vh;
+        width: 99%;
+      }
+
+      .smallBox-image.\36 {
+        height: 19vh;
+        width: 99%;
+      }
+
+
+      .productViewBtn {
+        top: 29%;
+        right: 15.5%;
+        width: 25%;
+
+        font-size: 0.85rem;
+      }
+
+
+      /*    productDesc Info (bottom sect)      */
+
+      .descTextWrap {
+        /*background-color: pink;*/
+        top: 10%;
+        left: 22vw;
+      }
+
+      h3.headerProdBox.\31 {
+        left: 0%;
+      }
+
+      p.paragraphDesc {
+        font-size: 1.3vw;
+        left: 0%;
+      }
+
+
+      .focusProd-Image.\32 {
+        /*      product image     */
+        height: 45vh;
+        width: 37vw;
+        left: 19%;
+        margin-top: -2rem;
+      }
+
+
+      /***                       navBar - section1                              ***/
+
+      p.logo {
+        left: 40vw;
+        font-size: 3.0vw;
+
+        margin: 2vw;
+        margin-top: 3.7vh;
+      }
+
+
+      .nav-items {
+        height: 12vh;
+      }
+
+      .nav-link {
+        font-size: 1.4vw;
+        margin: 3.2vw;
+        margin-top: 5.4vh;
+        padding: 0vw 0vw;
+      }
+
+      .cartCount {
+        /*count quantity bubble*/
+        top: 2vh;
+        height: 3.6vh;
+        width: 2.4vw;
+
+        font-size: 0.9rem;
+      }
+
+
+
+      /***                       landingPage - section2                              ***/
+      #landHeader {
+        left: 20vw;
+        font-size: 5.5vw;
+      }
+
+
+      #landDesc {
+        top: 54%;
+        left: 32vw;
+
+        font-size: 1.9vw;
+        line-height: 4.0rem;
+      }
+
+
+      a.landingBtn {
+        top: 72.5%;
+        left: 33vw;
+        width: 38vw;
+
+        font-size: 1.3vw;
+        letter-spacing: 0.6rem;
+      }
+
+
+      /***                    Parlance Photo (Club Master)    -  Section3    //   Parlance Products (Colm)        -  Section4           ***/
+
+      .introSunBG-Image.\31 {
+        /*Photo 1 Edits */
+        left: -23vw;
+        height: 90vh;
+        width: 125vw;
+        min-width: 135%;
+      }
+
+      .sunpromoWrap.\31 {
+        /*  Text  */
+        top: 43vh;
+        left: 65.5%;
+      }
+
+      a.sunPhotoBtn.\31 {
+        top: 105%;
+        left: 3%;
+
+        font-size: 1.4vw;
+        width: 99%;
+        min-width: 83%;
+      }
+
+
+      h5.sunBanner.\31 {
+        margin-top: 0rem;
+      }
+
+      .sunColumn {
+        /* background-color: pink; */
+        grid-template-columns: repeat(auto-fit, 19rem);
+      }
+
+      .product-image {
+        left: -2.85%;
+        height: 23vh;
+        width: 99%;
+      }
+
+
+
+      /*  Text  */
+      .text {
+        top: -8%;
+      }
+
+      .title {
+        font-size: 0.65rem;
+      }
+
+      .color {
+        font-size: 1.8rem;
+        letter-spacing: 0.4rem;
+      }
+
+      .price {
+        font-size: 1.05rem;
+      }
+
+
+
+      /***       Lacuna Photo (Round)    -  section5      //        Lacuna Products (Colm)    -  section6                   ***/
+
+      .introSunBG-Image.\32 {
+        left: -9vw;
+        height: 90vh;
+        width: 114vw;
+
+        min-width: 123%;
+      }
+
+      .sunpromoWrap.\32 {
+        /*  Text  */
+        top: 44vh;
+        left: 71.5vw;
+      }
+
+      a.sunPhotoBtn.\32 {
+        top: 102%;
+        left: 0.5%;
+      }
+
+
+      /***                    Lacuna Products (Colm)    -  section6               ***/
+
+      .product-image.sec2 {
+        left: -1%;
+      }
+
+      .text.\32 {
+        top: -11%;
+        left: -1.7%;
+      }
+
+      button.add.\32 {
+        left: -1%;
+      }
+
+
+      /***        Alure Photo (Round)    -    section7   // Alure Products (Colm)    -    section8           ***/
+
+      .introSunBG-Image.\33 {
+        left: -8vw;
+        height: 90vh;
+        width: 116vw;
+
+        min-width: 105%;
+      }
+
+
+      .sunpromoWrap.\33 {
+        /* Photo Responsiveness doesn't line up great. This is why header is on top right side*/
+        top: 16.5vh;
+        left: 54%;
+
+        color: cornsilk;
+        text-shadow: 2px 1px 0px black,
+          3px 1px 0px black;
+      }
+
+      a.sunPhotoBtn.\33 {
+        visibility: hidden;
+        top: 97%;
+        left: 0.3%;
+      }
+
+
+
+      .product-image.sec3 {
+        left: 1%;
+
+      }
+
+      .text.\33 {
+        top: -21%;
+        left: 0%;
+      }
+
+      button.add.\33 {
+        top: -14%;
+        left: 0%;
+      }
+
+
+      /***                        Locations    -     section9                           ***/
+      .titleSec {
+        top: 0%;
+      }
+
+      .findLocat {
+        /*    Button  Sec   */
+        top: 3%;
+        margin-top: 0rem;
+      }
+
+      div#locateBtn1 {
+        position: relative;
+        top: 12.3vh;
+        left: 33%;
+      }
+
+      a.locateBtn {
+        display: block;
+        top: 0%;
+        left: 0%;
+        width: 35%;
+      }
+
+
+
+
+    }
+
+
+
+    @media (max-width: 870px) {
+
+      /*                  Grid Layout               */
+      .grid.layout {
+        /*background-color: palevioletred;*/
+        grid-template-rows: 1.05fr 1.4fr 2.0fr 1.5fr 2.2fr 0.9fr 2.2fr 3.2fr;
+      }
+
+      /*!      Modal Class       !*/
+
+      .modal-content {
+        width: 55vw;
+      }
+
+      .close {
+        cursor: pointer;
+      }
+
+      /*                    Cart Section   - separate Modules (Modal 1)                          */
+
+      .cartCount {
+        top: 3vh;
+        left: 94.25%;
+
+        height: 3vh;
+        width: 1.4rem;
+
+        font-size: 0.75rem;
+        line-height: 1.2rem;
+
+        border-radius: 50%;
+      }
+
+
+      /*        Product Boxes        */
+      .cartContainer {
+        top: 10%;
+      }
+
+      .cartBox {
+        left: -1vw;
+        min-width: 51vw;
+      }
+
+      .cartBox:after {
+        /*Creates pseudo line underneath Product Boxes */
+        left: 2.2%;
+        width: 139%;
+      }
+
+      .cartProd-image {
+        top: 2.2vh;
+        left: 0vw;
+
+        height: 19vh;
+        width: 20vw;
+      }
+
+      .textBox {
+        top: -21%;
+        left: 1vw;
+      }
+
+
+
+      /*  Product Box - Buttons   */
+      .deleteTest {
+        top: 82%;
+        left: 50%;
+
+        font-size: 2.5vw;
+        width: 4.8vw;
+        height: 1.125rem;
+      }
+
+      .addTest {
+        top: 82%;
+        left: 63%;
+
+        font-size: 2.1vw;
+        width: 4.8vw;
+        height: 1.125rem;
+      }
+
+      .deleteProd {
+        top: 20%;
+        left: 90%;
+
+        font-size: 1.0rem;
+        width: 2.261rem;
+        height: 1.9rem;
+      }
+
+
+      /*    Cart Total Box (1st/Top Box)      */
+      .cartProd-image.\-1 {
+        top: -8%;
+        left: 1vw;
+        width: 22vw;
+      }
+
+      .textBox.\-1 {
+        left: 29px;
+        /*used to avoid moving textbox too far left*/
+        font-size: 0.7rem;
+      }
+
+      p.prodHeader.-\31 {
+        font-size: 1.08rem;
+        letter-spacing: 0.4rem;
+      }
+
+      .deleteTest.\-1 {
+        left: 53%;
+        width: 14.5vw;
+
+        font-size: 0.8rem;
+        line-height: 0rem;
+        letter-spacing: 0.05rem;
+
+        min-width: 16vw;
+      }
+
+
+      /*                    Product Desc Section   - separate Module (Modal 2)                          */
+
+      .productBoxView {
+        /*background-color: pink;*/
+        left: 0%;
+        width: 100%;
+
+        grid-template-rows: 4.375rem repeat(2, 12.5rem);
+        grid-template-areas:
+          "header header header header"
+          "smBox smBox smBox smBox"
+          "smBox smBox smBox smBox";
+      }
+
+      .largeProdBox {
+        /*background-color: chocolate;*/
+        grid-area: none;
+      }
+
+      .smallProdBox.Frame {
+        /*background-color: plum;*/
+        grid-area: smBox;
+        justify-content: center;
+
+        position: relative;
+        top: 11%;
+        left: 2%;
+      }
+
+      .btnAreaBox {
+        /*background-color: salmon;*/
+        grid-area: none;
+        position: absolute;
+        top: 230%;
+      }
+
+
+      /*              leftBox                 */
+      .focusProd-Image {
+        visibility: hidden;
+        left: 40%;
+        height: 50vh;
+        width: 50%;
+      }
+
+      .headerTextWrap {
+        top: 20%;
+      }
+
+      h3.headerProdBox {
+        top: 11%;
+        left: 37.75%;
+        font-size: 3.8vw;
+      }
+
+
+      /*        rightBox - product choices         */
+      .smallBox {
+        /*background-color: palegoldenrod;*/
+        top: 0%;
+        height: 52%;
+        width: 23%;
+      }
+
+      .prodDescName {
+        position: absolute;
+        top: -100%;
+        left: -51vw;
+        z-index: 10;
+      }
+
+
+      /*        productImage Boxes      */
+      .smallBox-image {
+        height: 27vh;
+        width: 21vw;
+      }
+
+      .smallBox-image.\36 {
+        height: 27vh;
+        width: 21vw;
+      }
+
+
+      /*             bottomBox - productInfo                */
+      p.subHeaderView {
+        visibility: visible;
+        position: absolute;
+
+        top: -535%;
+        left: 467%;
+        font-size: 1.6vw;
+      }
+
+      .productViewBtn {
+        right: 65.5vw;
+        width: 36vw;
+      }
+
+      p.priceProdView {
+        font-size: 2.4vw;
+      }
+
+
+
+      /*         productDesc -   Text         */
+      .descTextWrap {
+        /*background-color: pink;*/
+        top: 7%;
+        left: 14.5%;
+      }
+
+      h3.headerProdBox.\31 {
+        position: absolute;
+        left: 22.75vw;
+        font-size: 4.4vw;
+        line-height: 8.375rem;
+      }
+
+      p.subHeaderView.\32 {
+        visibility: hidden;
+      }
+
+      p.paragraphDesc {
+        visibility: visible;
+        top: 1vh;
+        left: 7vw;
+
+        font-size: 0.6rem;
+        line-height: 4.5vw;
+        margin-top: 8rem;
+
+        text-align: left;
+      }
+
+      /*      product image     */
+      .focusProd-Image.\32 {
+        visibility: visible;
+        position: absolute;
+        left: 14vw;
+        height: 42vh;
+        width: 42vw;
+
+        margin-top: 14.5rem;
+      }
+
+      /***                       navBar - section1                              ***/
+
+      p.logo {
+        top: 0.25%;
+        left: 40%;
+
+        font-size: 3.8vw;
+        letter-spacing: 0.438rem;
+        margin-top: 3.25vh;
+        padding: 0rem 0rem;
+      }
+
+      .nav-link {
+        /*  Text  */
+        font-size: 1.7vw;
+        margin: 1.25rem;
+
+        margin-top: 2.3rem;
+        padding: 0vw 0vw;
+      }
+
+
+      /***                       landingPage - section2                              ***/
+
+      #landHeader {
+        top: 45%;
+        left: 7%;
+        font-size: 7.5vw;
+      }
+
+      #landDesc {
+        left: 23.75%;
+        font-size: 2.7vw;
+      }
+
+
+      a.landingBtn {
+        top: 76.5%;
+        left: 29.5vw;
+        width: 45%;
+        font-size: 0.9rem;
+      }
+
+
+      /***                    Parlance Photo (Club Master)    -  Section3               ***/
+
+
+      /*      sunPromo Classes          */
+      .sunpromoWrap {
+        line-height: 2.0rem;
+      }
+
+      .sunPhotoDesc {
+        font-size: 0.7rem;
+      }
+
+      .sunPhotoPrice {
+        position: relative;
+        left: -0.5%;
+        letter-spacing: 0.3rem;
+        line-height: 5.0rem;
+      }
+
+      a.sunPhotoBtn {
+        visibility: hidden;
+      }
+
+
+
+      .introSunBG-Image.\31 {
+        /*Photo 1 Edits */
+        top: 7%;
+        left: -1vw;
+
+        height: 110vh;
+        width: 105%;
+        min-width: 20%;
+        background-position-x: left;
+      }
+
+      .sunpromoWrap.\31 {
+        /*  Text  */
+        position: relative;
+        top: -33vh;
+        left: 51vw;
+
+        color: white;
+        text-shadow: 2px 1px 0px black,
+          2.5px 1px 0px black;
+        width: fit-content;
+      }
+
+
+
+      /***                       Parlance Products (Colm)        -  Section4                       ***/
+
+      .sunColumn {
+        /* background-color: pink; */
+        grid-template-columns: repeat(auto-fit, 16rem);
+        grid-column-gap: 1rem;
+        justify-content: space-evenly;
+      }
+
+      .container {
+        /*background: red;*/
+        position: relative;
+        overflow: hidden;
+
+        text-align: center;
+        min-width: 60%;
+      }
+
+
+
+      .product-image {
+        left: 1.15%;
+        height: 22vh;
+        width: 94%;
+      }
+
+
+
+      .text {
+        top: -11%;
+        left: -1%;
+      }
+
+      button.add {
+        top: -6%;
+        left: 0%;
+      }
+
+
+      /***            Lacuna Photo (Round)    -  section5     //      Lacuna Products (Colm)    -  section6            ***/
+
+      .introSunBG-Image.\32 {
+        top: 12%;
+        left: -16vw;
+
+        height: 171vh;
+        width: 203px;
+        min-width: 131%;
+        transform: scale(0.7);
+        background-position-x: left;
+      }
+
+
+      .sunpromoWrap.\32 {
+        /*  Text  */
+        top: 41%;
+        left: 9%;
+        color: white;
+      }
+
+
+
+      .product-image.sec2 {
+        left: 3%;
+      }
+
+      .text.\32 {
+        top: -10%;
+        left: 0%;
+      }
+
+
+      button.add.\32 {
+        top: -6%;
+        left: 1%;
+      }
+
+
+      /***                    Alure Photo (Round)    -    section7     //     Alure Products (Colm)    -    section8            ***/
+
+      .introSunBG-Image.\33 {
+        left: -3%;
+        height: 149vh;
+        width: 88%;
+
+        background-position: right;
+      }
+
+      .sunpromoWrap.\33 {
+        /*  Text  */
+        top: 35.5%;
+        left: 13.5%;
+        color: cornsilk;
+
+        text-shadow: 2px 1px 0px black,
+          3px 1px 0px black;
+      }
+
+
+
+      /*  Product Box Adjustments */
+      .product-image.sec3 {
+        left: 3.25%;
+      }
+
+      .text.\33 {
+        top: -22%;
+        left: -3.25%;
+      }
+
+
+      button.add.\33 {
+        top: -14%;
+        left: -2.5%;
+      }
+
+
+      /***                        Locations    -     section9                           ***/
+
+      .titleSec {
+        top: 0vh;
+
+        margin-top: 0rem;
+        margin-bottom: 1.7rem;
+      }
+
+
+      /*    Button  Sec   */
+      .findLocat {
+        top: 6vh;
+        left: 1%;
+        font-size: 2.7vw;
+      }
+
+
+      div#locateBtn1 {
+        position: absolute;
+        top: 1950vh;
+        left: 21%;
+        width: 31%;
+      }
+
+
+      a.locateBtn {
+        width: 188%;
+        font-size: 2.6vw;
+      }
+
+
+
+      .ftrMainItem {
+        /*footer breaks layout because it's not included in grid */
+        padding: 1.25rem;
+        min-width: 12.5rem;
+        line-height: 9vh;
+      }
+
+
+      @media (max-width: 870px) {
+        div#locateBtn1 {
+          top: 1983vh;
+        }
+      }
+
+
+
+
+
+    }
+
+
+
+
+
+
+    @media (max-width: 546px) {
+
+      /*                  Grid Layout               */
+      .grid.layout {
+        /*background-color: palevioletred;*/
+        position: relative;
+        display: grid;
+        text-align: center;
+
+
+        grid-template-rows: 0.35fr 0.45fr 0.9fr 0.4fr 1.0fr 0.5fr 1.0fr 1.4fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4.0rem;
+
+        grid-template-areas:
+          "landing landing landing landing"
+
+          "parlance parlance parlance parlance"
+          "sunSec1 sunSec1 sunSec1 sunSec1"
+
+          "lacuna lacuna lacuna lacuna"
+          "sunSec2 sunSec2 sunSec2 sunSec2"
+
+          "alure alure alure alure"
+          "sunSec3 sunSec3 sunSec3 sunSec3"
+
+          "location location location location"
+      }
+
+
+
+
+      /*                Grid Areas              */
+
+      /*  Section2   */
+      .landingPage {
+        /*background-color: #D291BC;*/
+        grid-area: landing;
+        position: relative;
+
+      }
+
+
+      /*    Section3, Section5, Section7    */
+      .parlance {
+        grid-area: parlance;
+        position: relative;
+        margin-top: 1.0rem;
+      }
+
+      .lacuna {
+        grid-area: lacuna;
+        position: relative;
+      }
+
+      .alure {
+        grid-area: alure;
+        position: relative;
+      }
+
+
+      /*    Section4, Section6, Section8    */
+      .sunglassSec.\31 {
+        grid-area: sunSec1;
+      }
+
+      .sunglassSec.\32 {
+        grid-area: sunSec2;
+      }
+
+      .sunglassSec.\33 {
+        grid-area: sunSec3;
+      }
+
+
+
+      .locationBox {
+        /*    Section9    */
+        margin-top: 4.0rem;
+        grid-area: location;
+      }
+
+      .locateColmGrid {
+        /*    Section10    */
+        /*background-color: cadetblue;   */
+        top: -4%;
+        left: 12%;
+      }
+
+
+
+
+      /*!                  Modal Class                      !*/
+
+      .modal {
+        padding-top: 1.7rem;
+        width: 100%;
+        z-index: 1;
+      }
+
+      .modal-content {
+        top: -1.2%;
+        width: 100%;
+      }
+
+
+      .close {
+        /* The Close Button */
+        position: absolute;
+        top: 12vh;
+        left: 91%;
+
+        color: black;
+        z-index: 20;
+      }
+
+
+
+      /*          Cart Section   - separate Modules (Modal 1)                */
+
+      .cartContainer {
+        display: grid;
+        justify-content: center;
+        justify-content: space-evenly;
+      }
+
+
+
+      /*      Cart Section       */
+      .cartBox {
+        /*background-color: red;*/
+        left: 10%;
+
+        min-width: 28rem;
+        padding: 1.25rem;
+      }
+
+
+      .cartBox:after {
+        /*Creates pseudo line underneath Product Boxes */
+        top: -1%;
+        left: -11.8%;
+
+        min-height: 20%;
+        width: 300%;
+
+        margin-bottom: 0;
+      }
+
+
+      .cartProd-image {
+        top: 15%;
+        left: -18%;
+
+        height: 21vh;
+        width: 48%;
+      }
+
+
+      .textBox {
+        /*  Text  */
+        top: -19%;
+        left: -13%;
+      }
+
+
+
+      /*  Product Box - Buttons   */
+      .deleteTest {
+        top: 84%;
+        left: 38%;
+
+        font-size: 4.5vw;
+        width: 8.8vw;
+      }
+
+      .addTest {
+        top: 84%;
+        left: 51%;
+
+        font-size: 3.2vw;
+
+        height: 1.125rem;
+        width: 8.8vw;
+      }
+
+      .deleteProd {
+        top: 26%;
+        left: 74%;
+
+        font-size: 1.063rem;
+        width: 1.875rem;
+        height: 1.563rem;
+      }
+
+
+
+
+      /*    Cart Total Box (1st/Top Box)      */
+      .cartProd-image.\-1 {
+        top: 1%;
+        left: -13%;
+
+        height: 21vh;
+        width: 44%;
+      }
+
+
+      .textBox.\-1 {
+        top: -9%;
+        left: -5%;
+
+        font-size: 0.75rem;
+        letter-spacing: 0.2rem;
+      }
+
+
+      .deleteTest.\-1 {
+        top: 75.5%;
+        left: 40%;
+        width: 7.5rem;
+      }
+
+
+
+      /***                       navBar - section1                              ***/
+
+      p.logo {
+        /*  nav logo  */
+        left: 42%;
+        font-size: 5.6vw;
+
+        margin: 0vw;
+        margin-top: 6vw;
+      }
+
+      .nav-items {
+        /*  Text  */
+        height: 19vw;
+      }
+
+
+      .nav-link {
+        font-size: 3.0vw;
+
+        margin: 4vw;
+        margin-top: 7.8vw;
+        padding: 0vw 0vw;
+      }
+
+      a.nav-link.\32 {
+        visibility: hidden;
+      }
+
+
+      a.nav-link.\34 {
+        visibility: hidden;
+      }
+
+
+
+      /***                       landingPage - section2                              ***/
+
+      #sunLanding-Image {
+        height: 102vh;
+        width: 100%;
+      }
+
+
+
+      /*  Text  */
+      #landHeader {
+        top: 46%;
+        left: 4%;
+
+        font-size: 10.4vw;
+      }
+
+      #landDesc {
+        top: 66%;
+        left: 13.75%;
+
+        font-size: 3.2vw;
+        line-height: 6vh;
+      }
+
+
+      a.landingBtn {
+        top: 87.5%;
+        left: 29%;
+        width: 51%;
+
+        font-size: 0.8rem;
+      }
+
+
+      /***                    Parlance Photo (Club Master)    -  Section3               ***/
+
+      /*Sun Photo Classes for 3 Sections*/
+      .introSunBG-Image {
+        position: relative;
+        transform: scale(0.85);
+
+        height: 100%;
+        width: 100%;
+      }
+
+
+      /*  Text  */
+      .sunpromoWrap {
+        position: absolute;
+        letter-spacing: 0.2rem;
+        line-height: 2.4rem;
+      }
+
+      .sunPhotoHeader {
+        font-size: 1.9rem;
+        letter-spacing: 0.6rem;
+      }
+
+
+      .sunPhotoDesc {
+        font-size: 0.85rem;
+      }
+
+
+      .sunPhotoPrice {
+        font-size: 1.3rem;
+        line-height: 6.0rem;
+      }
+
+
+
+      a.sunPhotoBtn {
+        visibility: hidden;
+      }
+
+
+      .introSunBG-Image.\31 {
+        /*Photo 1 Edits */
+        left: -10%;
+        height: 113vh;
+
+        width: 119%;
+        min-width: 20%;
+        background-position-x: left;
+      }
+
+      .sunpromoWrap.\31 {
+        /*  Text  */
+        top: -28%;
+        left: 9%;
+      }
+
+
+
+      /***                       Parlance Products (Colm)        -  Section4                       ***/
+      h5.sunBanner {
+        font-size: 1.15rem;
+      }
+
+
+      h5.sunBanner.\31 {
+        /*Adjustment*/
+        margin-top: 0rem;
+      }
+
+
+      .sunColumn {
+        /* background-color: pink; */
+        grid-template-columns: repeat(auto-fit, 11.5rem);
+        grid-column-gap: 0.2rem;
+        grid-row-gap: 4rem;
+
+        justify-items: center;
+        justify-content: space-around;
+      }
+
+
+
+
+      /*  Text  */
+      .text {
+        top: -15%;
+        left: -1.85%;
+      }
+
+      .title {
+        font-size: 0.65rem;
+        letter-spacing: 0.1rem;
+      }
+
+      .color {
+        font-size: 1.8rem;
+        letter-spacing: 0.4rem;
+      }
+
+      .price {
+        font-size: 1.05rem;
+        line-height: 4.5rem;
+        letter-spacing: 0.25rem;
+      }
+
+
+      button.add {
+        /*needed*/
+        top: -11%;
+        left: -1%;
+      }
+
+
+
+
+      /*        Product Boxes        */
+      .product-image {
+        left: -1vw;
+        height: 33.5vh;
+        width: 48vw;
+      }
+
+      button.descViewBtn {
+        /* disables 2nd modal for mobile */
+        visibility: hidden;
+      }
+
+
+      .product-image.sec2 {
+        /* Product Images (adjustments) */
+        left: 2%;
+      }
+
+      .product-image.sec3 {
+        left: 2%;
+
+      }
+
+
+      /***                     Lacuna Photo (Round)    -  section5                ***/
+
+      /*Header*/
+      h5.sunBanner.\32 {
+        margin-top: 7.0rem;
+      }
+
+
+
+      .introSunBG-Image.\32 {
+        /*Image*/
+        left: -44%;
+        height: 110%;
+
+        width: 171%;
+        min-width: 20%;
+        background-position-x: left;
+      }
+
+
+      .sunpromoWrap.\32 {
+        /*  Text  */
+        top: 58%;
+        left: 5.25%;
+
+        text-shadow: 2px 1px 0px black,
+          2.5px 1px 0px black;
+      }
+
+
+      /***                    Lacuna Products (Colm)    -  section6               ***/
+
+      .product-image.sec2 {
+        left: -0.25%;
+      }
+
+      .text.\32 {
+        top: -18%;
+        left: -0.25%;
+      }
+
+      button.add.\32 {
+        top: -15%;
+        left: 0.5%;
+      }
+
+
+      /***                    Alure Photo (Round)    -    section7              ***/
+
+      h5.sunBanner.\33 {
+        /*Header*/
+        margin-top: 7.0rem;
+
+      }
+
+      .introSunBG-Image.\33 {
+        left: -23%;
+        height: 74%;
+        width: 137%;
+
+        transform: scale(0.80);
+        filter: grayscale(0.1);
+        background-position-x: right;
+      }
+
+
+
+      .sunpromoWrap.\33 {
+        /*  Text  */
+        top: 22.5%;
+        left: 54.5%;
+      }
+
+
+      /***                    Alure Products (Colm)    -    section8               ***/
+
+      /*  Product Box Adjustments */
+      .sunColumn.\33 {
+        grid-row-gap: 5.5rem;
+      }
+
+
+      /*  Box Images */
+      .product-image.sec3 {
+        left: 0.25%;
+      }
+
+      .text.\33 {
+        top: -26%;
+        left: 0%;
+      }
+
+      .price.\33 {
+        line-height: 3.7rem;
+      }
+
+
+      button.add.\33 {
+        top: -24%;
+        left: -0.5%;
+      }
+
+
+
+
+      /***                        Locations    -     section9                           ***/
+
+      .titleSec {
+        top: -4%;
+        margin-top: 10rem;
+      }
+
+      a.escape {
+        top: 64%;
+        width: 100%;
+        height: 111%;
+      }
+
+      .findLocat {
+        visibility: hidden;
+      }
+
+
+
+
+      a.locateBtn {
+        /* Button  Sec */
+        visibility: hidden;
+      }
+
+
+      div#locateBtn1 {
+        top: 70.3vh;
+        left: 1%;
+      }
+
+
+
+
+
+
+    }
+
+
+
+
+
+    @media (max-width: 387px) {
+
+      /*            Grid Layout              */
+
+      .grid.layout {
+        /*background-color: palevioletred;*/
+        grid-template-rows: 0.15fr 0.15fr 0.9fr 0.2fr 1.0fr 0.2fr 1.05fr 0.85fr;
+      }
+
+      /*  Section10  */
+      .locateColmGrid {
+        /*background-color: cadetblue;*/
+        top: -4%;
+        left: 12%;
+      }
+
+
+
+      /*          Cart Section   - separate Modules (Modal 1)                */
+      .modal-content {
+        top: -5.2%;
+      }
+
+
+      .cartCount {
+        /* Cart  Section  */
+        top: 1.25vh;
+        left: 92%;
+
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+
+      .cartProd-image {
+        top: 15%;
+        left: -24%;
+
+        height: 21vh;
+        width: 48%;
+      }
+
+
+      .textBox {
+        top: -25%;
+        left: -19%;
+      }
+
+
+
+      .deleteTest {
+        /* Buttons */
+        top: 77%;
+        left: 32%;
+
+        font-size: 1.2rem;
+        width: 2rem;
+      }
+
+
+      .addTest {
+        top: 77%;
+        left: 43%;
+
+        font-size: 1.0rem;
+        height: 1.125rem;
+        width: 2rem;
+      }
+
+
+      .deleteProd {
+        top: 33%;
+        left: 54%;
+
+        font-size: 1.063rem;
+        width: 1.875rem;
+        height: 1.563rem;
+      }
+
+
+      .textBox.\-1 {
+        /*  Total Cart Section  */
+        left: -13%;
+      }
+
+      .deleteTest.\-1 {
+        top: 78.5%;
+        left: 33%;
+      }
+
+
+
+
+      /***                       landingPage - section2                              ***/
+
+      #landHeader {
+        top: 44%;
+        left: 4%;
+        font-size: 12.4vw;
+      }
+
+      #landDesc {
+        top: 63%;
+        left: 7%;
+
+        font-size: 3.7vw;
+        line-height: 6vh;
+      }
+
+
+      a.landingBtn {
+        top: 85vh;
+        left: 20%;
+        width: 66%;
+
+        font-size: 2.6vw;
+        padding: 2vh;
+      }
+
+
+
+      /***       Parlance Photo (Club Master)    -  Section3    //     Parlance Products (Colm)        -  Section4                 ***/
+
+      .introSunBG-Image.\31 {
+        left: -82px;
+        height: 113vh;
+        min-width: 135%;
+        background-position-x: left;
+      }
+
+
+
+      /*Main Page Product Grid */
+      .sunColumn {
+        grid-template-columns: repeat(auto-fit, 19rem);
+        grid-column-gap: 0.2rem;
+        grid-row-gap: 4rem;
+      }
+
+
+
+      .product-image {
+        left: 0vw;
+        height: 33.5vh;
+        width: 85vw;
+      }
+
+      .text {
+        top: -15%;
+        left: 0.5%;
+      }
+
+      button.add {
+        top: -13%;
+        left: 1.5%;
+      }
+
+
+
+
+      /***    Lacuna Photo (Round)    -  section5        //        Lacuna Products (Colm)    -  section6                   ***/
+
+      .introSunBG-Image.\32 {
+        top: -4%;
+        left: -44%;
+        height: 122%;
+
+        min-width: 161%;
+        background-position-x: left;
+      }
+
+      .sunpromoWrap.\32 {
+        top: 48%;
+        left: 5.25%;
+      }
+
+
+      .text.\32 {
+        top: -18%;
+        left: 0.5%;
+      }
+
+      button.add.\32 {
+        top: -15%;
+        left: 0.75%;
+      }
+
+
+
+      /***      Alure Photo (Round)    -    section7    //       Alure Products (Colm)    -    section8            ***/
+
+      .introSunBG-Image.\33 {
+        left: -45%;
+        height: 119%;
+        width: 161%;
+
+        background-position-x: right;
+      }
+
+      .sunpromoWrap.\33 {
+        top: 39.5%;
+        left: 42.5%;
+      }
+
+
+      .text.\33 {
+        top: -26%;
+        left: 0.25%;
+      }
+
+
+      button.add.\33 {
+        top: -21%;
+        left: 1.5%;
+      }
+
+
+
+
+      /***                        Locations    -     section9                           ***/
+
+      .findLocat {
+        font-size: 1.2rem;
+      }
+
+
+      a.founderBtn {
+        margin-top: -18rem;
+      }
+
+
+
+
+
+
+    }

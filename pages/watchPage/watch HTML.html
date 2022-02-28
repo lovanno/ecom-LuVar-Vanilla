@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Page</title>
+</head>
+
+
+<link rel="stylesheet" type="text/css" href="watchStyle.css">
+ 
+
+<body>
+
+
+<!--                    Nav Bar    -  Section1     (not included in Grid Layout)           -->
+
+<div class="navBar">
+    <header>
+        <nav class = "nav-bar">
+            <ul class="nav-items">
+            <a class="logo" href="#"><p class="logo">Lu Var</p></a>
+
+                <li class="nav-item sec2"><a id= "cartOpen" class="nav-link 1">Cart</a></li>
+                <li class="nav-item sec2"><a href="../sunPage/sun HTML.html" class="nav-link 2">Sunglasses</a></li>
+                
+                <li class="nav-item sec1"><a href="#" class="nav-link 3">Contact</a></li>
+                <li class="nav-item sec1"><a href="../Home/Lu Var HTML.html" class="nav-link 4">Story</a></li>
+                <div class="cartCount">0</div>
+
+            </ul>
+        </nav>
+    </header>
+</div>
+
+
+
+
+
+<!--          Modal     -  Checkout Cart         -->
+    
+<div id="modalCheckout" class="modal 1">
+
+    <div class="modal-content">
+
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 class = "popupHeader">Cart</h2>
+            </div>
+
+    
+        <div class="modal-body">
+
+                <div class = "cartContainer">
+                    <div class = "cartBox">
+
+                        <div class = "cartProd-image -1"></div>
+
+                        <div class = "textBox -1">
+                            <p class = "prodHeader -1">Your Cart is Empty</p>
+        
+                            <p class ="prodPrice -1">Explore</p>
+                            <p class ="prodCount -1">Conquer</p>
+                            <p class ="prodColor -1">Achieve</p>
+
+                        </div>
+
+                            <button class = "deleteTest -1">Clear Cart</button>
+                            <button class = "addTest -1"></button>
+                        
+                            <button class = "deleteProd -1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" 
+                                        role="img" 
+                                        width="1em" 
+                                        height="1em" 
+                                        preserveAspectRatio="xMidYMid meet" 
+                                        viewBox="0 0 24 24">
+                                    <g class="icon-tabler" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></g></svg>
+                            </button>
+
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+    
+    
+    
+    
+<!--          Modal     -  Product Desc         -->
+    
+<div id="myModal2" class="modal 2">
+    
+
+    <div class="modal-content 2">
+            <div class="modal-header 2">
+                <span class="close 2">&times;</span>                
+            </div>
+
+
+    <div class="modal-body 2">
+
+        <div class = "productBoxView">
+    
+            <div class = "largeProdBox">
+                <div class = "focusProd-Image"></div>
+            </div>
+    
+
+            <div class = "headerBox">
+    
+                <div class = "headerTextWrap">
+                    <h3 class = "headerProdBox">Lu Mauru</h3>
+
+                    <div style="text-align:center">
+                        <span class="dot 1"></span>
+                        <span class="dot 2"></span>
+                        <span class="dot 3"></span>
+                    </div>
+                </div> 
+
+
+            </div>
+    
+    
+            <div class = "smallProdBox Frame">
+    
+                    <div class = "smallBox 1">
+                        <div class = "smallBox-image 1"></div>
+                        <div class = "smBtn 1"></div>
+                    </div>
+    
+    
+                    <div class = "smallBox 2">
+                        <div class = "smallBox-image 2"></div>
+                        <div class = "smBtn 2"></div>
+                    </div>
+    
+    
+                    <div class = "smallBox 3">
+                        <div class = "smallBox-image 3"></div>
+                        <div class = "smBtn 3"></div>
+                    </div>
+    
+    
+                    <div class = "smallBox 4">
+                        <div class = "smallBox-image 4"></div>
+                        <div class = "smBtn 4"></div>
+                    </div>
+    
+    
+                    <div class = "smallBox 5">
+                        <div class = "smallBox-image 5"></div>
+                        <div class = "smBtn 5"></div>                
+                    </div>
+    
+    
+                    <div class = "smallBox 6">
+                        <div class = "smallBox-image 6"></div>
+                        <div class = "smBtn 6"></div>                
+                    </div>
+    
+    
+                    <div class = "smallBox 7">
+                        <div class = "smallBox-image 7"></div>
+                        <div class = "smBtn 7"></div>                
+                    </div>
+    
+    
+                    <div class = "smallBox 8">
+                        <div class = "smallBox-image 8"></div> 
+                        <div class = "smBtn 8"></div>               
+                    </div>
+    
+            </div>
+    
+    
+            <div class = "btnAreaBox">
+
+                <div class = "prodDescName">
+                    <p class = "subHeaderView">Lu Mauru</p>
+                    <p class = "priceProdView">$479 </p>
+                </div>
+                    <button class="productViewBtn">Add to Cart</button>
+            </div>
+
+        </div>
+    
+    
+    
+            <div class = "productDescView">
+    
+                <div class="descViewBG-image"></div>
+    
+                <div class="descTextWrap">
+                    <h3 class = "headerProdBox 1">Alure</h3>
+                    <p class = "subHeaderView 2">Aviator</p>
+    
+                    <p class = "paragraphDesc">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br> 
+                        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br> 
+                        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                    </p>
+    
+                    <div class = "focusProd-Image 2"></div>
+                </div>
+    
+            </div>
+    </div>
+    </div>
+
+</div>
+    
+    
+    
+<div class= "grid layout">    <!--                                   Entire Structure of Page                                           -->
+
+
+
+ 
+<!--                    Landing Page    -  Section2               -->
+ <div class ="landingPage">
+
+        <div id = "watchLanding-Image"></div>
+ 
+         <h1 id="landHeader">Dark Relic</h1>
+ 
+         <h3 id="landDesc">Matte Black Diamond <br> 8.75 ct Dial</h3>
+         <div id="landingBtn1"><a href="#Lu Mauru" class="landingBtn">Check Out</a></div>
+ 
+ </div>
+
+
+
+
+
+ <!--                    Sidebar         -  Section3                   -->
+ <div class="sideBar">  
+ 
+     <div class="sidebarContainer">
+         <h1 class = "sidebarTitle">Lu Var</h1>
+ 
+ 
+         <button class="sideHeaderBtn 1">Watches</button>
+            <div class="sideLinks">
+              
+                <div class="linkLocation 1"><a href="#Lu Mauru" class="btn-link">Lu Mauru</a></div>
+                <div class="linkLocation 2"><a href="#Sephur" class="btn-link">Sephur</a></div>
+                <div class="linkLocation 3"><a href="#Numous" class="btn-link">Numous</a></div>
+            </div>
+ 
+ 
+         <button class="sideHeaderBtn 2">Sunglasses</button>
+            <div class="sideLinks">
+        
+                <div class="linkLocation 1"><a href="../sunPage/sun HTML.html#parlancePromo" class="btn-link">Parlance</a></div>
+                <div class="linkLocation 2"><a href="../sunPage/sun HTML.html#lacunaPromo" class="btn-link">Lacuna</a></div>
+                <div class="linkLocation 3"><a href="../sunPage/sun HTML.html#alurePromo" class="btn-link">Alure</a></div>
+            </div>
+         
+ 
+         <button class="sideHeaderBtn 3">Retailers</button>
+            <div class="sideLinks">
+        
+                <div class="linkLocation 1"><a href="https://www.google.com/maps/dir//24+Rue+de+S%C3%A8vres,+75007+Paris/@48.8511142,2.2543252,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47e671d39ebb8601:0xd99b7bf65c716272!2m2!1d2.3243648!2d48.8511354" class="btn-link">Paris</a></div>
+                <div class="linkLocation 2"><a href="https://www.google.com/maps/dir//41.8998,-87.6244/@41.8997805,-87.6944099,12z" class="btn-link">Chicago</a></div>
+                <div class="linkLocation 3"><a href="https://www.google.com/maps/dir//Gucci,+8500+Beverly+Blvd+Suite+%23743,+Los+Angeles,+CA+90048/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80c2bc139759b583:0xeb380abe3f296997?sa=X&ved=2ahUKEwjY_cX_3oL0AhUy87sIHckcD38Q48ADegQIFRAu" class="btn-link">Los Angeles</a></div>
+            </div>
+ 
+     </div>
+  </div>
+ 
+ 
+
+
+  
+
+  
+ <!--                                               watchSections         -  Section4                                                -->
+
+
+
+
+<!---                       Lu Mauru - Watch Sec1                     -->
+ <div class="watchSect 1">
+        <h5 id="Lu Mauru"></h5> <!--    a Link    -->
+
+
+    <h5 class = "watchType 1">Lu Mauru</h5>
+    <div class="watchColumn"> 
+ 
+
+      <div class="container">
+            <div class="product-image sec1 1">
+                <button class="descViewBtn"></button>
+
+            </div>
+
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">Wolf Black</p>
+                <p class="price">$3,700</p>
+
+            </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+      <div class="container">
+            <div class="product-image sec1 2">
+                <button class="descViewBtn"></button>
+            </div>
+
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">White Marble</p>
+                <p class="price">$3,900</p>
+ 
+          </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+      <div class="container">
+            <div class="product-image sec1 3">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">Wolf Gold</p>
+                <p class="price">$8,755</p>
+ 
+            </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+      <div class="container">
+            <div class="product-image sec1 4">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">Lava</p>
+                <p class="price">$5,275</p>
+ 
+            </div>
+                <button class="add">Add</button>
+      </div>
+ 
+ 
+ 
+      <div class="container">
+            <div class="product-image sec1 5">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">Sand</p>
+                <p class="price">$6,125</p>
+ 
+            </div>
+                <button class="add">Add</button>
+ 
+      </div>
+ 
+ 
+ 
+      <div class="container">
+            <div class="product-image sec1 6">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">Ocean</p>
+                <p class="price">$5,575</p>
+ 
+            </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+      <div class="container">
+            <div class="product-image sec1 7">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">Ocean Black</p>
+                <p class="price">$4,200</p>
+
+            </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+      <div class="container">
+            <div class="product-image sec1 8">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Lu Mauru</h5>
+                <p class="color">Ocean White</p>
+                <p class="price">$4,400</p>
+ 
+            </div>
+                <button class="add">Add</button>
+      </div>
+ 
+   </div>
+ </div>
+ 
+ 
+ 
+ 
+
+
+<!---                     Lu Mauru - Watch Sec2                      -->
+ <div class="watchSect 2">
+    <h5 id="Sephur"></h5>   <!--      a Link      -->
+
+
+    <h5 class = "watchType">Sephur</h5>
+    <div class = "watchColumn 2">
+
+
+
+        <div class="container">
+            <div class="product-image sec2 1">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Sephur</h5>
+                <p class="color">Dark Rose</p>
+                <p class="price">$3,600</p>
+ 
+            </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+     <div class="container">
+            <div class="product-image sec2 2">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Sephur</h5>
+                <p class="color">Silver</p>
+                <p class="price">$3,200</p>
+ 
+            </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+     <div class="container">
+            <div class="product-image sec2 3">
+                <button class="descViewBtn"></button>
+
+            </div>
+ 
+            <div class="text">
+                <h5 class="title">Sephur</h5>
+                <p class="color">Rose Gold</p>
+                <p class="price">$3,800</p>
+ 
+            </div>
+                <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+     <div class="container">
+          <div class="product-image sec2 4">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Sephur</h5>
+              <p class="color">Dark Coffee</p>
+              <p class="price">$2,975</p>
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+     <div class="container">
+          <div class="product-image sec2 5">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Sephur</h5>
+              <p class="color">Emerald</p>
+              <p class="price">$4,175</p>
+ 
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+
+ 
+     <div class="container">
+          <div class="product-image sec2 6">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Sephur</h5>
+              <p class="color">Rose Fall</p>
+              <p class="price">$3,275</p>
+
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+
+     <div class="container">
+          <div class="product-image sec2 7">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+ 
+              <h5 class="title">Sephur</h5>
+              <p class="color">Platt Emerald </p>
+              <p class="price">$4,275</p>
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+     <div class="container">
+          <div class="product-image sec2 8">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Sephur</h5>
+              <p class="color">Dark Sand</p>
+              <p class="price">$2,845</p>
+ 
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+    </div>
+  </div>
+ 
+ 
+
+
+<!---                         Lu Mauru - Watch Sec3                      -->
+
+ <div class="watchSect 3">
+    <h5 id="Numous"></h5> <!--a Link-->
+
+
+   <h5 class = "watchType">Numous</h5>
+   <div class = "watchColumn 3">
+
+
+    <div class="container">
+          <div class="product-image sec3 1">
+                <button class="descViewBtn"></button>
+
+          </div>
+
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Dark Silver</p>
+              <p class="price">$3,475</p>
+
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+     <div class="container">
+          <div class="product-image sec3 2">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Marble Rose</p>
+              <p class="price">$7,255</p>
+ 
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+
+     <div class="container">
+          <div class="product-image sec3 3">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Silver Black</p>
+              <p class="price">$4,125</p>
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+     <div class="container">
+          <div class="product-image sec3 4">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Teal</p>
+              <p class="price">$3,675</p>
+
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+ 
+     <div class="container">
+          <div class="product-image sec3 5">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Dark Ocean</p>
+              <p class="price">$3,825</p>
+
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+ 
+ 
+     <div class="container">
+          <div class="product-image sec3 6">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Gold</p>
+              <p class="price">$8,975</p>
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+
+     <div class="container 7">
+          <div class="product-image sec3 7">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Coffee</p>
+              <p class="price">$5,345</p>
+ 
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+ 
+
+ 
+     <div class="container">
+          <div class="product-image sec3 8">
+                <button class="descViewBtn"></button>
+
+          </div>
+ 
+          <div class="text">
+              <h5 class="title">Numous</h5>
+              <p class="color">Dark Teal</p>
+              <p class="price">$3,455</p>
+ 
+          </div>
+              <button class="add">Add</button>
+     </div>
+ 
+    </div>
+  </div>
+ 
+
+
+
+
+
+
+ <!--                                         founder          -       Section5                                               -->     
+
+
+   <div class ="founderSec">
+      <div id = "founder-image"></div>
+
+        <div class="founderNameWrap">
+
+            <h1 id="founderHeader">Francis Sauve</h1>
+            <p id="workTitle">Founder</p>
+
+        </div>
+
+         <h3 class="founderStory 1">  "At the adolescent age of 17, Francis Sauve envisaged <br> a world of innovation.  
+                                Through his works, <br>  Sauave aspires to influence  <br> the multitude who seek improvement and versatility"
+        </h3>
+
+         <h3 class="founderStory 2"> Carpe Nocte will feature exotic herbs, fierce duration, <br> and alluring scents 
+                                     all topped with the most <br> exquisite containers.
+         </h3>
+         
+
+         <div id="founderBtn1"><a href="#" class="founderBtn">Discover Roots</a></div>     
+   </div>
+ 
+
+
+
+
+<!--                                             Locations       -         Section6                             --> 
+
+     <div class="locationBox">
+            <h5 id="Locations"></h5> <!--   a Link    -->
+
+
+            <h1 class="titleSec">Lu Var</h1>
+      <div class="locateColmGrid">
+ 
+
+          <div class="colm 1">
+               <h4 class="location 1">Paris, France</h4>
+               <p class = "address 1">30 avenue de Bouvine <br> SEDAN, CA 08200</p>
+
+               <a href="https://www.google.com/maps/dir//24+Rue+de+S%C3%A8vres,+75007+Paris/@48.8511142,2.2543252,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47e671d39ebb8601:0xd99b7bf65c716272!2m2!1d2.3243648!2d48.8511354" class = "escape 1"></a>
+          </div>
+ 
+ 
+          <div class="colm 2">
+               <h4 class="location 2">Chicago, Il</h4>
+               <p class = "address 2">70 vesta drive <br> chicago, IL 60607</p>
+
+               <a href="https://www.google.com/maps/dir//41.8998,-87.6244/@41.8997805,-87.6944099,12z" class = "escape 2"></a>
+          </div>
+ 
+ 
+          <div class="colm 3">
+               <h4 class="location 3">los angeles, CA</h4>
+               <p class = "address 3">320 Newport St <br> Sunnyvale, CA 94087</p>
+
+               <a href="https://www.google.com/maps/dir//Gucci,+8500+Beverly+Blvd+Suite+%23743,+Los+Angeles,+CA+90048/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80c2bc139759b583:0xeb380abe3f296997?sa=X&ved=2ahUKEwjY_cX_3oL0AhUy87sIHckcD38Q48ADegQIFRAu" class = "escape 3"></a>
+          </div>
+ 
+        </div>
+
+
+ 
+         <h4 class="findLocat">Find A Location Near You</h4>
+         <div id="locateBtn1"><a href="https://www.gucci.com/us/en/store?store-search=10473&gclid=CjwKCAjwz5iMBhAEEiwAMEAwGA7uQgPgZTlHm-LXqda23v3bhcBOSPChe99WlCc4Hy-cskzw9anKaRoCw-QQAvD_BwE" class="locateBtn">Locate</a></div>
+ 
+    </div>
+
+
+
+
+
+           
+<!--                                        Footer       -        Section7                                                   -->
+    <footer>
+    <section class="ftrMain">
+           <div class="ftrMainItem">
+
+              <h2 class="ftrHeadings">Company</h2>
+           <ul>
+             <li><a href="#">About</a></li>
+             <li><a href="#">Services</a></li>
+             <li><a href="#">Pricing</a></li>
+             <li><a href="#">Careers</a></li>
+           </ul>
+         </div>
+ 
+ 
+          <div class="ftrMainItem">
+
+              <h2 class="ftrHeadings">Resources</h2>
+           <ul>
+             <li><a href="#">Webinars</a></li>
+             <li><a href="#">Blog</a></li>
+             <li><a href="#">eBooks</a></li>
+             <li><a href="#">Experiences</a></li>
+           </ul>
+         </div>
+ 
+ 
+          <div class="ftrMainItem">
+
+              <h2 class="ftrHeadings">Contact</h2>
+           <ul>
+             <li><a href="#">Connect with a Representative</a></li>
+             <li><a href="#">Find a Retailer</a></li>
+             <li><a href="#">Frequently Asked Questions</a></li>
+           </ul>
+         </div>
+ 
+ 
+         <div class="ftrMainItem">
+
+              <h2 class="ftrHeadings">Stay Updated</h2>
+              <p class="ft-Desc">Follow Lu Var's Journey</p>
+
+          <form>
+
+             <input type="email" name="email" placeholder="Email Address">
+             <input type="submit" value="Join">
+             
+          </form>
+         </div>
+ 
+ 
+      </section>
+     
+
+       <!-- Footer Ending -->
+       <section class="ftrLegal">
+
+         <ul class="ftrLegalText">
+           <li class="endName">Lu Var </li>
+           <li class="endCopyright">&copy; 2021 Copyright Lu Var</li>
+         </ul>
+      
+       </section>
+     </footer>
+ 
+ 
+</div>
+
+      <script type="text/javascript" src="watch JS.js"></script> 

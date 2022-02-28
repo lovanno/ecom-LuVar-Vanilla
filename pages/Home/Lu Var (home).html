@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lu Var</title>
+
+
+</head>
+        <link rel="stylesheet" type="text/css" href="Lu Var (home css).css">
+
+<body>
+
+
+    <!--                                                   Nav Bar                                                               -->
+	 <div class="navBar">
+        <header>
+            <nav class = "nav-bar">
+                <ul class="nav-items">
+                <a class="logo" href="#"><p class="logo">Lu Var</p></a>
+
+                    <li class="nav-item sec2"><a href="#" class="nav-link 1">Contact</a></li>
+                    <li class="nav-item sec2"><a href="../watchPage/watch HTML.html" class="nav-link 2">Watches</a></li>
+					
+                    <li class="nav-item sec1"><a href="#" class="nav-link 3">Story</a></li>
+                    <li class="nav-item sec1"><a href="../sunPage/sun HTML.html" class="nav-link 4">Sunglasses</a></li>
+
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+
+    
+    <div class= "text styleSheet">   
+
+
+            
+    <!--                                  landingPage (home) - Section1                                                       -->
+    <div class = "landingPage">
+        <div class="landingWatch-image"></div>
+
+        <div class="opener">
+            <h1 class="opener-title-1">Leather Luxury</h1>
+            <p class="opener-desc">Luxury chronographs with <br> metrics for every second</p>
+
+            <div class="hero-btn"><a href="../watchPage/watch HTML.html#Sephur" class="home-btn-link">Shop Now</a></div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+<!--                                       bestSeller Scroll - Section2                                                         -->
+    <div class = "bestSeller">
+
+        <div class = "bestSellHeader">
+            <h1 id="bestSellerTitle">Lu Var's Finest</h1>
+
+            <p id="arrowIcons">
+                <span id = "leftArrow">	&#139;</span>
+                <span id= "rightArrow">	&#155;</span>
+            </p>
+
+        </div>      
+   
+
+
+        <div class = "bestSellerCont">      
+
+            <div class="product-box 1">
+                <div class="product-image 1">
+                    <div class="prodBtn 1"><a href="../watchPage/watch HTML.html#Lu Mauru" id ="0" class="prod-btn-link" onclick='return productRedirect()'></a></div>
+                </div>
+
+
+                <div class="pDetail 1">
+                    <p class = "headingName">Lu Mauru</p>
+
+                    <p class= "prodColor">Wolf Black</p> 
+                    <p class="prodPrice">$3,700</p>
+
+                </div>
+            </div>
+
+
+            <div class="product-box 2">
+                <div class="product-image 2">
+                    <div class="prodBtn 2"><a href="../watchPage/watch HTML.html#Lu Mauru" id ="6" class="prod-btn-link" onclick='return productRedirect()'></a></div>
+                </div>
+
+
+                <div class="pDetail 2">
+                    <p class = "headingName">Lu Mauru</p>
+
+                    <p class= "prodColor">Ocean Black</p> 
+                    <p class="prodPrice">$4,200</p>
+
+                </div>
+            
+            </div>
+
+
+            <div class="product-box 3">
+                <div class="product-image 3">
+                    <div class="prodBtn 3"><a href="../watchPage/watch HTML.html#Lu Mauru" id ="1" class="prod-btn-link" onclick='return productRedirect()'></a></div>
+                </div>
+
+
+                <div class="pDetail 3">
+                    <p class = "headingName">Lu Mauru</p>
+
+                    <p class= "prodColor">White Marble</p> 
+                    <p class="prodPrice">$3,900</p>
+
+                </div>
+            
+            </div>
+
+
+            <div class="product-box 4">
+                <div class="product-image 4">
+                    <div class="prodBtn 4"><a href="../watchPage/watch HTML.html#Sephur" id ="8" class="prod-btn-link" onclick='return productRedirect()'></a></div>
+                </div>
+
+
+                <div class="pDetail 4">
+                    <p class = "headingName">Sephur</p>
+
+                    <p class= "prodColor">Dark Rose</p> 
+                    <p class="prodPrice">$3,600</p>
+
+                </div>
+            
+            </div>
+
+
+            <div class="product-box 5">
+                <div class="product-image 5">
+                    <div class="prodBtn 5"><a href="../watchPage/watch HTML.html#Sephur" id ="9" class="prod-btn-link" onclick='return productRedirect()'></a></div>
+                </div>
+
+
+                <div class="pDetail 5">
+                    <p class = "headingName">Sephur</p>
+
+                    <p class= "prodColor">Silver</p> 
+                    <p class="prodPrice">$3,200</p>
+                </div>
+            
+            </div>
+
+
+            <div class="product-box 6">
+                <div class="product-image 6">
+                    <div class="prodBtn 6"><a href="../watchPage/watch HTML.html#Numous" id ="18" class="prod-btn-link" onclick='return productRedirect()'></a></div>
+                </div>
+
+                <div class="pDetail 6">
+                    <p class = "headingName">Numous</p>
+
+                    <p class= "prodColor">Silver Black</p> 
+                    <p class="prodPrice">$4,125</p>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="zoomPhotoModal" class="modal">
+
+        <div class="modal-content">
+            <div id="currentImg" class ="modalImg"></div>
+        </div>
+
+    </div>
+
+
+        <!--                              cinematic1 (naturistAqua - Promo1) - Section3                    --->
+        <div class = "cinematic 1">
+
+                <h5 id="naturistAqua"></h5> <!--    Allows user to be centered with product   -->
+
+                <div class="cinematic-image">
+                    <a href="#naturistAqua" class = "cineImg-btn 1"></a> 
+                </div>
+
+
+                <!--        watch 1     -->
+                <div class="cinematic-text-container 1">
+                    <p class="cinematic_heading 1">Naturist Aqua</p>
+                    <p class="cineType 1">Co-Axil Escapement</p>
+                    <p class="cinePrice 1">$4,500</p>
+
+                    <div class="cineShopBtn 1"><a href="../watchPage/watch HTML.html" class="cine-btn-link 1">Shop Now</a></div>
+                </div>
+
+
+                <!--        watch 2     -->
+                <div class="cinematic-text-container 2">
+
+                    <p class="cinematic_heading 2">Naturist Carme</p>
+                    <p class="cineType 2">Co-Axil Escapement</p>
+                    <p class="cinePrice 2">$6,800</p>
+
+                    <div class="cineShopBtn 2"><a href="../watchPage/watch HTML.html" class="cine-btn-link 2">Shop Now</a></div>   
+                </div>
+
+        </div>
+
+
+
+
+        <!--                    sunglassLuxLens -  Section4                   --->
+        <div class = "sunPromo">
+        
+                    <div class="sunglassLens-text-container">
+
+                        <div class = "sunHeaderCont">
+                            <h1 class ="sunLuxuryHeading 1">Lu Var's</h1>
+                            <h1 class ="sunLuxuryHeading 2">Luxurious Lens</h1>
+                        </div>
+
+                        <p id="sunglassDesc">
+                        Crafted with Zylonite and Powerful <br>
+                        Temples for Today, <br>
+                        Tomorrow and the Future</p>
+
+                        <div id="discoverBtn"><a href="../sunPage/sun HTML.html" class="discover-btn-link">Discover</a></div>
+
+                    </div>      
+
+            <div class="sunglassBlack-image"></div>
+
+        </div>
+
+
+        
+        <!--                      cinematic2 (Tide Le - Promo2) - Section5                    --->
+        <div class = "cinematic 2">
+
+                <h5 id="Tide"></h5>
+
+                <div class="cinematic2-image">
+                    <a href="#Tide" class = "cineImg-btn 2"></a> 
+                </div>
+
+
+                <!--        watch 3     -->
+                <div class="cinematic-text-container 3">
+
+                    <p class="cinematic_heading 3">Tide Le</p>
+                    <p class="cineType 3">Co-Axil Master</p>
+                    <p class="cinePrice 3">$4,500</p>
+
+                    <div class="cineShopBtn 3"><a href="../watchPage/watch HTML.html" class="cine-btn-link 3">Shop Now</a></div>
+                </div>
+
+
+                <!--        watch 4     -->
+                <div class="cinematic-text-container 4">
+
+                    <p class="cinematic_heading 4">Tide Var</p>
+                    <p class="cineType 4">Co-Axil Master</p>
+                    <p class="cinePrice 4">$6,800</p>
+
+                    <div class="cineShopBtn 4"><a href="../watchPage/watch HTML.html" class="cine-btn-link 4">Shop Now</a></div>
+                </div>
+
+        </div>
+
+
+
+           <!--                                 journalVar - Section6                            --->
+
+        <div class="journalCont">
+                <h1 class="journalTitle">Behind Lu Var</h1> 
+    
+
+            <div class="journalBox">
+    
+                <div class="col 1">
+
+                    <h4 class="storyHeading 1">WaterProof</h4>
+                    <p class = "storyDesc 1">Watches are submerged 3000 meters below water to ensure quality. Watches are submerged 3000 meters below water to ensure quality. 
+                                             Watches are submerged 3000 meters below water to ensure quality. Watches are submerged 3000 meters below water to ensure quality.
+                    </p>
+
+                    <div class="storyBtn 1"><a href="https://www.rolex.com/about-rolex-watches/waterproofness.html" class="story-btn-link 1"></a></div>   
+                </div>
+    
+
+                <div class="col 2">
+                    <h4 class="storyHeading 2">Materials</h4>
+                    <p class = "storyDesc 2">Leather is sourced from only the best suppliers</p>
+
+                    <div class="storyBtn 2"><a href="https://on.rolex.com/3wQhu6U" class="story-btn-link 2"></a></div>   
+                </div>
+    
+    
+                <div class="col 3">
+                    <h4 class="storyHeading 3">Scratch Resistant</h4>
+                    <p class = "storyDesc 3">Military grade weapons are employed to test durability </p>
+
+                    <div class="storyBtn 3"><a href="https://www.rolex.com/about-rolex-watches/a-legacy-of-excellence.html" class="story-btn-link 3"></a></div>   
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+</div>
+
+
+
+
+            <!--                                                Footer                                                     --->
+            
+    <footer>
+
+      <!-- Footer main -->
+      <section class="ftrMain">
+        <div class="ftrMainItem 1">
+          <h2 class="ftrHeadings">Company</h2>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+
+        <div class="ftrMainItem 2">
+          <h2 class="ftrHeadings">Resources</h2>
+          <ul>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">eBooks</a></li>
+            <li><a href="#">Experiences</a></li>
+          </ul>
+        </div>
+
+
+        <div class="ftrMainItem 3">
+          <h2 class="ftrHeadings">Contact</h2>
+          <ul>
+            <li><a href="#">Connect with a Representative</a></li>
+            <li><a href="#">Find a Retailer</a></li>
+            <li><a href="#">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+
+        <div class="ftrMainItem 4">
+          <h2 class="ftrHeadings">Stay Updated</h2>
+          <p class="ft-Desc">Follow Lu Var's Journey</p>
+          <form>
+            <input type="email" name="email" placeholder="Email Address">
+            <input type="submit" value="Join">
+          </form>
+        </div>
+
+
+      </section>
+    
+   
+      <!-- Footer legal -->
+      <section class="ftrLegal">
+        <ul class="ftrLegalText">
+            
+          <li class="endName">Lu Var </li>
+          <li class="endCopyright">&copy; 2021 Copyright Lu Var</li>
+
+        </ul>
+      </section>
+    </footer>
+
+
+
+    
+
+    <script type="text/javascript" src="Lu Var (home js).js"></script> 
+        

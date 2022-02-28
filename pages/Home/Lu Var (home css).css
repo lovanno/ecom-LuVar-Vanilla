@@ -1,0 +1,3040 @@
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      overflow-x: hidden;
+    }
+
+    html, body {
+      font-size: 62.5%;
+    }
+
+
+    .text.styleSheet {
+      text-transform: uppercase;
+      text-align: center;
+
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+
+
+    /*                          Nav Bar                            */
+
+    /*  nav logo  */
+    p.logo {
+      cursor: pointer;
+      display: block;
+      position: fixed;
+
+      top: -1.25%;
+      left: 45%;
+      height: 5%;
+
+
+      font-family: 'Times New Roman', Times, serif;
+      color: #c9c9c9;
+      /*slighly lighter to blend with Li's */
+
+      font-size: 2.4rem;
+      letter-spacing: 0.7rem;
+      font-weight: 600;
+
+
+      margin: 2.5rem;
+      padding: 1.0rem 1.6rem;
+
+      transition: 400ms;
+    }
+
+
+
+    /*  Text  */
+    .nav-items {
+      position: fixed;
+
+      background: black;
+      overflow: hidden;
+      list-style-type: none;
+
+      width: 100%;
+
+      z-index: 500;
+      transition: 400ms;
+    }
+
+    .nav-item.sec1 {
+      position: relative;
+      float: left;
+
+      left: 3%;
+    }
+
+    .nav-item.sec2 {
+      position: relative;
+      float: right;
+
+      right: 3%;
+    }
+
+    .nav-link {
+      display: block;
+
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #CCCCCC;
+      text-decoration: none;
+      text-align: center;
+
+      margin: 2.5rem;
+      padding: 1.0rem 1.6rem;
+      letter-spacing: 0.25rem;
+
+
+      transition: 400ms;
+    }
+
+
+
+
+    /*!                     Scroll Effects                         !*/
+
+
+    /*      Nav Bar - Homescreen   */
+    .scrolling-active {
+      background: black;
+      box-shadow: 0 3px 1rem rgba(0, 0, 0, .1);
+      z-index: 1002;
+
+      transition: 800ms;
+    }
+
+
+    /* Text */
+    .scrolling-active .nav-link {
+      color: white;
+      z-index: 1001;
+
+    }
+
+    .scrolling-active p.logo {
+      color: white;
+
+    }
+
+    /* Text Highlight */
+    .nav-link:hover:not(.active) {
+      /* Hover of Li Nav Bar*/
+      color: #878686;
+      text-decoration: none;
+      transition: 400ms;
+    }
+
+
+    .scrolling-active .nav-link:hover {
+      color: #878686;
+      z-index: 1001;
+      transition: 600ms;
+
+    }
+
+
+
+
+
+    /***                      Home - section 1                              ***/
+
+    .landingWatch-image {
+      position: absolute;
+      background: url("../../material/luVarHome.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      top: 8%;
+      left: -3%;
+
+      height: 92vh;
+      width: 110%;
+      z-index: 1;
+    }
+
+
+    h1.opener-title-1 {
+      position: absolute;
+      top: 31%;
+      left: 58%;
+
+      font-size: 4.5rem;
+      letter-spacing: 0.8rem;
+
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+      text-align: center;
+
+      z-index: 500;
+    }
+
+
+    p.opener-desc {
+      position: absolute;
+      top: 43%;
+      left: 63.75%;
+
+      font-size: 1.9rem;
+      letter-spacing: 0.5rem;
+      letter-spacing: 100;
+      line-height: 4.5rem;
+
+      color: white;
+      text-transform: capitalize;
+      text-align: center;
+      font-family: garamond, bodoni MT;
+
+      z-index: 500;
+    }
+
+
+
+    /*      "shop now" btn  - Homescreen    */
+    .home-btn-link {
+      position: absolute;
+      top: 70%;
+      left: 65%;
+
+      font-size: 1.4rem;
+      letter-spacing: 0.5rem;
+
+
+      font-family: century;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+
+
+      color: black;
+      background-color: white;
+      border: 1.5px solid black;
+
+      border-radius: 1.9rem;
+      padding: 1.2rem 1.6rem;
+      width: 20%;
+      z-index: 500;
+    }
+
+
+
+    /***  	      	bestSeller Scroll Section - 2 		      ***/
+
+    /*	header for bestSeller Section */
+
+    .bestSellHeader {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      top: 96%;
+      left: 4.75%;
+      width: 78%;
+
+      margin: 8.4rem;
+      border-bottom: 3px solid black;
+      border-top: 60px solid white;
+      /*White Space between Sect 1+2*/
+    }
+
+
+    /*  Title */
+    h1#bestSellerTitle {
+      position: relative;
+      font-family: century;
+
+      left: 0.25%;
+
+      font-size: 2.5rem;
+      font-weight: 100;
+      word-spacing: 0.19rem;
+      letter-spacing: 0.8rem;
+    }
+
+
+    /*Arrow*/
+    p#arrowIcons {
+      position: relative;
+      right: .25%;
+    }
+
+    span#leftArrow, span#rightArrow {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+
+      left: 14%;
+      height: 3.0rem;
+      width: 3.0rem;
+
+      font-size: 4.0rem;
+      color: #555;
+      text-align: center;
+
+      margin: 1.9rem;
+      padding: 0.2rem;
+      border-radius: 2.0rem;
+      line-height: 1.6rem;
+
+    }
+
+    span#rightArrow:hover {
+      background: #222;
+      color: white;
+
+      text-align: center;
+      align-items: center;
+      outline: none;
+      box-shadow: none;
+    }
+
+
+    span#leftArrow:hover {
+      background: #222;
+      color: white;
+
+      text-align: center;
+      align-items: center;
+      outline: none;
+      box-shadow: none;
+    }
+
+
+    span#leftArrow, span#rightArrow {
+      user-select: none;
+
+      -ms-user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+
+      -khtml-user-select: none;
+      -moz-user-select: none;
+    }
+
+
+
+    /*    Product Box   */
+    .bestSellerCont {
+      position: absolute;
+      display: flex;
+
+      top: 128%;
+      width: 98%;
+
+      left: 89.5%;
+
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin: auto;
+    }
+
+
+
+    .product-box {
+      position: relative;
+      display: flex;
+
+      flex-direction: column;
+
+      height: 78%;
+      min-width: 26%;
+      left: 1%;
+
+      margin: 0 3.5rem;
+      border-radius: 2.0rem;
+      transition: 0.5s;
+    }
+
+
+
+    .prod-btn-link {
+      position: absolute;
+      left: 0%;
+
+      background-color: transparent;
+      height: 100%;
+      width: 100%;
+
+      padding: 10rem;
+    }
+
+
+    .product-image {
+      cursor: pointer;
+      position: relative;
+
+      background-image: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+      background-position-x: 45%;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 3px solid black;
+
+
+      height: 45vh;
+      width: 70%;
+    }
+
+
+    .product-image:hover {
+      transform: scale(0.93);
+      transition: 600ms;
+    }
+
+
+
+    /*black box text */
+    .pDetail {
+      position: absolute;
+      bottom: -35%;
+      font-size: 2.0rem;
+      line-height: 2.3rem;
+      padding: 1.0rem;
+
+      width: 70%;
+
+      align-items: center;
+      text-align: center;
+
+      background: black;
+      color: white;
+    }
+
+
+    p.headingName {
+      color: #BDBDBD;
+
+      font-size: 0.7rem;
+      letter-spacing: 0.5rem;
+      font-family: century;
+      text-transform: uppercase;
+      font-weight: 100;
+    }
+
+
+    p.prodColor {
+      font-size: 1.7rem;
+      letter-spacing: 0.5rem;
+      font-family: century;
+      text-transform: uppercase;
+      font-weight: 100;
+    }
+
+    p.prodPrice {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4rem;
+      margin-top: 2.2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.25rem;
+      font-weight: 100;
+    }
+
+
+
+
+    /*	header for bestSeller Section */
+    .product-image.\32 {
+      background: url("../../watchDes/watchPage/R1/mblAqua.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      background-position-x: 45%;
+    }
+
+    .product-image.\33 {
+      background: url("../../watchDes/watchPage/R1/mblWhite.jpg");
+
+
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      background-position-x: 45%;
+    }
+
+
+    .product-image.\34 {
+      background: url("../../watchDes/watchPage/R2/darkRose.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+
+    .product-image.\35 {
+      background: url("../../watchDes/watchPage/R2/blkSilver.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+
+    .product-image.\36 {
+      background: url("../../watchDes/watchPage/R3/silver.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      background-position-x: 45%;
+    }
+
+
+
+
+
+    /***                           for cinematicClass            -         Modal (Shared)                                   ***/
+
+    .modal {
+      cursor: pointer;
+
+      position: fixed;
+      display: none;
+      overflow: auto;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+
+      padding-top: 100px;
+
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.5);
+
+      z-index: 1;
+    }
+
+
+
+    #currentImg {
+      position: relative;
+      background-image: url("../../material/cinematic2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      background-position-x: 85%;
+      height: 87vh;
+      width: 75%;
+
+      left: 63%;
+
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+
+
+    #currentImg:hover {
+      transform: scale(0.98);
+    }
+
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      width: 80%;
+      max-width: 43.75rem;
+    }
+
+
+
+
+
+    /***                           cinematic1 (naturistAqua - Promo1) - Section3                                   ***/
+
+    /*Allows Section to be centered (ahref)*/
+    h5#naturistAqua {
+      position: absolute;
+      top: 200%;
+      left: 24%;
+      line-height: 3.0rem;
+
+    }
+
+
+    .cinematic-image {
+      position: absolute;
+
+      background: url("../../material/cinematic.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-x: 25%;
+
+      top: 213%;
+      left: 9%;
+      height: 85vh;
+      width: 80%;
+
+    }
+
+
+
+    a.cineImg-btn {
+      cursor: pointer;
+      background-color: transparent;
+
+      position: absolute;
+      left: 59%;
+
+      height: 100%;
+      width: 41%;
+    }
+
+
+
+    /*    Cinematic Text Classes   */
+
+    .cinematic-text-container.\31 {
+      position: absolute;
+      top: 225%;
+      left: 24%;
+
+      line-height: 3.0rem;
+    }
+
+
+    .cinematic-text-container.\32 {
+      position: absolute;
+      top: 265.5%;
+      left: 23.5%;
+
+      line-height: 3.0rem;
+    }
+
+
+
+    p.cinematic_heading {
+      font-size: 2.1rem;
+      letter-spacing: 0.4rem;
+      font-weight: 100;
+
+      font-family: Alegreya SC;
+      color: #202020;
+      text-transform: uppercase;
+    }
+
+
+    p.cineType {
+      font-size: 0.95rem;
+      letter-spacing: 0.5rem;
+      font-weight: 100;
+
+      font-family: Alegreya;
+      color: #373737;
+    }
+
+
+    p.cinePrice {
+      font-size: 1.7rem;
+      line-height: 9.0rem;
+      letter-spacing: 0.3rem;
+
+      color: #4f4f4f;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+
+
+
+    a.cine-btn-link {
+      position: relative;
+      left: -.75%;
+      width: 30%;
+
+      font-size: 0.9rem;
+      letter-spacing: 0.4rem;
+      font-family: Alegreya SC;
+      color: #202020;
+
+      background-color: white;
+      border: 1.5px solid black;
+      padding: 1.4rem 1.6rem;
+
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+
+    p.cinePrice.\31 {
+      position: relative;
+      left: -2%;
+    }
+
+
+    a.cine-btn-link.\31 {
+      position: relative;
+      left: -2%
+    }
+
+
+
+    p.cinePrice.\32 {
+      position: relative;
+      left: -3%;
+    }
+
+
+    a.cine-btn-link.\32 {
+      position: relative;
+      left: -2.75%
+    }
+
+
+    /***                                 sunglassLuxLens -  Section4                                      ***/
+
+    /*        Background IMG         */
+    .sunglassBlack-image {
+      position: absolute;
+      background: url("../../material/sunglassLens.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-y: 40%;
+
+      top: 325%;
+      left: 9%;
+
+      height: 110vh;
+      width: 80%;
+
+      z-index: -1000;
+    }
+
+
+
+    /*  Text  */
+    .sunHeaderCont {
+      position: absolute;
+      top: 336.5%;
+      left: 28%;
+
+      text-align: center;
+    }
+
+    .sunLuxuryHeading {
+      font-size: 4.8rem;
+      letter-spacing: 2.0rem;
+      font-weight: 100;
+      line-height: 5.7rem;
+
+      font-family: Alegreya SC;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .sunLuxuryHeading.\31 {
+      font-size: 2.5rem;
+    }
+
+
+
+    p#sunglassDesc {
+      position: absolute;
+      top: 364%;
+      left: 33%;
+
+      font-family: Alegreya SC;
+      text-align: center;
+      color: #C8C8C8;
+
+      font-size: 1.6rem;
+      line-height: 6.0rem;
+      letter-spacing: 0.6rem;
+      font-weight: 100;
+    }
+
+    /*    Btn     */
+    a.discover-btn-link {
+      position: absolute;
+      top: 403%;
+      left: 42.5%;
+      width: 16%;
+
+      font-size: 1.7rem;
+      letter-spacing: 0.5rem;
+      font-weight: 400;
+
+      font-family: century;
+      text-align: center;
+      color: black;
+
+      border: 1.5px solid black;
+      padding: 0.9rem 1.6rem;
+      background-color: #A9A9A9;
+
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+
+    /***                        cinematic2 (tide - Promo2) - Section5                            ***/
+
+    /*Allows Section to be centered (ahref)*/
+    h5#Tide {
+      position: absolute;
+      top: 448%;
+      left: 24%;
+      line-height: 3.0rem;
+    }
+
+    .cinematic2-image {
+      position: absolute;
+      background: url("../../material/cinematic2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      top: 460%;
+      left: 9%;
+
+      height: 90vh;
+      width: 80%;
+
+      z-index: -1000;
+    }
+
+    a.cineImg-btn.\32 {
+      left: 0%;
+      width: 55.25%;
+    }
+
+
+
+    /*    Text for 3rd Product  */
+    .cinematic-text-container.\33 {
+      position: absolute;
+      top: 477.25%;
+      left: 70.5%;
+    }
+
+    p.cinematic_heading.\33 {
+      font-size: 1.9rem;
+      letter-spacing: 1.4rem;
+    }
+
+
+    p.cineType.\33 {
+      font-size: 0.87rem;
+      letter-spacing: 0.5rem;
+
+    }
+
+    p.cinePrice.\33 {
+      position: relative;
+      left: -1%;
+    }
+
+
+    /*    Text for 4th Product  */
+    .cinematic-text-container.\34 {
+      position: absolute;
+      top: 512.25%;
+      left: 70%;
+    }
+
+
+    p.cinematic_heading.\34 {
+      font-size: 1.8rem;
+      letter-spacing: 1.4rem;
+
+      top: 524%;
+      left: 75.5%;
+    }
+
+
+    p.cineType.\34 {
+      font-size: 0.9rem;
+      letter-spacing: 0.55rem;
+    }
+
+
+    p.cinePrice.\34 {
+      position: relative;
+      left: -2.75%;
+    }
+
+    /*    Btn     */
+    a.cine-btn-link.\34 {
+      position: relative;
+      left: -2.25%;
+    }
+
+
+
+
+    /***                               journalBox - Section 6                                 ***/
+
+    /*  Header  */
+    h1.journalTitle {
+      position: absolute;
+      top: 580%;
+      left: 28%;
+
+      font-size: 3.0rem;
+      letter-spacing: 3.5rem;
+      font-weight: 100;
+      text-decoration-line: underline;
+
+      text-underline-offset: 2.5rem;
+      text-decoration-thickness: 0.25rem;
+
+      font-family: Alegreya SC;
+      text-transform: uppercase;
+    }
+
+
+    /*Journal Flex Box*/
+    .journalBox {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+
+      top: 575%;
+      left: 9%;
+
+      min-width: 124.0rem;
+      margin-top: 15rem;
+    }
+
+    .journalBox>* {
+      flex: 1 1 50%;
+      min-width: 5ch;
+    }
+
+    .journalBox>.col.\31 {
+      flex: 1 1 100%;
+    }
+
+
+
+    /*Column Boxes*/
+    .col {
+      cursor: pointer;
+      background-color: #d7d7d7;
+
+      border: 3px solid black;
+      border-bottom: 140px solid black;
+      min-height: 35.0rem;
+    }
+
+
+    .col:hover {
+      transform: scale(0.90);
+      transition: 600ms;
+    }
+
+
+
+
+
+    /*    Journal Images    */
+    .col.\31 {
+      position: relative;
+      background: url("../../material/waters2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      background-position-y: 30%;
+    }
+
+
+    .col.\32 {
+      position: relative;
+      background: url("../../material/leathers1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      background-position-y: 40%;
+    }
+
+
+    .col.\33 {
+      position: relative;
+      background: url("../../material/scratchs3.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      background-position-y: 25%;
+    }
+
+
+
+    /*  JournalText */
+    .storyHeading {
+      position: absolute;
+      color: white;
+
+      font-size: 2.2rem;
+      letter-spacing: 0.4rem;
+
+      text-transform: uppercase;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .storyDesc {
+      position: absolute;
+      color: white;
+      text-align: left;
+
+      font-family: century;
+      text-transform: uppercase;
+
+      font-size: 0.8rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.2rem;
+
+      font-weight: 100;
+    }
+
+
+    a.story-btn-link {
+      position: absolute;
+      left: 0%;
+
+      background-color: transparent;
+      height: 180%;
+      width: 100%;
+
+      padding: 10rem;
+    }
+
+
+
+
+    /*      1st Story       */
+    .storyHeading.\31 {
+      top: 108%;
+      left: 1.5%;
+    }
+
+    .storyDesc.\31 {
+      top: 128.5%;
+      left: 1.75%;
+    }
+
+
+    /*      2nd Story       */
+    .storyHeading.\32 {
+      top: 108%;
+      left: 3.5%;
+    }
+
+    .storyDesc.\32 {
+      top: 127.5%;
+      left: 3.75%;
+    }
+
+
+
+    /*      3rd Story       */
+    .storyHeading.\33 {
+      top: 108%;
+      left: 3.5%;
+    }
+
+    .storyDesc.\33 {
+      top: 127.5%;
+      left: 3.75%;
+    }
+
+
+
+
+
+    /***               Footer - Section7               ***/
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    footer {
+      position: absolute;
+      top: 700%;
+      left: 0%;
+      margin-top: 13rem;
+
+      width: 100%;
+      line-height: 6.0;
+
+      background-color: black;
+      color: #bbb;
+    }
+
+
+    /*  Text  */
+    footer a {
+      font-size: 1.45rem;
+      letter-spacing: 0.16rem;
+      font-family: garamond;
+
+      text-decoration: none;
+      color: #eee;
+
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .ftrHeadings {
+      font-size: 1.7rem;
+      padding-bottom: 1.0rem;
+      letter-spacing: 0.48rem;
+
+
+      font-family: Alegreya SC;
+      text-transform: uppercase;
+      color: #fff;
+
+    }
+
+
+
+
+    /* Footer Rows */
+    .ftrMain {
+      padding: 2.0rem 3.0rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+    /* Footer legal */
+    .ftrLegal {
+      background-color: #141414;
+      padding: 1.5rem 3.0rem;
+      line-height: 1.6rem;
+    }
+
+
+    .ftrLegalText {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+
+    .ftrLegalText li {
+      position: relative;
+      white-space: nowrap;
+      margin: 0.02rem 1.0rem;
+      left: 75%;
+    }
+
+    /*Text*/
+    li.endName, li.endCopyright, p.ft-Desc {
+      font-size: 1.28rem;
+      font-family: Alegreya SC;
+      text-transform: uppercase;
+      letter-spacing: 0.32rem;
+
+    }
+
+
+    /*  Text Positions  */
+    li.endName {
+      margin: 1.6rem;
+      left: 7%;
+    }
+
+
+    li.endCopyright {
+      margin: 1.6rem;
+      left: -7%;
+    }
+
+    p.ft-Desc {
+      position: relative;
+      top: -12%;
+
+    }
+
+
+    /*  Space between bottom Text */
+    .ftrLegalText li:nth-last-child(2) {
+      flex: 1;
+    }
+
+
+
+
+    .ftrMainItem {
+      padding: 2.0rem;
+      min-width: 20.0rem;
+    }
+
+    /*  Enter Email Section   */
+    form {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+
+      top: -2%;
+    }
+
+    input[type="email"] {
+      font-family: Alegreya SC;
+      letter-spacing: 0.16rem;
+
+      border: 0;
+      padding: 1.0rem;
+      margin-top: 0.05rem;
+    }
+
+    input[type="submit"] {
+      cursor: pointer;
+      font-family: century;
+
+      background-color: #333333;
+      color: white;
+
+      border: 0;
+      padding: 1.0rem 1.5rem;
+      margin-top: 0.05rem;
+      letter-spacing: 0.08rem;
+    }
+
+
+
+
+    @media only screen and (min-width: 47.7rem
+
+      /* 477px */
+    ) {
+      .ftrMain {
+        justify-content: space-evenly;
+      }
+
+    }
+
+    @media only screen and (min-width: 124.0rem
+
+      /* 1240px */
+    ) {
+      .ftrMain {
+        justify-content: space-evenly;
+      }
+    }
+
+
+
+    /* for prodModal*/
+
+    @keyframes zoom {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+    /*****                                              Media Queries                                               *****/
+
+
+
+    /**!               Large Mobie Device Screens              !**/
+
+    @media (max-width: 1050px) {
+
+
+      p.logo {
+        position: absolute;
+        left: 34%;
+
+        font-size: 3.4vw;
+        letter-spacing: 0.7rem;
+
+        margin: 7.0vw;
+        padding: 1rem 1.6rem;
+
+        margin-top: 3.0vh;
+      }
+
+
+      .nav-link {
+        font-size: 1.5vw;
+
+        margin: 2vw;
+        padding: 2vw 1.6vw;
+      }
+
+
+
+      .nav-items {
+        height: 15vh;
+        width: 100%;
+
+        line-height: 4.5vh;
+      }
+
+      .nav-item.sec1 {
+        left: 3%;
+      }
+
+      .nav-item.sec2 {
+        right: 3%;
+      }
+
+
+
+
+      /**              Home - Section 1                 **/
+
+
+      .landingWatch-image {
+        top: 6%;
+        left: 0%;
+
+        height: 121vh;
+        width: 100vw;
+
+        border-bottom: 26rem solid black;
+      }
+
+
+
+
+      h1.opener-title-1 {
+        position: absolute;
+
+        top: 71%;
+        left: 22.75%;
+
+        font-size: 4.8vw;
+
+        text-shadow: 2.5px 0px 0px #595959;
+      }
+
+
+      p.opener-desc {
+        position: absolute;
+        top: 81.5%;
+        left: 32.25%;
+
+        font-size: 2.15vw;
+        letter-spacing: 0.5rem;
+        letter-spacing: 100;
+        line-height: 3.7rem;
+
+        text-shadow: 2.5px 0px 0px #595959;
+      }
+
+
+
+      .home-btn-link {
+        position: absolute;
+        top: 104%;
+        left: 32.75%;
+
+        font-size: 1.4vw;
+        letter-spacing: 0.5rem;
+        border-radius: 1.9rem;
+        padding: 1.2rem 1.6rem;
+
+        width: 38%;
+      }
+
+
+
+
+
+      /***  	      	bestSeller Scroll Section - 2 		      ***/
+
+
+      /*	header for bestSeller Section */
+      .bestSellHeader {
+        top: 137%;
+        left: 3%;
+        width: 94%;
+
+        margin: 0;
+        border-bottom: 3px solid black;
+        border-top: 60px solid white;
+      }
+
+
+      /*  Title */
+      h1#bestSellerTitle {
+        position: relative;
+        left: 28.5%;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+
+        font-size: 3.1vw;
+        word-spacing: 0.19vw;
+        letter-spacing: 0.8vw;
+      }
+
+
+      /*Arrow*/
+      p#arrowIcons {
+        visibility: hidden;
+        right: .25%;
+      }
+
+
+
+
+
+      /*Product Box Container*/
+      .bestSellerCont {
+        margin-top: 3rem;
+
+        top: 155%;
+        left: 0%;
+        min-width: 90%;
+
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+
+
+      .product-box {
+        left: 1%;
+
+        height: 76vh;
+        min-width: 28%;
+
+        margin: 1rem;
+        border-radius: 2rem;
+      }
+
+
+
+      .prod-btn-link {
+        left: 0%;
+
+        height: 46vh;
+        width: 100%;
+        padding: 0rem;
+      }
+
+
+      .product-image {
+        background-position-x: 45%;
+
+        height: 46vh;
+        width: 100%;
+
+        border: 3px solid black;
+      }
+
+
+      .product-image:hover {
+        transform: scale(0.93);
+      }
+
+
+
+      /*black box text */
+      .pDetail {
+        bottom: 13%;
+        width: 100%;
+
+        padding: 1.0vw;
+      }
+
+
+      p.headingName {
+        margin-top: 0.8vh;
+        font-size: 0.75vw;
+        letter-spacing: 0.65vw;
+        line-height: 4.0vh;
+      }
+
+
+      p.prodColor {
+        font-size: 1.7vw;
+        letter-spacing: 0.8vw;
+      }
+
+      p.prodPrice {
+        font-size: 1.55vw;
+        letter-spacing: 0.25rem;
+
+        margin-top: 2.4vw;
+        margin-bottom: 2.8vw;
+      }
+
+
+
+      /*Center Specific Products */
+      .product-image.\32 {
+        background-position-x: 45%;
+      }
+
+      .product-image.\33 {
+        background-position-x: 45%;
+      }
+
+
+
+      .product-image.\36 {
+        background-position-x: 45%;
+      }
+
+
+
+
+      /***    for cinematicClass       -      Modal (Shared)             ***/
+
+      .modal {
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        padding-top: 100px;
+        z-index: 3;
+      }
+
+
+
+      #currentImg {
+        background-position-x: 85%;
+        height: 87vh;
+        width: 75%;
+
+        left: 63%;
+      }
+
+
+
+      #currentImg:hover {
+        transform: scale(0.98);
+      }
+
+
+      .modal-content {
+        margin: auto;
+        width: 80%;
+        max-width: 43.75rem;
+      }
+
+
+
+
+
+
+      /***                           cinematic1 (naturistAqua - Promo1) - Section3                                   ***/
+
+      h5#naturistAqua {
+        top: 330%;
+        left: 24%;
+        line-height: 3.0rem;
+      }
+
+
+      .cinematic-image {
+        background-position: right;
+        position: absolute;
+
+        top: 338%;
+        left: -12%;
+        height: 90vh;
+        width: 100vw;
+
+        z-index: 1;
+      }
+
+
+
+
+      .cinematic-image::after {
+        position: absolute;
+        content: '';
+
+        background: url(../../material/cinematic.jpg);
+        background-position: left;
+        background-size: cover;
+
+        left: 64.5%;
+        top: 105%;
+        height: 105vh;
+        width: 43vw;
+
+      }
+
+
+
+      a.cineImg-btn {
+        left: 0%;
+        width: 100%;
+      }
+
+
+
+      /*    Cinematic Text Classes   */
+      .cinematic-text-container {
+        line-height: 3.0rem;
+        z-index: 1;
+      }
+
+      .cinematic-text-container.\31 {
+        top: 448%;
+        left: 16%;
+      }
+
+
+      .cinematic-text-container.\32 {
+        top: 497.5%;
+        left: 15.5%;
+      }
+
+
+
+      /*Texts for sideWatches (promos)*/
+      p.cinematic_heading {
+        font-size: 2.1rem;
+        letter-spacing: 0.4rem;
+      }
+
+
+      p.cineType {
+        font-size: 0.95rem;
+        letter-spacing: 0.5rem;
+      }
+
+
+      p.cinePrice {
+        font-size: 1.7rem;
+        line-height: 9.0rem;
+        letter-spacing: 0.3rem;
+      }
+
+
+
+      a.cine-btn-link {
+        left: -.75%;
+        width: 30%;
+
+        font-size: 0.9rem;
+        letter-spacing: 0.4rem;
+        padding: 1.4rem 1.6rem;
+
+        border: 1.5px solid black;
+      }
+
+
+      p.cinePrice.\31 {
+        left: -2%;
+      }
+
+
+      a.cine-btn-link.\31 {
+        left: -2%
+      }
+
+
+
+      p.cinePrice.\32 {
+        left: -3%;
+      }
+
+
+      a.cine-btn-link.\32 {
+        left: -2.75%
+      }
+
+
+
+
+      /***                                 sunglassLuxLens -  Section4                                      ***/
+
+      /*        Background IMG         */
+      .sunglassBlack-image {
+        background-position-y: 90%;
+
+        top: 562%;
+        left: 0%;
+
+        height: 135vh;
+        width: 100vw;
+      }
+
+
+      /*sunglass Text*/
+      .sunHeaderCont {
+        position: absolute;
+        top: 579%;
+        left: 15%;
+      }
+
+      .sunLuxuryHeading {
+        font-size: 4.8vw;
+        letter-spacing: 2.0rem;
+
+        line-height: 5.7rem;
+      }
+
+      .sunLuxuryHeading.\31 {
+        font-size: 2.5vw;
+        line-height: 4.0vw;
+      }
+
+      .sunLuxuryHeading.\32 {
+        font-size: 5.2vw;
+        line-height: 10.0vw;
+
+        letter-spacing: 1.8rem;
+      }
+
+
+      p#sunglassDesc {
+        position: absolute;
+        top: 599%;
+        left: 22%;
+        font-size: 1.5vw;
+        line-height: 6.0vw;
+        letter-spacing: 0.7rem;
+      }
+
+
+      /*    Btn     */
+      a.discover-btn-link {
+        font-size: 2.0vw;
+        letter-spacing: 0.5rem;
+
+        top: 668%;
+        left: 31.25%;
+
+        width: 43%;
+        padding: 1.3vw 1.6vw;
+
+        border: 1.5px solid black;
+      }
+
+
+
+
+
+      /***                        cinematic2 (tide - Promo2) - Section5                             ***/
+
+      /*Allows Section to be centered (ahref)*/
+      h5#Tide {
+        top: 715%;
+        left: 24%;
+        line-height: 3.0rem;
+      }
+
+      .cinematic2-image {
+        position: absolute;
+        top: 720%;
+        left: 13%;
+
+        height: 100vh;
+        width: 80vw;
+      }
+
+
+      .cinematic2-image::after {
+        position: absolute;
+        content: '';
+
+        background: url(../../material/cinematic2.jpg);
+        background-size: cover;
+        background-position-x: 80%;
+
+
+        top: 101%;
+        left: 7%;
+
+        height: 130vh;
+        width: 50vw;
+      }
+
+
+
+
+
+      /*    Text for 3rd Product  */
+      .cinematic-text-container.\33 {
+        top: 850%;
+        left: 58vw;
+      }
+
+      p.cinematic_heading.\33 {
+        font-size: 1.9rem;
+        letter-spacing: 1.4rem;
+      }
+
+
+      p.cineType.\33 {
+        font-size: 0.87rem;
+        letter-spacing: 0.5rem;
+
+      }
+
+      p.cinePrice.\33 {
+        left: -1%;
+      }
+
+
+
+
+      /*    Text for 4th Product  */
+      .cinematic-text-container.\34 {
+        top: 901%;
+        left: 57vw;
+      }
+
+
+      p.cinematic_heading.\34 {
+        font-size: 1.8rem;
+        letter-spacing: 1.4rem;
+
+        top: 524%;
+        left: 75.5%;
+      }
+
+
+      p.cineType.\34 {
+        font-size: 0.9rem;
+        letter-spacing: 0.55rem;
+      }
+
+
+      p.cinePrice.\34 {
+        left: -2.75%;
+      }
+
+
+
+      /*    Btn     */
+      a.cine-btn-link.\34 {
+        left: -2.25%;
+      }
+
+
+
+
+      /***                               journalBox - Section 6                                 ***/
+
+      /*  Header  */
+      h1.journalTitle {
+        position: absolute;
+        top: 970%;
+        left: 16%;
+
+        font-size: 3.3vw;
+        letter-spacing: 3.5vw;
+        text-decoration-line: none;
+      }
+
+
+
+      /*Journal Flex Box*/
+      .journalBox {
+        display: flex;
+        flex-direction: column;
+
+        top: 960%;
+        left: 10%;
+
+        min-width: 20rem;
+        width: 80vw;
+
+        margin-top: 15rem;
+      }
+
+
+      .journalBox>* {
+        flex: 1 1 50%;
+        min-width: 5ch;
+      }
+
+      .journalBox>.col.\31 {
+        flex: 1 1 100%;
+      }
+
+
+
+      /*Column Boxes*/
+      .col {
+        border: 3px solid black;
+        border-bottom: 170px solid black;
+
+        min-height: 45.0rem;
+      }
+
+
+      .col:hover {
+        transform: scale(0.90);
+      }
+
+
+
+
+      /*    Journal Images    */
+      .col.\31 {
+        background-position-y: 30%;
+      }
+
+
+      .col.\32 {
+        background-position-y: 40%;
+      }
+
+
+      .col.\33 {
+        background-position-y: 25%;
+      }
+
+
+
+
+      /*  JournalText */
+      .storyHeading {
+        font-size: 2.8vw;
+        letter-spacing: 0.6rem;
+      }
+
+      .storyDesc {
+        font-size: 0.8vw;
+        line-height: 3.4vh;
+      }
+
+
+      a.story-btn-link {
+        left: 0%;
+
+        height: 180%;
+        width: 100%;
+
+        padding: 10rem;
+      }
+
+
+
+
+
+      /*    1st Story     */
+      .storyHeading.\31 {
+        left: 27vw;
+      }
+
+      .storyDesc.\31 {
+        top: 125%;
+        left: 2%;
+      }
+
+
+
+      /*    2nd Story     */
+      .storyHeading.\32 {
+        top: 108%;
+        left: 29vw;
+      }
+
+      .storyDesc.\32 {
+        top: 124.5%;
+        left: 29%;
+      }
+
+
+
+      /*    3rd Story     */
+      .storyHeading.\33 {
+        top: 108%;
+        left: 20vw;
+      }
+
+      .storyDesc.\33 {
+        top: 127.5%;
+        left: 24.25%;
+      }
+
+
+
+
+
+      /***               Footer - Section7               ***/
+
+      ul {
+        padding-left: 0;
+        line-height: 10.0vh;
+      }
+
+
+      footer {
+        top: 1200%;
+        left: 0%;
+        margin-top: 13rem;
+
+        width: 100%;
+        line-height: 6.0;
+      }
+
+
+      /*  Text  */
+      footer a {
+        font-size: 1.6vw;
+        letter-spacing: 0.3rem;
+      }
+
+
+      .ftrHeadings {
+        font-size: 2.1vw;
+        padding-bottom: 1.0rem;
+        letter-spacing: 0.48rem;
+
+        line-height: 6.0vh
+      }
+
+
+
+      /* Footer Rows */
+      .ftrMain {
+        margin-top: 7rem;
+        text-align: center;
+
+      }
+
+      .ftrMainItem {
+        padding: 0rem 0rem;
+      }
+
+
+
+
+      /* Footer legal */
+      .ftrLegal {
+        padding: 1.5rem 3.0rem;
+        line-height: 1.6rem;
+      }
+
+
+      .ftrLegalText {
+        line-height: 3.0vh;
+        width: 100%;
+      }
+
+
+      .ftrLegalText li {
+        margin: 0.02rem 1.0rem;
+        left: 75%;
+      }
+
+      /*Text*/
+      li.endName, li.endCopyright, p.ft-Desc {
+        font-size: 1.4vw;
+        letter-spacing: 0.32rem;
+      }
+
+
+
+      /*  Text Positions  */
+      li.endName {
+        margin: 1.6rem;
+        left: 7%;
+      }
+
+
+      li.endCopyright {
+        margin: 1.6rem;
+        left: 2%;
+      }
+
+      p.ft-Desc {
+        top: -12%;
+      }
+
+
+      /* Space between bottom Text */
+      .ftrLegalText li:nth-last-child(2) {
+        flex: 1;
+      }
+
+
+      .ftrMainItem.\34 {
+        margin-top: 24vh;
+        margin-bottom: 10vh;
+      }
+
+
+
+
+      /*  Enter Email Section   */
+      form {
+        top: 0%;
+        left: 5%;
+      }
+
+      input[type="email"] {
+        letter-spacing: 0.16rem;
+
+        border: 0;
+        padding: 0rem;
+        margin-top: 0.05rem;
+      }
+
+      input[type="submit"] {
+        border: 0;
+        padding: 1.5vw 1.5vw;
+        margin-top: 0.05rem;
+        letter-spacing: 0.08rem;
+      }
+
+
+    }
+
+
+
+
+
+
+    /**!                Tablets // Phones               !**/
+
+    @media (max-width: 600px) {
+
+      p.logo {
+        position: absolute;
+        left: 35%;
+
+        font-size: 4.0vw;
+        letter-spacing: 0.7rem;
+
+        margin: 6.0vw;
+        padding: 1rem 1.6rem;
+
+        margin-top: 2.5vh;
+      }
+
+
+
+      .nav-link {
+        font-size: 1.8vw;
+
+        padding: 5vw;
+        margin: 2vw;
+        margin-top: 1.5vh;
+      }
+
+
+
+      .nav-items {
+        height: 12vh;
+        width: 100%;
+      }
+
+      .nav-item.sec1 {
+        left: 3%;
+      }
+
+      .nav-item.sec2 {
+        right: 3%;
+      }
+
+
+      a.nav-link.\31 {
+        position: relative;
+        top: 0;
+        right: 282%;
+      }
+
+
+      a.nav-link.\32 {
+        position: relative;
+        top: 0;
+        left: 93%;
+      }
+
+
+      a.nav-link.\33 {
+        /*Story Link*/
+        visibility: hidden;
+      }
+
+      a.nav-link.\34 {
+        /*Sunglass Link*/
+        visibility: hidden;
+      }
+
+
+
+      .scrolling-active a.logo {
+        top: 2.5%;
+        left: 4%;
+
+        height: 4vw;
+        width: auto;
+      }
+
+
+
+      /**              Home - Section 1                 **/
+
+      .landingWatch-image {
+        top: 8%;
+        left: 0%;
+
+        height: 120vh;
+        width: 100vw;
+
+        border-bottom: 37rem solid black;
+      }
+
+
+
+      h1.opener-title-1 {
+        position: absolute;
+
+        font-size: 5.3vw;
+        top: 62%;
+        left: 17%;
+
+        text-shadow: 2.5px 0px 0px #595959;
+      }
+
+
+      p.opener-desc {
+        position: absolute;
+        top: 70%;
+        left: 24%;
+
+        font-size: 2.75vw;
+        letter-spacing: 0.5rem;
+        letter-spacing: 100;
+        line-height: 3.7rem;
+
+        text-shadow: 2.5px 0px 0px #595959;
+      }
+
+
+
+      .home-btn-link {
+        position: absolute;
+        top: 90%;
+        left: 30%;
+
+        font-size: 1.8vw;
+        letter-spacing: 0.5rem;
+        border-radius: 1.9rem;
+        padding: 1.2rem 1.6rem;
+
+        width: 40%;
+      }
+
+
+
+
+
+
+      /***  	      	bestSeller Scroll Section - 2 		      ***/
+
+
+      /*	header for bestSeller Section */
+      .bestSellHeader {
+        top: 137%;
+        left: 11.25%;
+        width: 80%;
+
+        margin: 0;
+        border-bottom: 3px solid black;
+        border-top: 60px solid white;
+      }
+
+
+      /*  Title */
+      h1#bestSellerTitle {
+        position: relative;
+        left: 19%;
+
+        font-size: 3.9vw;
+        word-spacing: 0.19vw;
+        letter-spacing: 0.8vw;
+
+        margin-top: 2vw;
+      }
+
+
+
+      /*Arrow*/
+      p#arrowIcons {
+        right: .25%;
+        visibility: hidden;
+      }
+
+
+
+      /* Product Box Container */
+      .bestSellerCont {
+        margin-top: 7rem;
+
+        top: 155%;
+        left: 5%;
+
+        min-width: 90%;
+
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+
+      /*  Product Boxes */
+      .product-box {
+        left: 1%;
+
+        height: 76vh;
+        min-width: 38%;
+        margin: 0;
+
+        border-radius: 2rem;
+      }
+
+
+
+
+      .prod-btn-link {
+        left: 0%;
+
+        height: 46vh;
+        width: 100%;
+
+        padding: 0rem;
+      }
+
+
+      .product-image {
+        background-position-x: 45%;
+
+        height: 46vh;
+        width: 100%;
+
+        border: 3px solid black;
+      }
+
+
+      .product-image:hover {
+        transform: scale(0.93);
+      }
+
+
+
+
+
+      /*black box text */
+      .pDetail {
+        bottom: 19%;
+        width: 100%;
+
+        padding: 1.0vw;
+      }
+
+
+      p.headingName {
+        font-size: 1.1vw;
+        letter-spacing: 0.6vw;
+      }
+
+
+      p.prodColor {
+        font-size: 2.3vw;
+        letter-spacing: 1.2vw;
+      }
+
+      p.prodPrice {
+        font-size: 2.1vw;
+        letter-spacing: 0.25rem;
+        margin-top: 2.4vw;
+        margin-bottom: 2.8vw;
+      }
+
+
+      /*Product Image 2,3,6 - Centered*/
+      .product-image.\32 {
+        background-position-x: 45%;
+      }
+
+      .product-image.\33 {
+        background-position-x: 45%;
+      }
+
+
+
+      .product-image.\36 {
+        background-position-x: 45%;
+      }
+
+
+
+
+      /**    for cinematicClass   -  Modal (Shared)          **/
+
+      .modal {
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        padding-top: 100px;
+        z-index: 1000;
+      }
+
+
+      div#currentImg {
+        background-position-x: 85%;
+        left: -10%;
+
+        height: 87vh;
+        width: 75%;
+      }
+
+
+
+      #currentImg:hover {
+        transform: scale(0.98);
+      }
+
+
+      .modal-content {
+        margin: auto;
+        width: 80%;
+        max-width: 43.75rem;
+      }
+
+
+
+
+
+      /***                           cinematic1 (naturistAqua - Promo1) - Section3                                   ***/
+
+      h5#naturistAqua {
+        top: 382%;
+        left: 24%;
+        line-height: 3.0rem;
+      }
+
+
+      .cinematic-image {
+        background-position: right;
+        position: absolute;
+        top: 392%;
+        left: 0%;
+
+        height: 95vh;
+        width: 100vw;
+
+        z-index: 1;
+      }
+
+
+
+      .cinematic-image::after {
+        position: absolute;
+        content: '';
+
+        background: url(../../material/cinematic.jpg);
+        background-position: left;
+        background-size: cover;
+
+        top: 105%;
+        left: 43.5%;
+
+        height: 110vh;
+        width: 48vw;
+      }
+
+
+      a.cineImg-btn {
+        left: 0%;
+        width: 100%;
+      }
+
+
+
+
+      /*    Cinematic Text Classes   */
+      .cinematic-text-container {
+        line-height: 3.0rem;
+        z-index: 1;
+      }
+
+      .cinematic-text-container.\31 {
+        top: 508.5%;
+        left: 14%;
+      }
+
+
+      .cinematic-text-container.\32 {
+        top: 559.5%;
+        left: 13%;
+      }
+
+
+
+      p.cinematic_heading {
+        font-size: 2.1rem;
+        letter-spacing: 0.4rem;
+      }
+
+
+      p.cineType {
+        font-size: 0.95rem;
+        letter-spacing: 0.5rem;
+      }
+
+
+      p.cinePrice {
+        font-size: 1.7rem;
+        line-height: 9.0rem;
+        letter-spacing: 0.3rem;
+      }
+
+
+
+      a.cine-btn-link {
+        left: -.75%;
+        width: 30%;
+
+        font-size: 0.9rem;
+        letter-spacing: 0.4rem;
+
+        border: 1.5px solid black;
+        padding: 1.4rem 1.6rem;
+      }
+
+
+      p.cinePrice.\31 {
+        left: -2%;
+      }
+
+
+      a.cine-btn-link.\31 {
+        left: -2%
+      }
+
+
+
+      p.cinePrice.\32 {
+        left: -3%;
+      }
+
+
+      a.cine-btn-link.\32 {
+        left: -2.75%
+      }
+
+
+
+
+
+      /***                                 sunglassLuxLens -  Section4                                      ***/
+
+      /*        Background IMG         */
+      .sunglassBlack-image {
+        background-position-y: 90%;
+
+        top: 625%;
+        left: 0%;
+
+        height: 130vh;
+        width: 100vw;
+      }
+
+
+
+      /*  Text  */
+      .sunHeaderCont {
+        position: absolute;
+        top: 637%;
+        left: 6%;
+      }
+
+      .sunLuxuryHeading {
+        font-size: 4.8vw;
+        letter-spacing: 2.0rem;
+
+        line-height: 5.7rem;
+      }
+
+
+      .sunLuxuryHeading.\31 {
+        font-size: 2.5vw;
+        line-height: 7.0vw;
+      }
+
+
+      .sunLuxuryHeading.\32 {
+        font-size: 5.8vw;
+        line-height: 10.0vw;
+        letter-spacing: 1.8rem;
+      }
+
+
+      p#sunglassDesc {
+        position: absolute;
+        top: 658%;
+        left: 12.25%;
+
+        font-size: 2.1vw;
+        line-height: 6.0vw;
+        letter-spacing: 0.58rem;
+      }
+
+      /*    Btn     */
+      a.discover-btn-link {
+        top: 730%;
+        left: 21.25%;
+
+        width: 60%;
+
+        font-size: 3.0vw;
+        letter-spacing: 0.5rem;
+
+        border: 1.5px solid black;
+        padding: 1.3vw 1.6vw;
+      }
+
+
+
+
+
+      /***                        cinematic2 (tide - Promo2) - Section5                            ***/
+
+      /*Allows Section to be centered (ahref)*/
+
+      h5#Tide {
+        top: 768%;
+        left: 24%;
+        line-height: 3.0rem;
+      }
+
+      .cinematic2-image {
+        position: absolute;
+        top: 778%;
+        left: 0%;
+
+        height: 100vh;
+        width: 100vw;
+      }
+
+
+      .cinematic2-image::after {
+        position: absolute;
+        content: '';
+
+        background: url(../../material/cinematic2.jpg);
+        background-size: cover;
+        background-position-x: 80%;
+
+        top: 101%;
+        left: 5%;
+
+        height: 130vh;
+        width: 80vw;
+      }
+
+
+
+
+
+      /*    Text for 3rd Product  */
+      .cinematic-text-container.\33 {
+        top: 909%;
+        left: 46vw;
+
+      }
+
+      p.cinematic_heading.\33 {
+        font-size: 1.9rem;
+        letter-spacing: 1.4rem;
+      }
+
+
+      p.cineType.\33 {
+        font-size: 0.87rem;
+        letter-spacing: 0.5rem;
+
+      }
+
+      p.cinePrice.\33 {
+        left: -1%;
+      }
+
+
+
+
+
+      /*    Text for 4th Product  */
+      .cinematic-text-container.\34 {
+        top: 961%;
+        left: 44.75vw;
+      }
+
+
+      p.cinematic_heading.\34 {
+        font-size: 1.8rem;
+        letter-spacing: 1.4rem;
+
+        top: 524%;
+        left: 75.5%;
+      }
+
+
+      p.cineType.\34 {
+        font-size: 0.9rem;
+        letter-spacing: 0.55rem;
+      }
+
+
+      p.cinePrice.\34 {
+        left: -2.75%;
+      }
+
+
+
+
+      /*   Btn    */
+      a.cine-btn-link.\34 {
+        left: -2.25%;
+      }
+
+
+
+
+      /***                               journalBox - Section 6                                 ***/
+
+      /*  Header  */
+      h1.journalTitle {
+        position: absolute;
+        top: 1025%;
+        left: 8%;
+
+        font-size: 5.4vw;
+        letter-spacing: 3.5vw;
+        text-decoration-line: none;
+      }
+
+
+      /*Journal Flex Box*/
+      .journalBox {
+        display: flex;
+        flex-direction: column;
+
+        top: 1015%;
+        left: 0%;
+
+        min-width: 20rem;
+        width: 100vw;
+        margin-top: 15rem;
+      }
+
+
+      .journalBox>* {
+        flex: 1 1 50%;
+        min-width: 5ch;
+      }
+
+      .journalBox>.col.\31 {
+        flex: 1 1 100%;
+      }
+
+
+
+      /*Column Boxes*/
+      .col {
+        min-height: 35.0rem;
+
+        border: 3px solid black;
+        border-bottom: 140px solid black;
+      }
+
+
+      .col:hover {
+        transform: scale(0.90);
+      }
+
+
+
+      /*    Journal Images    */
+      .col.\31 {
+        background-position-y: 30%;
+      }
+
+
+      .col.\32 {
+        background-position-y: 40%;
+      }
+
+
+      .col.\33 {
+        background-position-y: 25%;
+      }
+
+
+
+
+      /*  JournalText */
+      .storyHeading {
+        font-size: 4.5vw;
+        letter-spacing: 0.4rem;
+      }
+
+      .storyDesc {
+        font-size: 1.37vw;
+      }
+
+
+      a.story-btn-link {
+        left: 0%;
+
+        height: 180%;
+        width: 100%;
+
+        padding: 10rem;
+      }
+
+
+
+
+      /*     1st Story       */
+      .storyHeading.\31 {
+        left: 31%;
+      }
+
+      .storyDesc.\31 {
+        top: 125%;
+        left: 6.25%;
+      }
+
+
+
+      /*     2nd Story       */
+      .storyHeading.\32 {
+        top: 108%;
+        left: 34%;
+      }
+
+      .storyDesc.\32 {
+        top: 127.5%;
+        left: 17%;
+      }
+
+
+
+
+      /*     3rd Story       */
+      .storyHeading.\33 {
+        top: 108%;
+        left: 21%;
+      }
+
+      .storyDesc.\33 {
+        top: 127.5%;
+        left: 11.5%;
+      }
+
+
+
+
+
+
+      /***                                                       Footer - Section7                                                           ***/
+
+      ul {
+        padding-left: 0;
+      }
+
+
+      footer {
+        top: 1225%;
+        left: 0%;
+        margin-top: 13rem;
+
+        width: 100%;
+        line-height: 6.0;
+      }
+
+
+      /*  Text  */
+      footer a {
+        font-size: 2.6vw;
+        letter-spacing: 0.3rem;
+      }
+
+
+      .ftrHeadings {
+        font-size: 3.5vw;
+        padding-bottom: 1.0rem;
+        letter-spacing: 0.48rem;
+      }
+
+
+
+      /* Footer Rows */
+      .ftrMain {
+        padding: 2.0rem 3.0rem;
+      }
+
+
+      /* Footer legal */
+      .ftrLegal {
+        padding: 1.5rem 3.0rem;
+        line-height: 1.6rem;
+      }
+
+
+      .ftrLegalText {
+        width: 100%;
+      }
+
+
+      .ftrLegalText li {
+        margin: 0.02rem 1.0rem;
+        left: 75%;
+      }
+
+
+
+
+      /*              Text                 */
+      li.endName, li.endCopyright, p.ft-Desc {
+        font-size: 1.7vw;
+        letter-spacing: 0.32rem;
+      }
+
+
+      /*  Text Positions  */
+      li.endName {
+        margin: 1.6rem;
+        left: 7%;
+      }
+
+
+      li.endCopyright {
+        margin: 1.6rem;
+        left: 2%;
+      }
+
+      p.ft-Desc {
+        top: -12%;
+      }
+
+
+
+
+      /* Space between bottom Text */
+      .ftrLegalText li:nth-last-child(2) {
+        flex: 1;
+      }
+
+
+
+      .ftrMainItem {
+        padding: 0rem;
+        min-width: 0rem;
+
+        text-align: center;
+        line-height: 4.0rem;
+      }
+
+
+
+      .ftrMainItem.\31 {
+        position: absolute;
+        top: 3%;
+        left: 38%;
+      }
+
+
+      .ftrMainItem.\32 {
+        position: absolute;
+        top: 26.5%;
+        left: 36%;
+      }
+
+
+      .ftrMainItem.\33 {
+        position: absolute;
+        top: 51%;
+        left: 26vw;
+      }
+
+
+      .ftrMainItem.\34 {
+        /*1 Element must stay Relative to avoid the Section from Breaking*/
+        position: relative;
+        left: 26vw;
+
+        margin-top: 105rem;
+        margin-bottom: 5rem;
+      }
+
+
+
+
+
+      /*  Enter Email Section   */
+      form {
+        top: 0%;
+        left: 4%;
+        width: 38vw;
+      }
+
+      input[type="email"] {
+        letter-spacing: 0.16rem;
+
+        border: 0;
+        padding: 0rem;
+        margin-top: 0.05rem;
+      }
+
+      input[type="submit"] {
+        border: 0;
+        padding: 1.5vw 1.5vw;
+        margin-top: 0.05rem;
+        letter-spacing: 0.08rem;
+      }
+
+
+
+
+
+    }

@@ -1,0 +1,3537 @@
+*{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  body{
+    overflow-x: hidden;
+    /*font-size: 62.5%; isn't used. Only (home) uses 62.5%*/ 
+  } 
+
+
+
+/*                Grid Layout              */
+
+.grid.layout{
+    /*background-color: palevioletred;*/
+    position: relative;
+
+    display: grid;
+    grid-template-rows: 0.36fr repeat(3, 1.0fr) 0.6fr 0.4fr 0.45fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.7rem;
+
+    grid-template-areas:
+      "land land land land"
+
+      "sidebar mauru mauru mauru"
+      "sidebar sephur sephur sephur"
+      "sidebar numous numous numous"
+      "founder founder founder founder"
+
+      "location location location location"
+      "footer footer footer footer";
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+
+        /*                Grid Areas              */
+      .landingPage{
+        /*background-color: #D291BC;*/
+        grid-area: land;
+        position: relative;
+      }
+
+    
+      .sideBar{
+        /*background-color: aqua;*/
+        grid-area: sidebar;
+        position: sticky; 
+        top: 12%;
+
+        align-items: center;
+
+        height: 100vh;
+        overflow-x: auto;
+
+        margin-left: 1.0rem;
+        width: 95%;
+
+      }
+
+
+
+      /*    watchSections   */
+      .watchSect.\31{
+        grid-area: mauru;
+      }
+
+      .watchSect.\32{
+        grid-area: sephur;
+      }
+
+      .watchSect.\33{
+        grid-area: numous;
+      }
+
+
+
+      .founderSec{
+        /*background-color: #E0BBE4;*/
+        grid-area: founder;
+      }
+
+
+
+      .locationBox{ 
+        grid-area: location;
+      }
+
+
+      .locateColmGrid{
+        /*background-color: cadetblue;*/
+        grid-area: location;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        position: relative;
+        left: 13%;
+        max-width: 70rem;   /*1200px*/
+      }
+
+
+
+
+/*!                  Modal Class                      !*/
+  .modal{
+    position: fixed; 
+    display: none; 
+    overflow: auto; 
+    overflow-x: hidden; 
+
+    padding-top: 5.3em;  /*58px*/
+    height: 100%;
+    width: 100%; 
+    z-index: 2000; 
+
+
+    background-color: rgb(0,0,0); /* background shadow */    
+    background-color: rgba(0,0,0,0.4);
+  }
+
+
+  .modal-header {
+    background-color: black;
+    color: white;
+    padding: 0.125rem 1rem;  /*2px 16px*/
+    height: 2.5rem;  /*40px*/
+
+  }
+
+
+  .popupHeader{
+    position: relative;
+    top: 20%;
+    left: 14%;
+
+    font-size: 1.125rem;  /*18px*/
+    letter-spacing: 0.3rem;
+
+  }
+
+
+  .modal-content {
+    position: relative;
+    float: right;
+    margin: auto;
+
+    background-color: #fefefe;
+    padding: 0rem;
+    width: 40%;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }   
+
+
+
+
+  /* The Close Button */
+  .close {
+    float: right;
+    font-weight: bold;
+    color: white;
+    font-size: 1.75rem;  /*28px*/
+  }
+
+
+  .close:hover,
+  .close:focus {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+  }
+
+
+
+  /* Animations */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+ 
+
+
+
+/*          Cart Section   - separate Modules (Modal 1)                    */
+
+/*  Cart Boxes within Modal 1 */
+    .cartCount{
+      position: fixed;
+      text-align: center;
+
+      top: 2.5%;
+      left: 94.5%;
+
+      height: 1.563rem; /*25px*/
+      width: 1.563rem;
+      border-radius: 50%;
+
+
+
+      font-size: 0.7rem;
+      line-height: 1.563rem;
+      z-index: 1001;
+
+
+      font-weight: bold;
+      color: #fff;
+      background: black;
+    }
+
+
+
+    .scrolling-active .cartCount{
+      color: black;
+      background: white;
+      z-index: 1001;
+    }
+
+
+    /*        Product Boxes        */
+    .cartContainer{
+      position: relative;
+      display: grid;
+      justify-content: center;
+      justify-content: space-evenly;
+
+      top: 10%;
+    }
+
+
+    .cartBox{
+      /*background-color: red;*/
+      position: relative;
+      display: flex;
+      text-align: center;
+
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      left: -6%;
+
+      min-height: 10rem;   
+      min-width: 28rem;   /*250px*/
+      padding: 1.25rem; /*20px*/
+    }
+
+
+
+    .cartBox:after {        /*Creates pseudo line underneath Product Boxes */
+      position: absolute; 
+      content: ""; 
+      border-bottom: 2px solid black; 
+
+      left: -11.8%;
+      min-height: 20%;
+      width: 300%; 
+      margin-bottom: -2.5rem;     /*40px*/
+
+      opacity: 25%;
+    }
+
+
+
+
+    
+
+    /*  Product Boxes  -  Images   */
+   .cartProd-image{
+      position: relative;
+      background: url("../../watchDes/watchPage/R1/lava.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover; 
+      background-position: center;
+  
+      height: 18vh;
+      width: 30%;
+      left: -6%;
+      top: -6%;
+
+    }
+
+
+  /*         Text         */
+    .textBox{
+      position: relative;
+      top: -14%;
+      left: 0%;
+
+      font-size: 0.75rem;         /*12px*/
+      letter-spacing: 0.094rem;   /*1.5px*/
+      font-family: century;
+      text-align: left;
+    }
+  
+
+    .prodHeader{
+      font-size: 1.08rem;        /*17.28px*/
+      letter-spacing: 0.25rem;   /*4px*/
+      font-weight: 400;
+
+      color: black;
+      font-family: garamond;
+      font-weight: bold;
+    }
+
+
+
+
+    /*  Product Box - Buttons   */
+
+    .deleteTest{                /*Subtract 1 Item Button*/
+      cursor: pointer;
+      position: absolute;
+      top: 39%;
+      left: 69%;
+
+      font-size: 1.3rem;
+      line-height: 0.6rem;
+      width: 1.313rem;          /*21px*/
+      height: 1.125rem;         /*18px*/
+
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+
+    .addTest{                   /*Add 1 Item Button*/
+      cursor: pointer;
+      position: absolute;
+      top: 39%;
+      left: 77%;
+
+      line-height: 1.0rem;
+      font-size: 1.0rem;
+      width: 1.313rem;  /*21px*/
+      height: 1.125rem; /*18px*/
+
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
+
+
+    .deleteProd{                /*Deletes Entire Product Button*/
+      cursor: pointer;
+      display: flex;
+      position: absolute;
+
+      top: 22%;
+      left: 113%;
+
+      font-size: 1.063rem;       /*17px*/
+      width: 1.875rem;           /*30px*/
+      height: 1.563rem;          /*25px*/
+
+
+      border: transparent;
+      background-color: white;
+      align-items: center;
+      justify-content: center;
+
+      opacity: 35%;
+      transition: 1.3s;
+    }
+
+  
+
+    .deleteProd:hover{  
+      border: 2px solid black;
+      opacity: 100%;
+      transition: 0.4s;
+    }
+
+
+
+
+
+    /*    Cart Total Box (1st/Top Box)      */
+    .cartProd-image.\-1{
+      background: url("../../material/checkout4.jpg");
+      background-repeat: no-repeat;
+      background-size: cover; 
+      background-position: center;
+
+      top: -8%;
+      left: -6%;
+      height: 13vh;
+      width: 35%;
+    }
+
+
+
+
+    /*  Cart Box (top) - Text   */
+    .textBox.\-1{
+      font-size: 0.75rem;             /*12px*/
+      top: -15%;
+      left: -4.5%;
+      letter-spacing: 0.2rem;
+    }
+
+
+    p.prodHeader.-\31{
+      font-size: 1.0rem;              /*16px*/
+      letter-spacing: 0.4rem;
+    }
+
+
+
+    /*  Cart Box (top) - Buttons   */
+    .deleteTest.\-1{
+      position: absolute;
+      top: 75.5%;
+      left: 32%;
+
+      height: 1.875rem;               /*30px*/
+      width: 7.5rem;                  /*120px*/
+
+
+      font-size: 0.8rem;
+      line-height: 0rem;
+      letter-spacing: 0.05rem;
+
+      font-family: century;
+      text-align: center;
+
+      color: black;
+      border-radius: 0.5px solid black;
+      background-color: transparent;
+      
+
+      opacity: 60%;
+    }
+
+
+    .deleteTest.\-1:hover{
+      opacity: 100%;
+      transition: 0.5s;
+
+    }
+
+
+    .addTest.\-1{
+      position: static;
+      visibility: hidden;
+    }
+
+    
+
+
+
+                     /*                    Product Desc Section   - separate Module (Modal 2)                          */
+
+
+/*!                 productDesc   -    Modal2           !*/
+
+  /*Modal 2 Styling (prodDesc)*/
+  .modal.\32{
+    display: none; 
+    position: fixed;
+    overflow: auto; 
+    overflow-x: hidden; 
+    
+
+    width: 100.25%; 
+    height: 100%; 
+    padding-top: 5.313;           /*85px*/
+
+    z-index: 1; 
+  }
+
+
+  .modal-header.\32{
+    position: relative;
+    right: 0.01%;
+
+    background-color: black;
+    color: white;
+    height: 2.5rem;               /*40px*/
+  }
+
+  .popupHeader.\32{
+    position: relative;
+
+    left: 19%;
+    top: 20%;
+    font-size: 1.125rem;          /*18px*/
+  }
+
+  .modal-content.\32 {
+    position: relative;
+    margin: auto;
+
+    
+    background-color: #fefefe;
+    border: 1px solid #888;
+
+    height: 100%;
+    width: 100%;
+    padding: 0rem;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+
+
+
+  /* The Close Button */
+  .close.\32 {
+    float: right;
+    font-weight: bold;
+    color: white;
+    font-size: 1.75rem;           /*28px*/
+  }
+
+  .close.\32:hover,
+  .close.\32:focus {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+  }
+
+
+
+  
+
+/*!     Product Decription Module       !*/   
+
+  /*Grid Area for Product Desc - Separate Grid (unique)*/ 
+
+  .productBoxView{  
+    /*background-color: pink;*/
+
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 4.375rem repeat(2, 12.5rem) 9.375rem;  /*70px repeat(2, 200px) 150px*/
+
+    grid-template-areas:
+    "header header header header"
+    "focusProd focusProd smBox smBox"
+    "focusProd focusProd smBox smBox"
+    "btn btn btn btn";
+  }
+
+
+          /*  productDesc element setup */
+
+          .headerBox{
+            /*background-color: lavender;*/
+            grid-area: header;
+          }
+
+          .largeProdBox{
+            /*background-color: chocolate;*/
+            grid-area: focusProd;
+          }
+
+          .smallProdBox.Frame{
+            /*background-color: plum;*/
+            grid-area: smBox;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+
+          }
+
+
+          .btnAreaBox{
+            /*background-color: salmon;*/
+            grid-area: btn;
+          }
+  
+
+
+  /*              leftBox                 */
+  .focusProd-Image{
+    position: relative;
+
+    background: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+
+    height: 50vh;
+    width: 50%;
+    left: 40%;
+  }
+
+
+  /*productBox Header */
+  .headerTextWrap{
+    position: relative;
+    display: flex;
+    float: right;
+
+    top: 35%;
+    right: 16.85%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  h3.headerProdBox{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+
+    font-size: 2.188rem;                /*35px*/
+    letter-spacing: 0.75rem;            /*12px*/
+    font-weight: 100;
+  }
+
+
+
+  /*dot buttons - changes productSect*/
+  .dot {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background-color: #bbb;
+
+    height: 0.688rem;                   /*11px*/
+    width: 0.688rem;
+
+    margin: 0.313rem;                   /*5px*/
+    margin-top: 0.75rem;                /*12px*/
+    border-radius: 20%;
+
+    transition: 600ms;
+  }
+
+
+
+
+
+  /*        rightBox - product choices         */
+
+  .smallBox{
+    /*background-color: palegoldenrod;*/
+
+    position: relative;
+    display: flex;
+
+    top: 5%;
+    width: 22%;   
+    height: 43%;
+
+   
+    flex-wrap: wrap;
+    align-items: flex-end;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+
+  /*productBox Hidden Btn's*/
+  .smBtn{
+    cursor: pointer;
+    position: relative;
+
+    font-family: garamond;
+    text-transform: uppercase;
+    color: transparent;
+    background-color: transparent;
+
+    top: -94%;
+    height: 9.688rem;                   /*155px*/
+    width: 100%;
+
+    font-size: 0.75rem;                 /*12px;*/
+    letter-spacing: 0.625rem;           /*10px;*/
+    padding: 2.7rem;                    /*43.2px*/
+  }
+
+
+  .prodDescName{
+    position: relative;
+    top: -10%;
+    left: -18.25%;
+    line-height: 1.875rem;              /*30px*/
+
+    text-align: center;
+
+  }
+
+
+          /*        productImage Boxes      */
+          .smallBox-image{
+            position: relative;
+            background: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+
+            height: 20vh;
+            width: 80%;
+          }
+
+          .smallBox-image.\32{
+            background-image: url("../../watchDes/watchPage/R1/mblWhite.jpg");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+          }
+
+
+          .smallBox-image.\33{
+            background-image: url("../../watchDes/watchPage/R1/mblGoldBlk.jpg");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+          }
+
+
+          .smallBox-image.\34{
+            background-image: url("../../watchDes/watchPage/R1/lava.jpg");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+          }
+
+
+
+          .smallBox-image.\35{
+            background: url("../../watchDes/watchPage/R1/sand.jpg");
+
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+          }
+
+
+          .smallBox-image.\36{
+            position: relative;
+            background: url("../../watchDes/watchPage/R1/ocean.jpg");
+
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+  
+            height: 20vh;
+            width: 80%;
+          }
+
+
+          .smallBox-image.\37{
+            background-image: url("../../watchDes/watchPage/R1/whiteBlue.jpg");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+          }
+
+
+          .smallBox-image.\38{
+            background-image: url("../../watchDes/watchPage/R1/mblAqua.jpg");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+          }
+
+
+
+/*             bottomBox - productInfo                */
+    p.subHeaderView{
+      position: relative;
+      top: 5%;
+
+      font-size: 0.875rem;                    /*14px*/
+      letter-spacing: 0.438rem;               /*7px*/
+      font-weight: 100;
+
+
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+
+      opacity: 0.8;
+    }
+
+
+    p.priceProdView{
+      position: relative;
+      top: 23%;
+    
+      color: black;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      font-family:'Times New Roman', Times, serif;
+
+      font-size: 0.9rem;                       /*14.4px;*/
+      letter-spacing: 0.2rem;                 /*0.2px;*/
+      font-weight: 100;
+
+      opacity: 0.8;
+    }
+
+
+    .productViewBtn{
+      cursor: pointer;
+      position: relative;
+      float: right;
+
+      top: -5%;
+      right: 18%;
+      width: 20%;
+
+      font-size: 0.75rem;                      /*12px*/
+      letter-spacing: 0.25rem;                 /*4px*/
+      padding: 1.0rem;                        /*16px*/
+
+      text-transform: uppercase;
+      font-family: garamond;
+      background-color: black;
+      color: white;
+
+      z-index: 1001;
+    }
+
+
+
+
+
+/*            productDesc Info (bottom sect)          */
+
+    .productDescView{
+      /*background-color: tomato;*/
+      position: absolute;
+      top: 99%;
+      width: 100%;
+    }
+
+
+
+    /*       background     -   image        */
+    .descViewBG-image{
+      background: url("../../material/prodDesc.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover; 
+      background-position: center;
+
+      position: relative;
+
+      height: 113vh;
+      width: 100%;
+    }
+
+
+
+    /*         productDesc -   Text         */
+
+    .descTextWrap{
+      /*background-color: pink;*/
+      position: absolute;
+      top: 18%;
+      left: 30.5%;
+
+      text-align: center;
+      align-items: center;
+    }
+
+
+    h3.headerProdBox.\31{
+      position: relative;
+      font-size: 2.3rem;                    /*36.8px*/
+      letter-spacing: 0.7rem;               /*11.2px*/
+      line-height: 4.375rem;                /*70px*/
+      left: 0.75%;
+
+    }
+
+    p.subHeaderView.\32{
+      font-size: 0.7rem;                    /*11.2px*/
+      line-height: 0.9rem;                  /*14.4px*/
+      left: 1%;
+
+    }
+
+  
+    p.paragraphDesc{
+      position: relative;
+      top: 20%;
+
+      margin-top: 2.0rem;                     /*32px*/
+      font-size: 0.85rem;                     /*13.6px*/
+
+      letter-spacing: 0.313rem;               /*5px*/
+      line-height: 3.5rem;                    /*56px*/
+      text-transform: uppercase;
+    }
+
+
+
+              /*      product image     */
+              .focusProd-Image.\32{
+                background: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+
+                background-repeat: no-repeat;
+                background-size: cover; 
+                background-position: center;
+                background-position-x: 47%;
+
+                left: 33.25%;
+                height: 46vh;
+                width: 35%;
+                margin-top: 1.5rem;             /*24px*/
+              }
+
+
+
+
+/***                       navBar - section1                              ***/
+
+/*  nav logo  */
+  p.logo{
+    display: block;
+
+    position: fixed;
+    cursor: pointer;
+
+    height: 5%;
+    top: -1.25%;
+    left: 44%;
+
+
+    font-family: 'Times New Roman', Times, serif;
+    color: transparent; /*slighly lighter to blend with Li's */
+  
+    font-size: 1.5rem;
+    letter-spacing: 0.438rem;
+    font-weight: 600;
+  
+    margin: 1.563rem;
+    padding: 0.625rem 1.0rem;
+
+  
+    transition: 400ms;
+  }
+
+  /*  Text  */
+  .nav-items {
+    cursor: pointer;
+    background: transparent;
+    position: fixed;
+
+    overflow: hidden;
+    list-style-type: none;
+ 
+    width: 100%;
+    z-index: 500;
+
+    transition: 400ms;
+  }
+
+  .nav-item.sec1{
+    position: relative;
+    float: left;
+
+    left: 3%;
+  }
+
+  .nav-item.sec2{
+    position: relative;
+    float: right;
+
+    right: 2.5%;
+  }
+
+  .nav-link{
+    display: block;
+
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    margin: 1.563rem;
+    padding: 0.625rem 1.0rem;
+    letter-spacing: 0.156rem;
+  
+  
+    transition: 400ms;
+  }
+
+
+  /* Text Highlight */
+  .nav-link:hover:not(.active) {   /* Hover of Li Nav Bar*/
+    color: #c2592f;
+    text-decoration: none;
+    transition: 400ms;
+
+  }
+
+/*!                 Scroll Effects                  !*/
+
+/*      Nav Bar - Homescreen   */
+
+  /*Background*/
+.scrolling-active{ 
+    background: black;
+    /*box-shadow: 0 3px 1rem rgba(0,0,0,.1);*/
+    z-index: 1002;
+
+    transition: 800ms;
+  }
+
+
+  /* Text */
+  .scrolling-active .nav-link{
+    color: white;
+    z-index: 1001;
+
+  }
+
+  .scrolling-active p.logo{
+    color: white;
+
+  }
+
+
+  .scrolling-active .nav-link:hover{
+    color: #878686;
+    z-index: 1001;
+    transition: 600ms;
+
+  }
+
+
+
+/***                       landingPage - section2                              ***/
+  #watchLanding-Image{
+    background: url("../../material/watchLanding.jpg");
+    background-size: cover;
+    background-position: center;
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+  }
+
+
+
+  /*  Text  */
+  #landHeader{
+    position: absolute;
+    top: 10%;
+    left: 30.75%;
+
+    font-size: 6.0rem;
+    letter-spacing: 0.2rem;
+    font-weight: 100;
+
+    font-family: garamond;
+    color: black;
+    text-transform: uppercase;
+
+  }
+
+
+  #landDesc{
+    position: absolute;
+    top: 28%;
+    left: 38%;
+
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+    font-weight: 100;
+
+    text-shadow: 4px 1px 7px black;
+    color: #FDFEFF;
+    font-family: Alegreya SC;
+
+    opacity: 0.8;
+    text-transform: uppercase;
+    line-height: 3.7rem;
+
+  }
+
+
+
+
+  a.landingBtn{
+    position: absolute;
+    top: 55%;
+    left: 38%;
+
+    font-size: 1.4rem;
+    letter-spacing: 0.3rem;
+    font-weight: 100;
+
+    color: transparent;
+    text-transform: uppercase;
+    font-family: Alegreya SC;
+   
+
+    border: 2px solid transparent;
+    text-decoration: none;
+    padding: 6.0rem;
+
+  }
+
+
+
+
+/***                       sideBar - section3                              ***/
+  /* .sideBar class is in grid section
+  .sideBar{
+
+  }*/
+
+
+  h1.sidebarTitle{
+    font-weight: 100;
+    color: #000;
+    margin: 1.5rem;
+  }
+
+
+  .sideHeaderBtn {
+    text-align: left;
+    cursor: pointer;
+    margin: 0.2rem;
+    width: 80%;
+
+    font-size: 0.85rem;
+    letter-spacing: 0.3rem;
+    font-family: garamond;
+    text-transform: uppercase;
+
+    background: inherit;
+    border: none;
+    outline: none;
+    line-height: 4rem;
+
+
+    transition: all 0.5s linear;
+  }
+
+  
+  .sideLinks{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+
+    color: rgba(0,0,0,0.75);
+
+    max-height: 0;
+    margin: 0 1rem;
+    margin-top: -0.9rem;
+
+    padding-left: 1.5rem;
+    line-height: 1.4rem;
+
+
+    transition: max-height 0.45s ease-in-out;
+  }
+
+  /* sideLink Word  */
+  a.btn-link{
+    font-size: 0.68rem;
+    letter-spacing: 0.3rem;
+    line-height: 1.2rem;
+    font-weight: 100;
+  
+    font-family: century;
+    color: #808080;
+   
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+
+
+  /*     sideBar link btns    */
+  .sideHeaderBtn:after {
+    content: "+";
+    color: black;
+    font-size: 1.3rem;
+    font-family: garamond;
+    float: right;
+
+    transition: all 0.001s linear;
+  }
+
+  .sideHeaderBtn.is-open:after {
+    transform: rotate(45deg);
+  }
+
+  .sideHeaderBtn:hover, .sideHeaderBtn.is-open {
+    color: #000;
+    font-weight: bold;
+    transition: all 0.8s ease-out;
+  }
+
+  .sideHeaderBtn.\31{
+    margin-top: 2.6rem;
+
+  }
+
+
+
+
+/***                       watchSections - section4                              ***/
+
+  .watchColumn{       /*creates columns for watches*/
+    /*background-color: pink;*/
+    display: grid;
+    justify-content: center;
+
+    grid-template-columns: repeat(auto-fit, 20rem);
+    grid-row-gap: 5.625rem;    /*90px*/
+
+  }
+
+
+  /*Headers*/
+  h5.watchType{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    font-size: 1.3rem;                /*20.8px*/
+    color: black;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+
+    border-bottom: 2px black solid;
+    margin-top: 3.5rem;
+    margin-bottom: 2.0rem;
+    line-height: 3.5rem;
+    letter-spacing: 0.35rem;
+
+    width: 100%;
+  }
+
+
+  h5.watchType.\31{
+    margin-top: 1.0rem;                /*16px*/
+  }
+
+
+
+  .container {
+    /*background: red;*/
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+  }
+
+
+  /*          Text for Product Boxes        */
+  .text{
+    text-align: center;
+    line-height: 1.4;
+  }
+
+
+  .title{
+    font-size: 0.57rem;                /*9.12px*/
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+  }
+
+  .color{
+    font-size: 1.68rem;                /*26.88px*/
+    letter-spacing: 0.3rem;
+
+    font-family: century;
+    text-transform: capitalize;
+    font-weight: 100;
+
+  }
+    
+  .price{
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size:  1.04rem;              /*16.64px*/
+    line-height: 5.1rem;              /*81px*/
+    letter-spacing: 0.25rem;          /*4px*/
+    font-weight: 100;
+  }
+
+
+
+
+
+  /*        Product Boxes        */
+  .product-image{
+    position: relative;
+    left: 10.5%;
+
+    height: 45vh;
+    width: 85%;
+  }
+
+
+  button.add{
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    
+    font-size: 0.688rem;                 /*11px*/
+    width: 50%;
+    letter-spacing: 0.3rem;
+    line-height: 0.375rem;               /*6px*/
+
+    color: white;
+    background-color: black;
+    padding: 1rem;
+    left: 1%;
+
+  }
+
+
+
+
+  button.descViewBtn{
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: Alegreya SC;
+    cursor: pointer;
+
+    border: 2px solid transparent;
+    text-decoration: none;
+
+    width: 100%;
+    height: 100%;
+
+
+
+  }
+
+
+/*    -      Product Images - Section1 (Lu Mauru)     -    */
+  .product-image.sec1.\31{
+    background: url("../../watchDes/watchPage/R1/wolfGray.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec1.\32{
+    background: url("../../watchDes/watchPage/R1/mblWhite.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec1.\33{
+    background: url("../../watchDes/watchPage/R1/mblGoldBlk.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec1.\34{
+    background: url("../../watchDes/watchPage/R1/lava.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+
+  }
+
+
+  .product-image.sec1.\35{
+    background: url("../../watchDes/watchPage/R1/sand.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec1.\36{
+    background: url("../../watchDes/watchPage/R1/ocean.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec1.\37{
+    background: url("../../watchDes/watchPage/R1/mblAqua.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec1.\38{
+    background: url("../../watchDes/watchPage/R1/whiteBlue.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  } 
+
+
+
+
+/* -       Product Images - Section2 (Sephur)       - */
+  .product-image.sec2{
+    left: 10%;
+  }
+
+  .product-image.sec2.\31{
+    background: url("../../watchDes/watchPage/R2/darkRose.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec2.\32{
+    background: url("../../watchDes/watchPage/R2/blkSilver.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec2.\33{
+    background: url("../../watchDes/watchPage/R2/roseGold.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec2.\34{
+    background: url("../../watchDes/watchPage/R2/darkLeather.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size: cover; 
+    background-position: center;
+
+  }
+
+
+  .product-image.sec2.\35{
+    background: url("../../watchDes/watchPage/R2/grnLeather.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec2.\36{
+    background: url("../../watchDes/watchPage/R2/roseBlk.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec2.\37{
+    background: url("../../watchDes/watchPage/R2/grnBlk.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec2.\38{
+    background: url("../../watchDes/watchPage/R2/tan.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+
+
+/* -            Product Images - Sec3 (Numous)           - */
+  .product-image.sec3{
+    left: 9.75%;
+
+  }
+
+
+  .product-image.sec3.\31{
+    background: url("../../watchDes/watchPage/R3/grayBlk.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec3.\32{
+    background: url("../../watchDes/watchPage/R3/mblRose.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec3.\33{
+    background: url("../../watchDes/watchPage/R3/silver.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec3.\34{
+    background: url("../../watchDes/watchPage/R3/aquaLeather.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec3.\35{
+    background: url("../../watchDes/watchPage/R3/blueBlk.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec3.\36{
+    background: url("../../watchDes/watchPage/R3/gold.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+  .product-image.sec3.\37{
+    background: url("../../watchDes/watchPage/R3/leather.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+  .product-image.sec3.\38{
+    background: url("../../watchDes/watchPage/R3/aquaBlk.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+
+
+
+
+
+/***                        founder - section5                              ***/
+
+  #founder-image{
+    position: relative;
+    background: url("../../material/founder.jpg");
+
+    background-size: cover;
+    object-fit: cover;
+    -o-object-fit: cover;
+    align-items: center;
+
+    height: 80%;
+    width: 80%;
+    left: 3.6%;
+
+    margin-top: 12.0rem;
+    transform : scale(0.8);
+  }
+
+
+  .founderNameWrap{
+    position: relative;
+    top: -64%;
+    left: 20.2%;
+
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+
+  #founderHeader{
+    font-family: garamond;
+  
+    font-size: 3.0rem;
+    letter-spacing: 0.2rem;
+    font-weight: 100;
+  }   
+
+
+
+  #workTitle{
+    position: relative;
+    left: 0.5%;
+    color: black;
+    text-transform: uppercase;
+    font-family: Alegreya SC;
+
+    opacity: 0.8;
+    font-size: 0.9rem;
+    font-weight: 100;
+
+    letter-spacing: 0.3rem;
+    line-height: 3.5rem;
+  }
+
+
+  #founderDesc{
+    position: relative;
+    top: -63%;
+    left: 20.4%;
+
+    color: black;
+    font-family: garamond;
+    opacity: 0.8;
+
+
+    font-size: 0.9rem;
+    letter-spacing: 1.0rem;
+    line-height: 3.5rem;
+
+
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+
+  .founderStory{
+    position: relative;
+    top: -61.75%;
+    left: 53%;
+
+    color: black;
+    font-family: garamond;
+    opacity: 0.8;
+
+
+    font-size: 0.9rem;
+    letter-spacing: 0.25rem;
+    line-height: 2.4rem;
+
+
+    font-weight: 100;
+    text-align: left;
+    text-transform: capitalize;
+  }
+
+  .founderStory.\32{
+    top: -57.75%;
+  }
+
+
+
+  a.founderBtn{
+    position: absolute;
+    top: 79.7%;
+    left: 61%;
+
+    font-family: garamond;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.4rem;
+    font-weight: 100;
+
+
+    text-decoration: none;
+    text-align: center;
+  
+
+    color: white;
+    background-color: black;
+    border: 1.5px solid black;
+
+    border-radius: 2.0rem;
+    padding: 0.9rem 1.6rem;
+    font-weight: 100;
+
+    width: 20%;
+  }
+
+
+
+/***                        Locations - section6                              ***/
+
+  /*
+  Located in Grid Section. This Selector controls the width. 
+  .locateColmGrid {
+
+  }
+  */
+
+
+  .locateColmGrid > * {
+    flex: 1 1 33%;
+    min-width: 40ch;
+  }
+
+
+  .titleSec{
+    position: relative;
+    left: 0.45%;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.4rem;
+    font-weight: 100;
+    letter-spacing: 0.5rem;
+
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+
+    margin-top: 6.0rem;
+    margin-bottom: 1.7rem;
+  }
+
+
+
+
+
+  /*                 Columns                  */
+  .colm{
+    /*background-color: turquoise;*/
+    cursor: pointer;
+    min-height: 28.125rem;    /*450px */
+    min-width: 17.5rem;   /*250px*/
+
+    border-bottom: 220px solid #FEFEFE;
+    outline: 3px solid #DCDCDC;
+  }
+
+  .colm:hover{     
+    transform: scale(0.85);
+    transition: 600ms;
+
+  }
+
+
+  .colm.\31{
+    position: relative;
+    background-position-y: 40%;
+
+    background: url("../../material/building1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+
+  .colm.\32{
+    position: relative;
+    background-position-y: 85%;
+
+    background: url("../../material/building2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+
+  .colm.\33{
+    position: relative;
+    background-position-y: 10%;
+
+    background: url("../../material/building3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+  /*                 href Link Buttons                  */
+  a.escape{
+    position: relative;
+    display: block;
+    top: -30%;
+    width: 100%;
+    height: 180%;
+    background-color: transparent;
+  
+  }
+
+
+
+
+  /*                 Text                  */
+  .location{
+    position: relative;
+    top: 106%;
+
+    font-family: garamond;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    font-weight: normal;
+    
+
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    
+    align-items: center;
+  }
+
+  .address{
+    position: relative;
+    top: 121%;
+
+    color: black;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    line-height: 1.8rem;
+
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+  }
+
+
+
+  /*    Button  Sec   */
+  .findLocat{
+    position: relative;
+    left: 0.8%;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+
+    color: #535353;
+    text-align: center;
+    margin-top: 3.0rem;
+  }
+
+
+
+  a.locateBtn{
+    position: absolute;
+
+    top: 90.3%;
+    left: 41.8%;
+
+
+    font-family: garamond;
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    font-weight: 100;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+
+
+    color: white;
+    background-color: orange;
+
+    border: 1.5px solid black;
+    border-radius: 2.0rem;
+    font-weight: 100;
+
+
+    padding: 0.9rem 1.6rem;
+    width: 17%;
+  }
+
+
+
+
+
+/***                        Footer - section7                              ***/
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+
+    footer {
+      position: absolute;
+      bottom: 0%;
+
+      width: 100%;
+      line-height: 6.0;
+
+      background-color: black;
+      color: #bbb;
+    }
+
+
+    /*  Text  */
+    footer a {
+      font-family: garamond;        
+      font-size: 0.9rem;                  /*16px*/
+      letter-spacing: 0.1rem;             /*1.6px*/
+
+      text-decoration: none;
+      color: #eee;
+      text-transform: capitalize;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    .ftrHeadings {
+      font-family: Alegreya SC;
+      text-transform: uppercase;
+      color: #fff;
+
+      font-size: 1.0rem;
+      padding-bottom: 0.625rem;
+      letter-spacing: 0.3rem;
+    }
+
+
+    .container {
+      flex: 1;
+    }
+
+    section.ftrMain{
+      font-weight: 100;
+      text-align: left;
+    }
+
+
+  /* Footer Rows */
+    .ftrMain {
+      padding: 1.25rem 1.875rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+  /* Footer legal */
+    .ftrLegal {
+      background-color: #141414;
+      padding: 0.938rem 1.875rem;
+      line-height: 1rem;
+    }
+
+
+    .ftrLegalText {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+   
+    .ftrLegalText li {
+      position: relative;
+      white-space: nowrap;
+      margin: 0.013rem 0.625rem;
+      left: 75%;
+    }
+
+
+    /*Text*/
+    li.endName, li.endCopyright, p.ft-Desc{
+      font-family: Alegreya SC;
+
+      font-size: 0.8rem;
+      text-transform: uppercase;
+
+      letter-spacing: 0.2rem;  
+      font-weight: 100;
+      text-align:  left;
+     }
+
+
+    /*  Text Positions  */
+    li.endName{
+      margin: 1rem;
+      left: 7%;
+    }
+
+
+    li.endCopyright{
+      margin: 1rem;
+      left: -7%;
+    }
+
+    p.ft-Desc{
+      position: relative;
+      top: -12%;
+
+    }
+
+
+  /*  Space between bottom Text */
+    .ftrLegalText li:nth-last-child(2) {
+      flex: 1;
+    }
+
+
+
+
+    .ftrMainItem {
+      padding: 1.25rem;
+      min-width: 12.5rem;
+    }
+
+  /*  Enter Email Section   */
+    form {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+
+      top: -2%;
+    } 
+
+    input[type="email"] {
+      font-family: Alegreya SC;
+      letter-spacing: 0.1rem;
+
+      border: 0;
+      padding: 0.625rem;
+      margin-top: 0.031rem;
+    }
+
+    input[type="submit"] {
+      cursor: pointer;
+      font-family: century;
+
+      background-color: #333333;
+      color: white;
+
+      border: 0;
+      padding: 0.625rem 0.938rem;
+      margin-top: 0.031rem;
+      letter-spacing: 0.05rem;
+    }
+
+
+
+
+  
+
+@media only screen and (min-width: 29.813rem /* 477px */) {
+      .ftrMain {
+        justify-content: space-evenly;
+      }
+
+}
+
+@media only screen and (min-width: 77.5rem /* 1240px */) {
+      .ftrMain {
+        justify-content: space-evenly;
+      }
+}
+
+
+
+
+
+
+/*****                                              Media Queries                                               *****/
+
+
+@media (max-width: 1250px){     /**!     Large Mobie Device Screens   !**/ 
+
+    /*            Grid Layout              */
+    .grid.layout{
+      /*background-color: palevioletred;*/
+      grid-template-rows: 0.3fr repeat(3, 1.0fr) 0.1fr 0.25fr 0.3fr;
+    }
+
+
+  /*                Grid Areas              */
+    .sideBar{
+      /*background-color: aqua;*/
+      grid-area: sidebar;
+      position: sticky; 
+
+      top: 12%;
+      height: 100vh;
+
+      width: 95%;
+      margin-left: 1.0rem;
+
+      align-items: center;
+      overflow-x: auto;
+    }
+
+
+    .locateColmGrid{
+      top: -30%;
+      left: 10%;
+
+      width: 80%;
+    }
+
+
+
+/*!           Modal Class            !*/
+  .modal-content {
+    top: -1%;
+    width: 60%;
+  }   
+
+ 
+/*  Cart Boxes within Modal 1 */
+    .cartBox:after {        
+      left: -7.2vw;
+      width: 320vw; 
+    }
+
+
+
+  /*  Product Boxes  -  Images   */
+   .cartProd-image{
+      height: 18vh;
+      width: 12.5vw;
+
+      top: 1.75vh;
+      left: -2.5vw;
+    }
+
+
+    .textBox{
+      left: -6%;
+      margin-left: 1.8vw;     /*Prevents image and textbox from squishing*/
+    }
+  
+
+
+    /*  Product Box - Buttons   */
+    .deleteTest{   
+      left: 76%;
+    }
+
+    .addTest{ 
+      left: 84%;
+    }
+
+    .deleteProd{ 
+      top: 21%;
+      left: 106%;
+    }
+
+
+
+    /*  Cart Box (top) - Text   */
+    .textBox.\-1{
+      margin-left: 0vw;
+    }
+
+
+
+/*!                 productDesc   -    Modal2           !*/
+
+  .modal-header.\32{      /*altered to make design look thinner*/
+    background-color: transparent;
+  }
+
+
+  /* The Close Button */
+  .close.\32 {   
+    cursor: pointer;       
+    color: black;
+    font-size: 2.0rem;  
+    margin-top: 1.0rem;
+
+  }
+
+  .close.\32:hover,
+  .close.\32:focus {
+    color: white;
+    background-color: black
+  }
+
+
+
+/*!     Product Decription Module       !*/   
+
+  .productBoxView{      /*Grid Area for Product Desc - Separate Grid (unique)*/ 
+    /*background-color: pink;*/
+    width: 99%;
+    left: 0%;
+
+    grid-template-columns: 0.5fr repeat(3, 1fr);
+  }
+
+
+  /*      leftBox          */
+  .focusProd-Image{
+    height: 45vh;
+    width: 40vw;
+
+    top: 6vh;
+    left: 5.5vw;   
+  }
+
+  /*productBox Header */
+  .headerTextWrap{
+    top: 32%;
+    right: 18.5vw;
+  }
+
+  h3.headerProdBox{
+    font-size: 3.3vw; /*35px*/
+  }
+
+  .prodDescName{
+    top: 25%;
+    left: -24.5%;
+  }
+
+
+          /*        productImage Boxes      */
+          .smallBox-image{
+            top: 0%;
+            height: 19vh;
+            width: 99%;
+          }
+
+
+          .smallBox-image.\36{
+            height: 21.5vh;
+            width: 80%;
+          }
+
+    .productViewBtn{
+      top: -10%;
+      right: 19.5%;
+      width: 25%;
+      padding: 0.75rem;  /*16px*/
+    }
+
+
+
+/*    productDesc Info (bottom sect)      */
+
+    /*  productDesc -   Text     */
+    .descTextWrap{
+      /*background-color: pink;*/
+      top: 10%;
+      left: 22vw;
+    }
+
+    h3.headerProdBox.\31{
+      left: 0%;
+    }
+
+    p.subHeaderView.\32{
+      left: 0%;
+    }
+
+  
+    p.paragraphDesc{
+      font-size: 1.3vw; 
+
+      top: 20%;
+      left: 0%;
+    }
+
+
+        /*      product image     */
+          .focusProd-Image.\32{
+            height: 45vh;
+            width: 30vw;
+            left: 25%;
+
+            margin-top: -2rem; 
+          }
+
+
+/***                       navBar - section1                              ***/
+
+/*  nav logo  */
+  p.logo {
+    font-size: 3.0vw; 
+
+    left: 40vw;
+    height: 5%;
+
+    margin: 2vw;
+    margin-top: 3.7vh;
+  }
+
+
+
+  /*  Text  */
+  .nav-items {
+    height: 12vh;
+  }
+
+  .nav-link{
+    font-size: 1.4vw;
+    margin: 3.2vw;
+
+    margin-top: 5.4vh;
+    padding: 0vw 0vw;
+  }
+
+
+  .cartCount {    /*count quantity bubble*/
+    top: 2vh;
+    height: 2.7vh;
+    width: 2.35vw;
+
+    font-size: 0.9rem;
+  }
+
+
+/***                       landingPage - section2                              ***/
+
+  /*  Text  */
+  #landHeader{
+    top: 15%;
+    left: 22.5%;
+
+    font-size: 8.5vw;
+  }
+
+
+  #landDesc{
+    top: 30%;
+    left: 30%;
+
+    font-size: 2.58vw;
+  }
+
+
+/***                       sideBar - section3                              ***/
+
+  .sideHeaderBtn {
+    font-size: 1.2vw;
+    width: 90%;
+  }
+
+
+  /* sideLink Word  */
+  a.btn-link{
+    font-size: 0.95vw;
+  }
+
+
+/***                        founder - section5                              ***/
+
+  #founder-image{
+    height: 100vh;
+    width: 40vw;
+    left: 4.5vw;
+
+    transform : scale(1);
+  }
+
+  .founderNameWrap{     /* Founder Header */
+    top: -87vh;
+    left: 24%;
+  }
+
+
+  #founderHeader{    
+    font-size: 4.2vw;
+  }   
+
+
+
+  #workTitle{
+    font-size: 1.25vw;
+    line-height: 2.5rem;
+  }
+
+
+  #founderDesc{         /* Founder Story */
+    top: -65%;
+    left: 18%;
+  }
+
+
+  .founderStory{      
+    top: -82vh;
+    left: 52vw;
+
+    font-size: 1.2vw;
+    letter-spacing: 0.2rem;
+  }
+
+  .founderStory.\32{
+    top: -78vh;  
+  }
+
+
+  div#founderBtn1 {
+    position: relative;
+    top: -35%;
+    left: 59%;
+  }
+
+
+  a.founderBtn{
+    top: 0%;
+    left: 0%;
+
+    font-size: 1.25vw;
+    width: 30%;
+  }
+
+
+/***                        Locations - section6                              ***/
+
+  .titleSec{
+    top: -30%;
+  }
+
+  /*    Button  Sec   */
+  .findLocat{
+    top: -23%;
+    margin-top: 0rem;
+  }
+
+  a.locateBtn{
+    top: 92.1%;
+    left: 32.8%;
+
+    width: 35%;
+  }
+
+
+
+}
+
+
+
+
+@media (max-width: 870px){
+
+
+/*            Grid Layout              */
+
+  .grid.layout{
+    /*background-color: palevioletred;*/
+    
+    grid-template-rows: 0.35fr repeat(3, 1.0fr) 0.56fr 0.9fr 0.57fr;
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-gap: 0rem;
+    grid-auto-columns: 0px;
+
+    grid-template-areas:
+      "land land land land"
+
+      "mauru mauru mauru mauru"
+      "sephur sephur sephur sephur"
+      "numous numous numous numous"
+
+      "founder founder founder founder"
+      "location location location location"
+      "footer footer footer footer";
+  }
+
+
+
+      /*      Grid Areas         */
+
+      /*    watchSections   */
+      .watchSect.\31{
+        grid-area: mauru;
+      }
+
+      .watchSect.\32{
+        grid-area: sephur;
+      }
+
+      .watchSect.\33{
+        grid-area: numous;
+      }
+
+
+      .locateColmGrid{
+        position: relative;
+        top: 52vh;
+        left: 11%;
+      }
+
+
+
+/*!      Modal Class       !*/
+
+  .modal-content {
+    width: 55vw;
+  }   
+
+
+  /* The Close Button */
+  .close {
+    cursor: pointer;
+    color: white;
+  }
+
+  .close:hover,
+  .close:focus {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+
+  }
+
+ 
+/*                    Cart Section   - separate Modules (Modal 1)                          */
+
+/*  Cart Boxes within Modal 1 */
+    .cartCount{
+      top: 2.5%;
+      left: 94.5%;
+
+      height: 1.563rem; /*25px*/
+      width: 1.563rem;
+
+      font-size: 0.7rem;
+      line-height: 1.563rem;
+     
+      border-radius: 50%;
+    }
+
+
+    /*        Product Boxes        */
+    .cartContainer{
+      top: 10%;
+    }
+
+
+    .cartBox{
+      left: -1vw;
+      min-width: 51vw;
+    }
+
+
+    .cartBox:after {        /*Creates pseudo line underneath Product Boxes */
+      left: 2.2%;
+      width: 139%;
+    }
+
+
+
+    .cartProd-image{
+      top: 2.2vh;
+      left: -2vw;
+
+      height: 19vh;
+      width: 24vw;
+    }
+
+    .textBox{
+      top: -23%;
+      left: -6vw;
+    }
+
+
+
+
+    /*  Product Box - Buttons   */
+    .deleteTest{    
+      top: 82%;
+      left: 44%;
+
+      font-size: 2.5vw;
+      width: 4.8vw;
+    }
+
+    .addTest{  
+      top: 82%;
+      left: 57%;
+
+      font-size: 1.7vw;
+      width: 4.8vw;
+      height: 1.125rem;
+    }
+
+    .deleteProd{ 
+      top: 20%;
+      left: 90%;
+
+      font-size: 1.0rem;
+      width: 2.261rem;
+      height: 1.9rem;
+    }
+
+  
+
+
+    /*    Cart Total Box (1st/Top Box)      */
+    .cartProd-image.\-1{
+      top: -8%;
+      left: -1vw;
+
+      height: 16vh;
+      width: 22vw;
+    }
+
+
+    .textBox.\-1{
+      left: -1vw;
+      font-size: 0.7rem;  
+    }
+
+    .deleteTest.\-1{
+      left: 45%;
+
+      font-size: 0.8rem;
+      width: 14.5vw;
+
+      line-height: 0rem;
+      letter-spacing: 0.05rem;
+
+      min-width: 16vw;
+    }
+
+
+
+/*                    Product Desc Section   - separate Module (Modal 2)                          */
+
+/*!                 productDesc   -    Modal2           !*/
+
+  .modal-header.\32{
+    background-color: transparent;
+  }
+
+
+  /* The Close Button */
+  .close.\32 {
+    cursor: pointer;       
+    color: black;
+  }
+
+  .close.\32:hover,
+  .close.\32:focus {
+    cursor: pointer;
+    color: white;
+  }
+
+
+  
+
+/*!     Product Decription Module       !*/   
+
+  /*Grid Area for Product Desc - Separate Grid (unique)*/ 
+
+  .productBoxView{  
+    /*background-color: pink;*/
+    left: 0%;
+    width: 100%;
+    
+    grid-template-rows: 4.375rem repeat(2, 12.5rem);  
+
+    grid-template-areas:
+    "header header header header"
+    "smBox smBox smBox smBox"
+    "smBox smBox smBox smBox";
+    
+  }
+
+          .largeProdBox{
+            /*background-color: chocolate;*/
+            grid-area: none;
+          }
+
+
+          .smallProdBox.Frame{
+            /*background-color: plum;*/
+            grid-area: smBox;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+
+            position: relative;
+            top: 11%;
+            left: 2%;
+          }
+
+
+          .btnAreaBox{
+            /*background-color: salmon;*/
+            grid-area: none;
+
+            position: absolute;
+            top: 238%;
+          }
+  
+
+  /*              leftBox                 */
+  .focusProd-Image{
+    left: 40%;
+
+    height: 50vh;
+    width: 50%;
+    visibility: hidden;
+  }
+
+
+  /*productBox Header */
+  .headerTextWrap{
+    top: 20%;
+  }
+
+
+  h3.headerProdBox{
+    top: 11%;
+    left: 37.75%;
+
+    font-size: 3.8vw;
+  }
+
+
+
+  /*        rightBox - product choices         */
+
+  .smallBox{
+    /*background-color: palegoldenrod;*/
+    top: 0%;
+
+    height: 52%;
+    width: 23%;   
+  }
+
+    
+  .prodDescName{
+    position: absolute;
+    top: -100%;
+    left: -51vw;
+
+    z-index: 10;
+  }
+
+
+          /*        productImage Boxes      */
+          .smallBox-image{      /* Can't make responsive*/
+            height: 27vh;
+            width: 21vw;
+          }
+
+          .smallBox-image.\36{
+            height: 27vh;
+            width: 21vw;
+          }
+
+
+/*             bottomBox - productInfo                */
+    p.subHeaderView {
+      position: absolute;
+      top: -737%;
+      left: 243%;
+
+      font-size: 1.6vw;
+      visibility: visible;
+    }
+
+
+
+    .productViewBtn{
+      top: 182%;
+      right: 60.5vw;
+      
+      width: 30vw;
+    }
+
+
+    p.priceProdView {
+      font-size: 2.4vw;
+    }
+
+
+
+    /*         productDesc -   Text         */
+    .descTextWrap{
+      /*background-color: pink;*/
+      top: 7%;
+      left: 14.5%;
+    }
+
+    
+    h3.headerProdBox.\31{
+      position: absolute;
+      left: 20.75vw;
+
+      font-size: 4.4vw;
+      line-height: 8.375rem;
+    }
+
+
+    p.subHeaderView.\32{
+      top: 205%;
+      left: 28vw;
+
+      font-size: 1.5vw;
+      visibility: hidden;
+    }
+
+
+  
+    p.paragraphDesc{
+      top: 1vh;
+      left: 7vw;
+
+
+      font-size: 0.6rem;
+      line-height: 4.5vw;
+
+      margin-top: 8rem;
+
+      text-align: left;
+      visibility: visible;
+    }
+
+
+              /*      product image     */
+              .focusProd-Image.\32{
+                position: absolute;
+                left: 23.25vw;
+
+                height: 41vh;
+                width: 29vw;
+
+                margin-top: 14.5rem;
+                visibility: visible;
+              }
+
+
+
+/***                       navBar - section1                              ***/
+
+/*  nav logo  */
+  p.logo{
+    top: 0.25%;
+    left: 40%;
+
+    height: 5%;
+
+    font-size: 3.8vw;
+    letter-spacing: 0.438rem;
+
+    margin: 2vw;
+    margin-top: 3.25vh;
+    padding: 0rem 0rem;
+  }
+
+
+  /*  Text  */
+  .nav-link{
+    font-size: 1.7vw;
+    margin: 1.25rem;
+
+    margin-top: 2.7rem;
+    padding: 0vw 0vw;
+  }
+
+
+/***                       landingPage - section2                              ***/
+
+  /*  Text  */
+  #landHeader{
+    top: 14vh;
+    left: 20%;
+
+    font-size: 9.25vw;
+  }
+
+
+  #landDesc{
+    top: 27vh;
+    left: 27%;
+
+    font-size: 3.0vw;
+  }
+
+
+  a.landingBtn{
+    top: 52%;
+    left: 22%;
+  }
+
+
+
+
+/***                       watchSections - section4                              ***/
+
+  .watchColumn{       /*creates columns for watches*/
+    /*background-color: pink;*/
+    grid-template-columns: repeat(auto-fit, 15rem);
+
+  }
+
+  .container {
+    /*background: red;*/
+    display: grid;
+
+    align-items: start;
+    justify-items: center;
+    justify-content: space-around;
+  }
+
+  .color{
+    font-size: 1.58rem;  
+  }
+    
+
+
+  .product-image{
+    left: 1vw;
+    height: 42vh;
+    width: 45vw;
+  }
+
+  .product-image.sec2{
+    left: 2.5%;
+  }
+
+  .product-image.sec3{
+    left: 3%;
+
+  }
+
+
+/***                        founder - section5                              ***/
+
+  #founder-image{
+    left: 14.5%;
+
+    height: 86vh;
+    width: 118vw;
+
+    margin-top: 10rem;
+    transform: scale(1);
+  }
+
+
+  .founderNameWrap{
+    top: 1%;
+    left: 0.2%;
+  }
+
+
+  #founderHeader{
+    font-size: 6.3vw;
+  }   
+
+
+
+  #workTitle{
+    left: 0%;
+    font-size: 1.9vw;
+  }
+
+
+
+
+  .founderStory{
+    position: relative;
+    top: 3.5%;
+    left: -1%;
+
+    font-size: 1.9vw;
+    text-align: center;
+  }
+
+
+  .founderStory.\32{
+    top: 7.5%;
+  }
+
+
+  div#founderBtn1 {
+    position: relative;
+    top: 15%;
+    left: 26%;
+  }
+
+
+  a.founderBtn{
+    top: 0%;
+    left: 1%;
+
+    font-size: 2.0vw;
+    width: 49%;
+  }
+
+
+
+
+/***                        Locations - section6                              ***/
+  .titleSec{
+    top: 52vh;
+
+    margin-top: 0rem;
+    margin-bottom: 1.7rem;
+  }
+  
+
+  /*    Button  Sec   */
+  .findLocat{
+    top: 63vh;
+    left: 1%;
+
+    font-size: 2.7vw;
+    margin-top: 0.0rem;
+  }
+
+
+
+
+  div#locateBtn1{
+    position: relative;
+    top: 70.3vh;
+    left: 30%;
+  }
+
+
+  a.locateBtn{
+    display: block;
+    top: 0%;
+    left: 0%;
+
+    font-size: 2.6vw;
+    width: 43%;
+  }
+
+
+
+}
+
+
+
+@media (max-width: 499px){
+  
+  /*            Grid Layout              */
+  .grid.layout{
+    /*background-color: palevioletred;*/
+    grid-template-rows: 0.3fr repeat(3, 1.0fr) 0.5fr 1.45fr 0.6fr;
+  }
+
+
+  /*   Grid Areas   */
+  .locateColmGrid{
+    left: 13%;
+  }
+
+
+
+
+/*!                  Modal Class                      !*/
+  .modal{
+    padding-top: 1.7rem;
+    width: 100%; 
+   
+    z-index: 1;
+  }
+
+  .modal-content {
+    top: -2.2%;
+    width: 100%;
+  }   
+
+
+   /* The Close Button */
+  .close {
+    position: absolute;
+    top: 12vh;
+    left: 91%;
+
+    color: black;
+    z-index: 20;
+  }
+
+
+ 
+/*          Cart Section   - separate Modules (Modal 1)                */
+
+    /*        Product Boxes        */
+
+    .cartContainer{
+      display: grid;
+      justify-content: center;
+      justify-content: space-evenly;
+    }
+
+
+    .cartBox{
+      /*background-color: red;*/
+      left: 10%;
+
+      min-width: 28rem;  
+      padding: 1.25rem; 
+    }
+
+
+    .cartBox:after {        /*Creates pseudo line underneath Product Boxes */
+      top: -1%;
+      left: -11.8%;
+
+      min-height: 20%;
+      width: 300%; 
+
+      margin-bottom: 0;
+    }
+
+
+
+    /*  Product Boxes  -  Images   */
+   .cartProd-image{
+      top: 15%;
+      left: -18%;
+
+      height: 21vh;
+      width: 59%;
+    }
+
+
+    /*  Text  */
+    .textBox{
+      top: -19%;
+      left: -29%;
+    }
+  
+
+
+    /*  Product Box - Buttons   */
+    .deleteTest{   
+      top: 84%;
+      left: 34%; 
+
+      font-size: 4.5vw;
+      width: 8.8vw;
+    }
+
+    .addTest{  
+      top: 84%;
+      left: 46%;
+
+      font-size: 3.2vw;
+
+      height: 1.125rem; 
+      width: 8.8vw;
+    }
+
+    .deleteProd{  
+      top: 26%;
+      left: 74%;
+
+      font-size: 1.063rem;  
+      width: 1.875rem; 
+      height: 1.563rem; 
+    }
+
+
+
+    /*    Cart Total Box (1st/Top Box)      */
+    .cartProd-image.\-1{
+      top: -8%;
+      left: -6%;
+
+      height: 13vh;
+      width: 35%;
+    }
+
+
+    /*  Cart Box (top) - Text   */
+    .textBox.\-1{
+      top: -15%;
+      left: -4.5%;
+
+      font-size: 0.75rem; 
+      letter-spacing: 0.2rem;
+    }
+
+
+    /*  Cart Box (top) - Buttons   */
+    .deleteTest.\-1{
+      top: 75.5%;
+      left: 32%;
+
+      width: 7.5rem; 
+    }
+
+  
+
+/***                       navBar - section1                              ***/
+
+/*  nav logo  */
+  p.logo{  
+    left: 37%;
+    font-size: 5.6vw;
+
+    margin: 0vw;
+    margin-top: 6vw;
+  }
+
+  /*  Text  */
+  .nav-items {
+    height: 19vw;
+  }
+
+
+  .nav-link{
+    font-size: 3.0vw;
+
+    margin: 4vw;
+    margin-top: 7.8vw;
+
+    padding: 0vw 0vw;
+  }
+
+
+  a.nav-link.\32{
+    visibility: hidden;
+  }
+
+
+  a.nav-link.\34 {
+    visibility: hidden;
+  }
+
+  
+/***                       landingPage - section2                              ***/
+ 
+  /*  Text  */
+  #landHeader{
+    top: 17%;
+    left: 7.75%;
+
+    font-size: 13.5vw;
+  }
+
+
+  #landDesc{
+    top: 31%;
+    left: 19%;
+
+    font-size: 4.3vw;
+    letter-spacing: 0.2rem;
+    line-height: 6.7vh;
+  }
+
+
+  a.landingBtn{
+    top: 58%;
+    left: 9vw;
+    
+    font-size: 1.4rem;
+    padding: 3rem;
+  }
+
+
+
+
+/***                       watchSections - section4                              ***/
+
+  .watchColumn{       /*creates columns for watches*/
+
+    /*background-color: pink;*/
+    grid-template-columns: repeat(auto-fit, 10.4rem);
+
+    justify-content: space-evenly;
+    justify-items: center;
+
+    max-width: 29.5rem; /*prevents cart from breaking product colm's*/
+  }
+
+
+  /*Headers*/
+  h5.watchType.\31{             /*check*/
+    margin-top: 1.0rem; /*16px*/
+  }
+
+
+  .container {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    display: grid;
+    justify-items: center;
+
+    width: 110%;
+  }
+
+
+  /*          Text for Product Boxes        */
+  .text{
+    text-align: center;
+    line-height: 1.4;
+  }
+
+
+
+  .color{
+    font-size: 1.5rem;   /*26.88px*/
+    letter-spacing: 0.2rem;
+  }
+
+
+
+  /*        Product Boxes        */
+  .product-image{
+    left: 1vw;
+    height: 40.5vh;
+    width: 79vw;
+  }
+
+
+  button.descViewBtn{               /* disables 2nd modal for mobile */
+    visibility: hidden;
+  }
+
+
+/* Product Images (adjustments) */
+  .product-image.sec2{
+    left: 2%;
+  }
+
+  .product-image.sec3{
+    left: 2%;
+
+  }
+
+
+
+/***                        founder - section5                              ***/
+
+  #founder-image{
+    left: 1vw;
+
+    margin-top: 18rem;
+    height: 90vh;
+    width: 100%;
+    
+    transform: scale(1);
+  }
+
+
+  .founderNameWrap{
+    top: -52%;
+    left: -0.8%;  
+  }
+
+
+  #founderHeader{
+    font-size: 8.7vw;
+  }   
+
+
+
+  #workTitle{
+    left: 0.5%;
+
+    font-size: 3.5vw;
+    line-height: 3.0rem;
+  }
+
+
+
+  .founderStory{
+    top: -3.75%;
+    left: 0%;
+
+    font-size: 3.1vw;
+    letter-spacing: 0.3rem;
+  }
+
+  .founderStory.\32{
+    top: -0.75%;  
+  }
+
+
+  a.founderBtn{
+    top: 0%;
+    left: 0%;
+
+    margin-top: -5rem;
+    font-size: 3.5vw;
+    width: 96%;
+  }
+
+
+
+  div#founderBtn1 {
+    position: relative;
+    top: 15%;
+    left: 0%;
+  }
+
+
+/***                        Locations - section6                              ***/
+
+  .titleSec{
+    top: 12%;
+    margin-top: 25rem;
+  }
+
+  a.escape {
+    top: 64%;
+    width: 100%;
+    height: 111%;
+  }
+
+ 
+  /* Button  Sec */
+  a.locateBtn{
+    top: 0%;
+    left: 0%;
+    font-size: 4.6vw;
+    width: 96%;
+  }
+
+  
+  div#locateBtn1 {
+    position: relative;
+    top: 70.3vh;
+    left: 1%;
+  }
+
+
+
+
+}
+
+
+
+@media (max-width: 348px){
+  /*            Grid Layout              */
+  .grid.layout{
+
+    /*background-color: palevioletred;*/
+    grid-template-rows: 0.3fr repeat(3, 1.0fr) 0.5fr 0.55fr 0.6fr;
+  }
+
+
+  .founderNameWrap {
+    top: -32%;
+    left: 2%;
+  }
+
+  .founderStory {
+    top: -1.75%;
+    left: 0%;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.25rem;
+    line-height: 2.2rem;
+  }
+
+  .findLocat{
+    font-size: 1.2rem;
+  }
+
+
+  a.founderBtn{
+    margin-top: -18rem;
+  }
+
+
+ 
+
+}
