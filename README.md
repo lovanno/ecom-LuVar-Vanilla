@@ -21,7 +21,7 @@
 
 
 
-**⚖️What's the most technically challenging part of this project and why?⚖️**
+**⚖️ What's the most technically challenging part of this project and why? ⚖️**
 
 &emsp; &emsp;Design was the most challenging aspect of the entire project. I didn’t realize this until I started making the cart calculator 
 and had trouble integrating data from modals. I realized this when was able to finish responsive design faster in certain sections. 
@@ -87,12 +87,14 @@ that add products through the homepage. When a new product is pressed, the total
  
 🔑*Solutions*
 
-> (1): 
+> (1): parentnode.insertBefore
+
     testTextBox.parentNode.insertBefore(testBox, testTextBox);
 
     testBox.appendChild(testTextBox);
 
-> (2):  
+> (2): before 
+
     testBox.before(testTextBox);
 
     testBox.appendChild(testTextBox);
@@ -115,7 +117,7 @@ I have to be using a server to retrieve product information. While I know SQL, I
 • **Sidebar breaking**
 
 &emsp; &emsp; This was a minor problem with major consequences. Since I used position sticky for the sidebar, it broke when paired 
-with overflow-x:hiddenon the body and html. 
+with overflow-x: hidden on the body and html. 
 
 🔑 *Removing the overflow-x:hidden and just placing it in the body tagged fixed my problem*
 
@@ -124,6 +126,7 @@ with overflow-x:hiddenon the body and html.
 • **Display: block makes a href button responsive but breaks layout**
 
 🔑 *Absolute positioning is needed with Display: Block.*
+
 &nbsp;
 
 • **The footer breaks layout because it's not included in grid**
