@@ -2577,6 +2577,7 @@
       }
 
       div#locateBtn1 {
+        display: none;        /*Button keeps breaking throughout layout*/
         position: relative;
         top: 12.3vh;
         left: 33%;
@@ -2602,6 +2603,7 @@
       .grid.layout {
         /*background-color: palevioletred;*/
         grid-template-rows: 1.05fr 1.4fr 2.0fr 1.5fr 2.2fr 0.9fr 2.2fr 3.2fr;
+        /*0.55fr 0.8fr 0.5fr 0.3fr 0.7fr 0.2fr 0.6fr 1.5fr  Improving grid white space*/
       }
 
       /*!      Modal Class       !*/
@@ -2941,7 +2943,7 @@
         left: -1vw;
 
         height: 110vh;
-        width: 105%;
+        width: 97%;
         min-width: 20%;
         background-position-x: left;
       }
@@ -3118,14 +3120,9 @@
       }
 
 
-      @media (max-width: 870px) {
-        div#locateBtn1 {
-          top: 1983vh;
-        }
+      div#locateBtn1 {
+        top: 1983vh;
       }
-
-
-
 
 
     }

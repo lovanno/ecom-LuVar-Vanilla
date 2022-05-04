@@ -1569,13 +1569,12 @@
 
 
       .cinematic-image {
-        background-position: right;
+        background-position: center;
         position: absolute;
-
         top: 338%;
-        left: -12%;
+        left: -65%;
         height: 90vh;
-        width: 100vw;
+        width: 150vw;
 
         z-index: 1;
       }
@@ -1591,11 +1590,10 @@
         background-position: left;
         background-size: cover;
 
-        left: 64.5%;
         top: 105%;
+        left: 74.5%;
         height: 105vh;
         width: 43vw;
-
       }
 
 
@@ -2132,7 +2130,7 @@
 
       p.logo {
         position: absolute;
-        left: 35%;
+        left: 32%;
 
         font-size: 4.0vw;
         letter-spacing: 0.7rem;
@@ -2171,15 +2169,15 @@
 
       a.nav-link.\31 {
         position: relative;
-        top: 0;
-        right: 282%;
+        top: -12px;
+        right: 344%;
       }
 
 
       a.nav-link.\32 {
         position: relative;
-        top: 0;
-        left: 93%;
+        top: -12px;
+        left: 68%;
       }
 
 
@@ -2305,7 +2303,7 @@
         margin-top: 7rem;
 
         top: 155%;
-        left: 5%;
+        left: -1%;
 
         min-width: 90%;
 
