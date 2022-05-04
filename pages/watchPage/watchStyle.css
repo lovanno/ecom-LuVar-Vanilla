@@ -4,6 +4,11 @@
 
     margin: 0;
     padding: 0;
+    
+    /*Page Debugger
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;*/
   }
 
 
@@ -2429,7 +2434,8 @@
 
   .founderNameWrap{     /* Founder Header */
     top: -87vh;
-    left: 24%;
+    left: 55%;
+    width: fit-content;
   }
 
 
@@ -2457,6 +2463,7 @@
 
     font-size: 1.2vw;
     letter-spacing: 0.2rem;
+    width: fit-content;
   }
 
   .founderStory.\32{
@@ -2467,7 +2474,8 @@
   div#founderBtn1 {
     position: relative;
     top: -35%;
-    left: 59%;
+    left: 56%;
+    width: fit-content;
   }
 
 
@@ -2476,7 +2484,7 @@
     left: 0%;
 
     font-size: 1.25vw;
-    width: 30%;
+    width: 21rem;
   }
 
 
@@ -2484,12 +2492,16 @@
 
   .titleSec{
     top: -30%;
+    left: 42%;
+    width: fit-content;
   }
 
   /*    Button  Sec   */
   .findLocat{
     top: -23%;
+    left: 27%;
     margin-top: 0rem;
+    width: fit-content;
   }
 
   a.locateBtn{
@@ -2998,10 +3010,9 @@
 /***                        founder - section5                              ***/
 
   #founder-image{
-    left: 14.5%;
-
+    left: 20.5%;
     height: 86vh;
-    width: 118vw;
+    width: 67vw;
 
     margin-top: 10rem;
     transform: scale(1);
@@ -3010,7 +3021,7 @@
 
   .founderNameWrap{
     top: 1%;
-    left: 0.2%;
+    left: 19.2%;
   }
 
 
@@ -3031,7 +3042,7 @@
   .founderStory{
     position: relative;
     top: 3.5%;
-    left: -1%;
+    left: 15%;
 
     font-size: 1.9vw;
     text-align: center;
@@ -3053,9 +3064,7 @@
   a.founderBtn{
     top: 0%;
     left: 1%;
-
     font-size: 2.0vw;
-    width: 49%;
   }
 
 
@@ -3073,7 +3082,7 @@
   /*    Button  Sec   */
   .findLocat{
     top: 63vh;
-    left: 1%;
+    left: 20%;
 
     font-size: 2.7vw;
     margin-top: 0.0rem;
@@ -3085,14 +3094,13 @@
   div#locateBtn1{
     position: relative;
     top: 70.3vh;
-    left: 30%;
   }
 
 
   a.locateBtn{
     display: block;
     top: 0%;
-    left: 0%;
+    left: 26%;
 
     font-size: 2.6vw;
     width: 43%;
