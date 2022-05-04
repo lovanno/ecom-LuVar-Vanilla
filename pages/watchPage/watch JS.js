@@ -584,7 +584,9 @@ catch(err){
 
         function retrieveProdImage(increment){
             const prodImgRetrieve = window.getComputedStyle(allProdImg[increment]).backgroundImage; 
-            const prodImgUrl = "url(\"../../" + prodImgRetrieve.slice(140, -2) + "\")";
+            /*const prodImgUrl = "url(\"../../" + prodImgRetrieve.slice(140, -2) + "\")";   Production retriever*/
+            const prodImgUrl = "url(" + prodImgRetrieve.slice(4, -2) + "\")";   /*Netlify Live Retriever*/
+
 
                 return prodImgUrl
         }
@@ -1138,7 +1140,10 @@ try {
 
                 const clickedPDesc = descProdBtn[m].parentElement.firstChild.nextElementSibling;
                 const newImg = window.getComputedStyle(clickedPDesc).backgroundImage;     
-                const prodImgUrl3 = "url(\'../../" + newImg.slice(140, -2) + "\')";
+                /*const prodImgUrl3 = "url(\'../../" + newImg.slice(109, -2) + "\')";   Production img retriever*/
+                const prodImgUrl3 = newImg.slice(0, -2);    /*Netlify live retriever*/
+
+
                             
                 focusLgImg.style.backgroundImage = prodImgUrl3;
                 bottomDescImg.style.backgroundImage = prodImgUrl3;
