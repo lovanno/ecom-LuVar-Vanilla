@@ -584,11 +584,8 @@ catch(err){
 
         function retrieveProdImage(increment){
             const prodImgRetrieve = window.getComputedStyle(allProdImg[increment]).backgroundImage; 
-            /*const prodImgUrl = "url(\"../../" + prodImgRetrieve.slice(140, -2) + "\")";   Production retriever*/
-            const prodImgUrl = "url(" + prodImgRetrieve.slice(4, -2) + "\")";   /*Netlify Live Retriever*/
-
-
-                return prodImgUrl
+            const prodImgUrl = "url(" + prodImgRetrieve.slice(4, -2) + "\")";   
+            return prodImgUrl
         }
 
 
